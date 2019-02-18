@@ -15,6 +15,9 @@ public:
     explicit dice(QWidget *parent = nullptr);
     ~dice();
 
+private slots:
+    void on_pushButton_roll_clicked();
+
 private:
     Ui::dice *ui;
 };
