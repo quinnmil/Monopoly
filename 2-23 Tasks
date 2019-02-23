@@ -1,6 +1,8 @@
 Tasks for Feb 23
 
+==================
 TASK 1: BAREBONES CLASSES
+==================
 I think it would be a good idea to start by creating barebones classes with just
 the attributes you need. Just the framework, not a lot of coding.
 Remember, all these classes are outlined in /Feb13 Meeting Notes
@@ -85,4 +87,4 @@ Let me know if you have any questions about any of this. It's a decent amount of
 work but I think very doable in a couple solid hours. The notes here are suggestions,
 but let's talk it over if you want to make any large implementation changes.
 
-- Q 
+- Q
