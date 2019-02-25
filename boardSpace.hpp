@@ -12,7 +12,7 @@ public:
 	BoardSpace(vector<PlayerType> who, PropertyType *prop);
 	~BoardSpace();
 	vector<PlayerType> getWhoIsHere();
-	PropertyType * getProperty();
+	PropertyType* getProperty();
 private:
 	vector<PlayerType> whosHere;
 	PropertyType *property;
