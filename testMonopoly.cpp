@@ -10,7 +10,7 @@ int main(){
 
 	vector<PlayerType> players(4);
 	// initalizes empty property
-	PropertyType *prop = nullptr;
+	Property *prop = new Property();
 
 	// creates space with 4 players on it and property placeholder
 	BoardSpace space (players, prop);
