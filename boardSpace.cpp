@@ -6,7 +6,7 @@
 
 BoardSpace::BoardSpace(vector<PlayerType> who, PropertyType *prop){
 	whosHere = who;
-	property = &prop;
+	property = prop;
 }
 
 BoardSpace::~BoardSpace(){
@@ -18,5 +18,5 @@ vector<PlayerType> BoardSpace::getWhoIsHere(){
 }
 
 PropertyType* BoardSpace::getProperty(){
-	return property; 
+	return property;
 }
