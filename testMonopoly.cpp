@@ -7,11 +7,11 @@
 
 int main(){
 	vector<PlayerType> players(4);
-	const PropertyType prop;
-	BoardSpace x(players, prop);
+	PropertyType *prop;
+	BoardSpace x(players, &prop);
 	vector<BoardSpace> bs(40);
 	for(int i = 0; i < 40; i++){
-		bs.push_back(prop);
+		bs.push_back(&prop);
 	}
 	Board board(bs);
 	return 0;

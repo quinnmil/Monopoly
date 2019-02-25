@@ -9,7 +9,7 @@ using namespace std;
 
 class BoardSpace{
 public:
-	BoardSpace(vector<PlayerType> who, PropertyType prop);
+	BoardSpace(vector<PlayerType> who, PropertyType *prop);
 	~BoardSpace();
 	vector<PlayerType> getWhoIsHere();
 	PropertyType* getProperty();
