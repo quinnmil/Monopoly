@@ -1,0 +1,87 @@
+Meeting Notes for Feb 13, 2019
+
+- today is big picture project attack.
+
+- want to have a set schedule with task deadlines, we both have a busy term and
+don't want things to get ahead of us.
+
+- laying out big picture implementation today, going to break tasks down to smaller
+deliverables when we meet next week and begin coding.
+
+We aren't sure what we're going to do for graphics yet, narrowed down to two options:
+1. Text Based - CLI.
+  pros:
+  easier to develop in the short term.
+  Quick to prototype and test.
+  No huge learning curve.
+  cons:
+  difficult to display enough information in concise and easily readable format.
+  cumbersome and possibly overwhelming control options.
+
+2. Qt graphics
+  pros:
+  more graphically appealing application
+  easier for players to use
+  better for displaying information.
+
+  cons:
+  learning curve, we don't have any experience here.
+  could lead to more difficult in implementing backend/frontend.
+  collaboration could be more difficult.
+
+We decided we will each run though some Qt tutorials over the weekend so we
+have a better idea of what to expect.
+
+Next we went though the large classes we'll need for the game,
+everything was written on a whiteboard but I'm copying down here as well.
+
+Board Class
+- Spaces
+- Standard Properties
+- Special Properties
+    - utility/railroad/chance/communityChest/tax
+    - corners: jail/goToJail/freeParking/Go
+- Player Locations
+
+Property Class
+- name
+- color
+- cost
+- rent
+- house cost
+- hotel cost
+- house/hotel count
+- owned by:
+
+PropertyClass --> BoardWalk
+
+Player Class
+- name
+- piece
+- money
+- property owned
+- special cards
+- position on board
+- jail status
+
+Game Class
+- whos turn
+- roll dice
+- buying Property
+- paying rent 
+- banker
+- trading
+- jail process
+- player movement
+- passing go
+- newGame
+  - create players
+  - custom rules?
+- build house/hotel
+
+Utilities Class
+- inits
+- tests (autoplay?)
+- input validation
+- save/quit
+- start/endgame
