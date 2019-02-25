@@ -4,7 +4,7 @@
 
 //Constructor
 Property::Property() : PropertyType(){
-	color = "brown";
+	string color = "brown";
 	houseCost = 50;
 	hotelCost = 100;
 	houseCount = 0;

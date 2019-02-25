@@ -5,7 +5,7 @@
 
 //Constructor
 PropertyType::PropertyType(){
-	name = "Property1";
+	string name = "Property1";
 	cost = 100;
 	rent = 25;
 	ownedBy = nullptr;
@@ -32,4 +32,3 @@ int PropertyType::getRent(){
 string PropertyType::getOwnedBy(){
 	return ownedBy;
 }
-
