@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include "game.hpp"
+#include "boardSpace.hpp"
 
 //Constructor
 Game::Game(){
@@ -20,7 +21,7 @@ void Game::newGame(){
 
 //Get Turn
 int Game::getTurn(){
-
+	return turn;
 }
 
 //Roll Dice
@@ -59,12 +60,12 @@ void Game::movePlayer(){
 }
 
 //Add House
-void Game::addHouse(){
+void Game::addHouse(BoardSpace boardSpace){
 
 }
 
 //Add Hotel
-void Game::addHotel(){
+void Game::addHotel(BoardSpace boardSpace){
 
 }
 

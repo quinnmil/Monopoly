@@ -1,5 +1,5 @@
-#define PLAYER_HPP_
 #ifndef PLAYER_HPP_
+#define PLAYER_HPP_
 #include <cstdlib>
 #include <string>
 #include <vector>
@@ -8,6 +8,7 @@ using namespace std;
 class PlayerType{
 public:
 	PlayerType();
+	PlayerType(string &name, string &piece, int money);
 	~PlayerType();
 
 	string getName();
@@ -19,10 +20,10 @@ public:
 	int getMoney();
 	void setMoney(int money);
 	
-	vector<Property> getProperty();
+	//vector<Property> getProperty();
 	void setProperty();
 	
-	vector<SpecialCard> getSpecial();
+	//vector<SpecialCard> getSpecial();
 	void setSpecial();
 	
 	int getPosition();
@@ -34,8 +35,8 @@ private:
 	string name;
 	string piece;
 	int money;
-	vector<Property> ownedProperty;
-	vector<SpecialCard> ownedSpecial;
+	//vector<Property> ownedProperty;
+	//vector<SpecialCard> ownedSpecial;
 	int position;
 	bool jailStatus;
 };

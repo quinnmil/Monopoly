@@ -2,19 +2,21 @@
 #include <string>
 #include <vector>
 #include "boardSpace.hpp"
+#include "player.hpp"
 
-BoardSpace::BoardSpace(){
-
+BoardSpace::BoardSpace(vector<PlayerType> who, PropertyType *prop){
+	whosHere = who;
+	property = prop;
 }
 
-~BoardSpace::BoardSpace(){
+BoardSpace::~BoardSpace(){
 
 }
 
 vector<PlayerType> BoardSpace::getWhoIsHere(){
-
+	return whosHere;
 }
 
-PropertyType BoardSpace::getProperty(){
-
+PropertyType * BoardSpace::getProperty(){
+	return property; 
 }

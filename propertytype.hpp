@@ -1,5 +1,5 @@
-#define PROPERTYTYPE_HPP_
 #ifndef PROPERTYTYPE_HPP_
+#define PROPERTYTYPE_HPP_
 #include <cstdlib>
 #include <string>
 using namespace std;

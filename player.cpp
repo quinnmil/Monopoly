@@ -2,6 +2,34 @@
 #include <string>
 #include <vector>
 #include "player.hpp"
+#include "property.hpp"
+
+//Constructor
+PlayerType::PlayerType(){
+	name = "Player1";
+        piece = "Shoe";
+        money = 1500;
+        //ownedProperty(0);
+        //ownedSpecial(0);
+        position = 0;
+        jailStatus = false;
+}
+
+//Overloaded Constructor
+PlayerType::PlayerType(string &name, string &piece, int money){
+	name = this->name;
+	piece = this->piece;
+	money = this->money;
+	//ownedProperty(0);
+	//ownedSpecial(0);
+	position = 0;
+	jailStatus = false;
+}
+
+//Deconstructor
+PlayerType::~PlayerType(){
+
+}
 
 //Get Name
 string PlayerType::getName(){
@@ -34,9 +62,9 @@ void PlayerType::setMoney(int money){
 }
 
 //Get Property
-vector<Property> PlayerType::getProperty(){
-
-}
+//vector<Property> PlayerType::getProperty(){
+//	return ownedProperty;
+//}
 
 //Set Property
 void PlayerType::setProperty(){
@@ -44,9 +72,9 @@ void PlayerType::setProperty(){
 }
 
 //Get Special Cards
-vector<SpecialCard> PlayerType::getSpecial(){
-
-}
+//vector<SpecialCard> PlayerType::getSpecial(){
+//	return ownedSpecial;
+//}
 
 //Set Special Cards
 void PlayerType::setSpecial(){
@@ -72,4 +100,3 @@ bool PlayerType::getJailStatus(){
 void PlayerType::setJailStatus(bool jailStatus){
 	jailStatus = this->jailStatus;
 }
-

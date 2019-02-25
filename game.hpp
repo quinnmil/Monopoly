@@ -1,8 +1,9 @@
-#define GAME_HPP_
 #ifndef GAME_HPP_
+#define GAME_HPP_
 #include <cstdlib>
 #include <string>
 #include <vector>
+#include "boardSpace.hpp"
 
 class Game{
 public:
@@ -17,8 +18,8 @@ public:
 	void startTrade();
 	void jailPlayer();
 	void movePlayer();
-	void addHouse();
-	void addHotel();
+	void addHouse(BoardSpace boardSpace);
+	void addHotel(BoardSpace boardSpace);
 private:
 	int turn;
 	int die1, die2;

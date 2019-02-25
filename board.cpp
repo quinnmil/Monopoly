@@ -1,10 +1,12 @@
 #include <cstdlib>
+#include <vector>
 #include "board.hpp"
 
-Board::Board(){
+Board::Board(vector<BoardSpace> board){
+	gameBoard = board;
+}
+
+Board::~Board(){
 
 }
 
-~Board::Board(){
-
-}

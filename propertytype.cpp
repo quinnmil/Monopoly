@@ -5,7 +5,10 @@
 
 //Constructor
 PropertyType::PropertyType(){
-
+	name = "Property1";
+	cost = 100;
+	rent = 25;
+	ownedBy = nullptr;
 }
 
 //Decconstructor
@@ -15,38 +18,18 @@ PropertyType::~PropertyType(){
 
 //Get Name
 string PropertyType::getName(){
-
-}
-//Get Color
-string PropertyType::getColor(){
-
+	return name;
 }
 //Get Cost
 int PropertyType::getCost(){
-
+	return cost;
 }
 //Get Rent
 int PropertyType::getRent(){
-
-}
-//Get Cost of House
-int PropertyType::getHouseCost(){
-
-}
-//Get Cost of Hotel
-int PropertyType::getHotelCost(){
-
-}
-//Get House Count
-int PropertyType::getHouseCount(){
-
-}
-//Get Hotel Count
-int PropertyType::getHotelCount(){
-
+	return rent;
 }
 //Get Owner
 string PropertyType::getOwnedBy(){
-
+	return ownedBy;
 }
 
