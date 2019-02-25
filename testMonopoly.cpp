@@ -6,14 +6,24 @@
 #include "board.hpp"
 
 int main(){
+
+
 	vector<PlayerType> players(4);
-	PropertyType *prop;
-	BoardSpace x(players, &prop);
-	vector<BoardSpace> bs(40);
+	// initalizes empty property
+	PropertyType *prop = nullptr;
+
+	// creates space with 4 players on it and property placeholder
+	BoardSpace space (players, prop);
+
+	// lists of spaces
+	vector<BoardSpace> spaceList;
+
+	// fills spaceList with same space
 	for(int i = 0; i < 40; i++){
-		bs.push_back(&prop);
+		spaceList.push_back(space);
 	}
-	Board board(bs);
+	// creates board
+	Board board(spaceList);
+
 	return 0;
 }
-
