@@ -4,9 +4,10 @@
 #include "boardSpace.hpp"
 #include "game.hpp"
 #include "board.hpp"
+#include "mainwindow.h"
+#include <QApplication>
 
-int main(){
-
+int main(int argc, char *argv[]){
 
 	vector<PlayerType> players(4);
 	// initalizes empty property
@@ -24,6 +25,12 @@ int main(){
 	}
 	// creates board
 	Board board(spaceList);
+
+    QApplication a(argc, argv);
+    MainWindow w;
+    w.show();
+
+    return a.exec();
 
 	return 0;
 }
