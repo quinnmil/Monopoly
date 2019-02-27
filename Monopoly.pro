@@ -39,3 +39,6 @@ SOURCES += board.cpp \
            propertytype.cpp \
            testMonopoly.cpp \
            mainwindow.cpp
+
+RESOURCES += \
+    graphics.qrc
