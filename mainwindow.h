@@ -2,6 +2,11 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QGraphicsView>
+#include <QGraphicsScene>
+#include <QtGui>
+#include <QTCore>
+#include <QGraphicsRectItem>
 
 namespace Ui {
 class MainWindow;
@@ -16,10 +21,13 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pushButton_clicked();
+
 
 private:
     Ui::MainWindow *ui;
+    QGraphicsView *view;
+    QGraphicsScene *scene;
+    QGraphicsRectItem *rect;
 };
 
 #endif // MAINWINDOW_H
