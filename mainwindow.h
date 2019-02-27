@@ -30,4 +30,5 @@ private:
     QGraphicsRectItem *rect;
 };
 
+int dieRoll();
 #endif // MAINWINDOW_H

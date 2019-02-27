@@ -27,6 +27,8 @@ private:
 
 class SpecialProperty{
 public:
+    //SpecialProperty();
+    //~SpecialProperty();
 private:	
 };
 #endif /* PROPERTY_HPP_ */

@@ -40,7 +40,7 @@ void Game::payRent(){
 }
 
 //Pay Player
-void Game::payPlayer(){
+void Game::payPlayer(PlayerType p1, PlayerType p2){
 
 }
 
