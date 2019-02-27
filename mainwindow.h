@@ -22,4 +22,5 @@ private:
     Ui::MainWindow *ui;
 };
 
+int dieRoll();
 #endif // MAINWINDOW_H

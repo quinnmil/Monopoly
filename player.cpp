@@ -67,8 +67,8 @@ void PlayerType::setMoney(int money){
 //}
 
 //Set Property
-void PlayerType::setProperty(){
-
+void PlayerType::setProperty(PropertyType property){
+    ownedProperty.push_back(property);
 }
 
 //Get Special Cards
@@ -82,12 +82,12 @@ void PlayerType::setSpecial(){
 }
 
 //Get Position
-int PlayerType::getPosition(){
+unsigned int PlayerType::getPosition(){
 	return position;
 }
 
 //Set Position
-void PlayerType::setPosition(int position){
+void PlayerType::setPosition(unsigned int position){
 	position = this->position;
 }
 

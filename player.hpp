@@ -3,6 +3,7 @@
 #include <cstdlib>
 #include <string>
 #include <vector>
+#include "property.hpp"
 using namespace std;
 
 class PlayerType{
@@ -20,14 +21,14 @@ public:
 	int getMoney();
 	void setMoney(int money);
 	
-	//vector<Property> getProperty();
-	void setProperty();
-	
+    vector<PropertyType> getProperty();
+    void setProperty(PropertyType property);
+
 	//vector<SpecialCard> getSpecial();
 	void setSpecial();
 	
-	int getPosition();
-	void setPosition(int position);
+    unsigned int getPosition();
+    void setPosition(unsigned int position);
 	
 	bool getJailStatus();
 	void setJailStatus(bool jailStatus);
@@ -35,9 +36,9 @@ private:
 	string name;
 	string piece;
 	int money;
-	//vector<Property> ownedProperty;
+    vector<PropertyType> ownedProperty;
 	//vector<SpecialCard> ownedSpecial;
-	int position;
+    unsigned int position;
 	bool jailStatus;
 };
 

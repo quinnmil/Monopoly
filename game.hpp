@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include "boardSpace.hpp"
+#include "player.hpp"
 
 class Game{
 public:
@@ -14,7 +15,7 @@ public:
 	void rollDice();
 	void buyProperty();
 	void payRent();
-	void payPlayer();
+    void payPlayer(PlayerType p1, PlayerType p2);
 	void startTrade();
 	void jailPlayer();
 	void movePlayer();
