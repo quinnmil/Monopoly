@@ -53,6 +53,16 @@
      <string>Die 2</string>
     </property>
    </widget>
+   <widget class="QGraphicsView" name="graphicsView">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>30</y>
+      <width>721</width>
+      <height>411</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

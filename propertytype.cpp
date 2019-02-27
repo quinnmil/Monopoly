@@ -5,10 +5,10 @@
 
 //Constructor
 PropertyType::PropertyType(){
-	string name = "Property1";
-	cost = 100;
-	rent = 25;
-	ownedBy = nullptr;
+	name = "";
+	cost = 0;
+	rent = 0;
+	ownedBy = "";
 }
 
 //Decconstructor

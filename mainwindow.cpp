@@ -27,5 +27,7 @@ void MainWindow::on_pushButton_clicked(){
     ui->label_die1->setText(QString::number(v1));
     ui->label_die2->setText(QString::number(v2));
 
+//    ui->graphicsView->addRect(5,5)
+
 
 }
