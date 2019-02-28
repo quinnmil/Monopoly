@@ -17,7 +17,7 @@ private:
 	string color;
 	int cost;
 	int rent;
-	string ownedBy;
+    string ownedBy; //PlayerType?
 };
 
 #endif /* PROPERTYTYPE_HPP_ */

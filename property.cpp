@@ -25,6 +25,13 @@ Property::~Property(){
 
 }
 
+//********************
+//
+//GET FUNCTIONS
+//
+//********************
+
+//Get Name
 string Property::getName(){
     return name;
 }
@@ -49,14 +56,20 @@ int Property::getHouseCount(){
 	return houseCount;
 }
 
+//Get # of Hotels
+int Property::getHotelCount(){
+    return hotelCount;
+}
+
+//********************
+//
+//SET FUNCTIONS
+//
+//********************
+
 //Set # of Houses
 void Property::setHouseCount(int houseCount){
 	houseCount = this->houseCount;
-}
-
-//Get # of Hotels
-int Property::getHotelCount(){
-	return hotelCount;
 }
 
 //Set # of Hotels

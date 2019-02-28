@@ -12,7 +12,7 @@
 
 //GAME FUNCTION
 void runGame(){
-    vector<PlayerType> players(4); //Amount of players on a boardSpace
+    //vector<PlayerType> players(4); //Amount of players on a boardSpace
 
     Property *prop = new Property(); //New default property
 
