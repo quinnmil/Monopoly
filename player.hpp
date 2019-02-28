@@ -2,7 +2,7 @@
 #define PLAYER_HPP_
 #include <cstdlib>
 #include <string>
-#include <vector>
+#include <QApplication>
 #include "property.hpp"
 using namespace std;
 
@@ -21,14 +21,14 @@ public:
 	int getMoney();
 	void setMoney(int money);
 	
-    vector<PropertyType> getProperty();
-    void setProperty(PropertyType property);
+    QList<PropertyType*> getProperty();
+    void setProperty(PropertyType *property);
 
 	//vector<SpecialCard> getSpecial();
 	void setSpecial();
 	
     unsigned int getPosition();
-    void setPosition(unsigned int position);
+    void setPosition(int die1, int die2);
 	
 	bool getJailStatus();
 	void setJailStatus(bool jailStatus);
@@ -36,10 +36,11 @@ private:
 	string name;
 	string piece;
 	int money;
-    vector<PropertyType> ownedProperty;
+    QList<PropertyType*> ownedProperty;
 	//vector<SpecialCard> ownedSpecial;
     unsigned int position;
 	bool jailStatus;
+    int jailTime; //Think about how this will work
 };
 
 #endif /* PLAYER_HPP_ */
