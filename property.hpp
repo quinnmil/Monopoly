@@ -8,8 +8,9 @@ using namespace std;
 class Property : public PropertyType{
 public:
 	Property();
-	Property(string &color, int houseCost, int hotelCost);
+    Property(string name, string &color, int houseCost, int hotelCost);
 	~Property();
+    string getName();
 	string getColor();
 	int getHouseCost();
 	int getHotelCost();
@@ -18,6 +19,7 @@ public:
 	int getHotelCount();
 	void setHotelCount(int hotelCount);
 private:
+    string name;
 	string color;
 	int houseCost;
 	int hotelCost;
