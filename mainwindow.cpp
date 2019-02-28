@@ -5,8 +5,17 @@
 #include <QGraphicsScene>
 #include <QtGui>
 #include <QTCore>
-
 #include <QDebug>
+//#include "player.hpp"
+//#include "property.hpp"
+//#include "propertytype.hpp"
+//#include "boardSpace.hpp"
+//#include "game.hpp"
+//#include "board.hpp"
+
+// VARIBLES FOR TESTING
+static int NUMPLAYERS = 2;
+
 
 int dieRoll(){
     int roll;
@@ -17,13 +26,16 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-
+    Game *game = new Game();
 
     ui->setupUi(this);
     srand(time(NULL));
 
     spaceList = initalizeBoard();
-//    qDebug() << spaceList;
+
+//    gameSpaceList = game->getGameSpaceList();
+
+    qDebug() << spaceList;
 //    spaceList[0]->setHidden(true);
 
 
@@ -40,6 +52,7 @@ bool labelLessThan (QLabel * L1, QLabel * L2){
 }
 
 QList<QLabel *> MainWindow::initalizeBoard(){
+// TODO, get number of players from NEWSCREEN
 /*
      *
      * creates a list of lables on the board
@@ -53,8 +66,9 @@ QList<QLabel *> MainWindow::initalizeBoard(){
     QList<QLabel *> list = ui->groupBox_2->findChildren<QLabel *>();
 
     qSort(list.begin(), list.end(), labelLessThan );
-
+    list.takeFirst();
     return list;
+
 
 }
 
