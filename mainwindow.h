@@ -1,6 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "ui_mainwindow.h"
 #include <QMainWindow>
 #include <QGraphicsView>
 #include <QGraphicsScene>
@@ -19,16 +20,14 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    QList <QLabel *>initalizeBoard();
+    QList <QLabel *> spaceList;
 
 private slots:
-
+    void on_pushButton_clicked();
 
 private:
     Ui::MainWindow *ui;
-    QGraphicsView *view;
-    QGraphicsScene *scene;
-    QGraphicsRectItem *rect;
 };
 
-int dieRoll();
 #endif // MAINWINDOW_H
