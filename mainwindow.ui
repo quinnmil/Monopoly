@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QGroupBox" name="groupBox_2">
+   <widget class="QGroupBox" name="Board">
     <property name="geometry">
      <rect>
       <x>370</x>
@@ -1583,6 +1583,77 @@
       <bool>true</bool>
      </property>
     </widget>
+    <widget class="QGroupBox" name="NewGame">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>470</y>
+       <width>291</width>
+       <height>191</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>NewGame</string>
+     </property>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>40</y>
+        <width>231</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Welcome to Monopoly</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>80</y>
+        <width>121</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>How many players? </string>
+      </property>
+      <property name="buddy">
+       <cstring>playerCount</cstring>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>150</y>
+        <width>114</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Start Game</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="playerCount">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>80</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="minimum">
+       <number>2</number>
+      </property>
+      <property name="maximum">
+       <number>8</number>
+      </property>
+     </widget>
+    </widget>
     <zorder>BackGround</zorder>
     <zorder>space_25</zorder>
     <zorder>space_35</zorder>
@@ -1625,12 +1696,13 @@
     <zorder>space_16</zorder>
     <zorder>space_08</zorder>
     <zorder>space_14</zorder>
+    <zorder>NewGame</zorder>
    </widget>
-   <widget class="QGroupBox" name="groupBox">
+   <widget class="QGroupBox" name="Dice">
     <property name="geometry">
      <rect>
       <x>60</x>
-      <y>710</y>
+      <y>700</y>
       <width>261</width>
       <height>111</height>
      </rect>
@@ -1677,6 +1749,69 @@
       <string>Die 1</string>
      </property>
     </widget>
+   </widget>
+   <widget class="QGroupBox" name="PropertyInfo">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>150</y>
+      <width>311</width>
+      <height>251</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Current Space</string>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QLabel" name="Property">
+       <property name="text">
+        <string>Property:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="Property_2">
+       <property name="text">
+        <string>Price:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="Property_3">
+       <property name="text">
+        <string>Rent:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="Property_4">
+       <property name="text">
+        <string>Info:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="Property_5">
+       <property name="text">
+        <string>Owned by:</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="label_playersTurn">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>50</y>
+      <width>171</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Who's turn</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
