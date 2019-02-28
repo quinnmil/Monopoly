@@ -12,7 +12,8 @@ Property::Property() : PropertyType(){
 }
 
 //Overloaded Constructor
-Property::Property(string &color, int houseCost, int hotelCost) : PropertyType(){
+Property::Property(string name, string &color, int houseCost, int hotelCost) : PropertyType(){
+    name = this->name;
 	color = this->color;
 	houseCost = this->houseCost;
 	hotelCost = this->hotelCost;
@@ -22,6 +23,10 @@ Property::Property(string &color, int houseCost, int hotelCost) : PropertyType()
 //Deconstructor
 Property::~Property(){
 
+}
+
+string Property::getName(){
+    return name;
 }
 
 //Get Color
