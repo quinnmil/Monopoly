@@ -8,6 +8,11 @@
 #include <QtGui>
 #include <QTCore>
 #include <QGraphicsRectItem>
+#include "property.hpp"
+#include "propertytype.hpp"
+#include "boardSpace.hpp"
+#include "game.hpp"
+#include "board.hpp"
 
 namespace Ui {
 class MainWindow;
@@ -22,6 +27,7 @@ public:
     ~MainWindow();
     QList <QLabel *>initalizeBoard();
     QList <QLabel *> spaceList;
+    QList <BoardSpace> gameSpaceList;
 
 private slots:
     void on_pushButton_clicked();
