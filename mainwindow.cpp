@@ -16,12 +16,13 @@
 // VARIBLES FOR TESTING
 static int NUMPLAYERS = 2;
 
+//THIS WAS MOVED TO GAME.CPP
+//int dieRoll(){
+//    int roll;
+//    roll = rand()%6+1;
+//    return roll;
+//}
 
-int dieRoll(){
-    int roll;
-    roll = rand()%6+1;
-    return roll;
-}
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
