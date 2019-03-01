@@ -88,9 +88,18 @@ string Game::getPropertyName(){
     return name;
 }
 
+int Game::getPlayerPosition(PlayerType player){
+    return player.getPosition();
+}
+
 //Gets current player
 PlayerType* Game::getCurrentPlayer(){
     return currentPlayer;
+}
+
+//Gets current player name
+string Game::getCurrentPlayerName(){
+    return currentPlayer->getName();
 }
 
 //Gets Index of current player
