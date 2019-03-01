@@ -179,7 +179,19 @@ void Game::buyProperty(){
 
 //Pay Rent
 void Game::payRent(){
-
+    int pos = currentPlayer->getPosition(); //Gets position of current player
+    PropertyType *currProp = gameSpaceList.at(pos); //Gets current property
+    int rent = currProp->getRent(); //Gets rent
+    if(currProp->getOwnedBy().compare("") > 0){ //If there is an owner of said property
+        PlayerType *owner;
+        for(int i = 0; i < playerList.length(); i++){
+            if(currProp->getOwnedBy().compare(playerList.at(i)->getName()) == 0){ //If owner of current property == PlayerType.getName()
+                owner = playerList.at(i);
+                currentPlayer->setMoney(currentPlayer->getMoney() - rent); //Subtract rent from current player
+                owner->setMoney(owner->getMoney() + rent); //Add rent to owner
+            }
+        }
+    }
 }
 
 //Pay Player
