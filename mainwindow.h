@@ -25,9 +25,13 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    QList <QLabel *>initalizeBoard();
+    void updateDisplay();
+    QList <QLabel *>getSpaceList();
+    QList<PropertyType*> getGameSpaceList();
+
+    void displayOptions();
     QList <QLabel *> spaceList;
-    QList <BoardSpace> gameSpaceList;
+    QList <PropertyType*> gameSpaceList;
 
 private slots:
     void on_pushButton_clicked();
