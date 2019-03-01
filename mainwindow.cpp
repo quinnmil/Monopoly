@@ -7,8 +7,8 @@
 #include <QTCore>
 #include <QDebug>
 //#include "player.hpp"
-//#include "property.hpp"
-//#include "propertytype.hpp"
+// #include "property.hpp"
+// #include "propertytype.hpp"
 //#include "boardSpace.hpp"
 //#include "game.hpp"
 //#include "board.hpp"
@@ -27,6 +27,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+    // todo, this will be called when newGame button is pressed.
     Game *game = new Game();
 
     ui->setupUi(this);
@@ -52,7 +53,7 @@ bool labelLessThan (QLabel * L1, QLabel * L2){
     return L1->objectName() < L2->objectName();
 }
 
-QList<QLabel *> MainWindow::initalizeBoard(){
+QList<QLabel *> MainWindow::getSpaceList(){
 // TODO, get number of players from NEWSCREEN
 /*
      *
@@ -68,21 +69,57 @@ QList<QLabel *> MainWindow::initalizeBoard(){
 
     qSort(list.begin(), list.end(), labelLessThan );
     list.takeFirst();
-    return list;
-
 
 }
 
-void MainWindow::on_pushButton_clicked(){
-    int v1 = dieRoll();
-    int v2 = dieRoll();
-    int total = v1 + v2;
+QList<PropertyType*> MainWindow::getGameSpaceList(){
+  return game->getGameSpaceList();
+}
 
-    ui->label_die1->setText(QString::number(v1));
-    ui->label_die2->setText(QString::number(v2));
+void MainWindow::on_pushButton_clicked(){
+    // int v1 = dieRoll();
+    // int v2 = dieRoll();
+    // int total = v1 + v2;
+    int die1 = game->dieRoll();
+    int die2 = game->dieRoll();
+
+    // move player.
+    game->movePlayer(die1, die2);
+
+
+    // update dice
+    ui->label_die1->setText(QString::number(die1));
+    ui->label_die2->setText(QString::number(die2));
+
+    this->updateDisplay();
+
 
 //    spaceList[total]->setHidden(false);
+}
+void MainWindow::displayOptions(){
+  // if property is unowned, display offer to buy
 
+  // if property is owned, notify player of rent payment.
+}
 
+void MainWindow::updateDisplay(){
+  // update board dislay
+  PlayerType* currentPlayer = game->getCurrentPlayer();
+
+  int index = game->getPlayerPosition(currentPlayer);
+  spaceList[index]->setText("player here");
+
+  // update information display
+  QString currentProperty = game->getPropertyName();
+  int currentPropertyCost = game->getPropertyCost();
+  int currentPropertyRent = game->getPropertyRent();
+  QString currentPropertyInfo = game->getPropertyInfo();
+
+}
+
+/* note for later, if we want to get info on a selected propoerty, we could
+I really just need the index of that click and then look it up in gameSpaceList
+
+*/
 
 }
