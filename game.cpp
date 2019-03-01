@@ -59,6 +59,18 @@ Game::~Game(){
 //
 //********************
 
+//Gets positions of all players in the board
+QList<int> Game::getAllPositions(){
+    QList<int> list; //creates list of positions to return
+    QList<PlayerType*> players = getPlayerList(); //list "players" now contains the game's full player list
+    for(int i = 0; i < players.length(); i++){
+        PlayerType *player = players.at(i); //gets player @ position in list
+        const unsigned int pos = player->getPosition(); //gets const version of position
+        list.push_back(pos); //adds to list that will be returned
+    }
+    return list;
+}
+
 //Gets Die Roll 1
 int Game::getDieOne(){
     return dieRoll();
@@ -69,9 +81,35 @@ int Game::getDieTwo(){
     return dieRoll();
 }
 
+//Gets current player
+PlayerType* Game::getCurrentPlayer(){
+    return currentPlayer;
+}
+
 // Playerlist - list of all current players
 QList<PlayerType*> Game::getPlayerList(){
     return playerList;
+}
+
+//Gets position of a certain player
+int Game::getPlayerPosition(PlayerType player){
+    return player.getPosition();
+}
+
+//Gets Index of current player
+int Game::getCurrentPlayerIndex(){
+    int currPos = 0;
+    for(int i = 0; i < playerList.length(); i++){
+        if(currentPlayer->getName().compare(playerList.at(i)->getName()) == 0){
+            currPos = i;
+        }
+    }
+    return currPos;
+}
+
+//Gets current player name
+string Game::getCurrentPlayerName(){
+    return currentPlayer->getName();
 }
 
 // gameSpaceList -> list of BoardSpaces (have a list of players, and property)
@@ -86,43 +124,6 @@ string Game::getPropertyName(){
     int position = currentPlayer->getPosition();
     string name = gameSpaceList[position]->getName();
     return name;
-}
-
-int Game::getPlayerPosition(PlayerType player){
-    return player.getPosition();
-}
-
-//Gets current player
-PlayerType* Game::getCurrentPlayer(){
-    return currentPlayer;
-}
-
-//Gets current player name
-string Game::getCurrentPlayerName(){
-    return currentPlayer->getName();
-}
-
-//Gets Index of current player
-int Game::getCurrentPlayerIndex(){
-    int currPos = 0;
-    for(int i = 0; i < playerList.length(); i++){
-        if(currentPlayer->getName().compare(playerList.at(i)->getName()) == 0){
-            currPos = i;
-        }
-    }
-    return currPos;
-}
-
-//Gets positions of all players in the board
-QList<int> Game::getAllPositions(){
-    QList<int> list; //creates list of positions to return
-    QList<PlayerType*> players = getPlayerList(); //list "players" now contains the game's full player list
-    for(int i = 0; i < players.length(); i++){
-        PlayerType *player = players.at(i); //gets player @ position in list
-        const unsigned int pos = player->getPosition(); //gets const version of position
-        list.push_back(pos); //adds to list that will be returned
-    }
-    return list;
 }
 
 //********************
@@ -174,6 +175,9 @@ void Game::buyProperty(){
             bankMoney += currProp->getCost(); //Add cost to bankMoney
             currentPlayer->setProperty(currProp); //Give player the property
         }
+    }
+    else{
+        //ALREADY OWNED
     }
 }
 
