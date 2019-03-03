@@ -11,6 +11,7 @@
 #include <QApplication>
 
 //GAME FUNCTION
+/*
 void runGame(){
     //vector<PlayerType> players(4); //Amount of players on a boardSpace
 
@@ -50,10 +51,11 @@ void runGame(){
         }
     }
 }
+*/
 
 //MAIN
 int main(int argc, char *argv[]){
-    runGame();
+//    runGame();
     QApplication a(argc, argv);
     MainWindow w;
     w.show();
