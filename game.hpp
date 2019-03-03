@@ -33,11 +33,11 @@ public:
 
     // QUINN-TODO: These are property related AND MAY BE IN MAINWINDOW.CPP
 
-    QList<PropertyType*> getGameSpaceList(); //returns entire list of properties
-    string getPropertyName();   // name of property ie: "Boardwalk"
-    string getPropertyOwner();  // name of owner or "unowned"
-    int getPropertyCost();
-    int getPropertyRent();
+    QList<PropertyType*> getGameSpaceList(); //DONE: returns entire list of properties
+    string getPropertyName();   //DONE: name of property ie: "Boardwalk"
+    string getPropertyOwner();  //DONE: name of owner or "unowned"
+    int getPropertyCost(); //DONE
+    int getPropertyRent(); //DONE
     string getPropertyInfo(); // property description if special property, otherwise empty string is fine.
 
 

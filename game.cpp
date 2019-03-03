@@ -122,10 +122,30 @@ QList<PropertyType*> Game::getGameSpaceList(){
 string Game::getPropertyName(){
     // 'player' could/should be replaced with a CurrentPlayer pointer you keep in this class.
     int position = currentPlayer->getPosition();
-    string name = gameSpaceList[position]->getName();
+    string name = gameSpaceList.at(position)->getName();
     return name;
 }
 
+//Gets name of owner of property current player is on
+string Game::getPropertyOwner(){
+    int position = currentPlayer->getPosition();
+    string prop_owner = gameSpaceList.at(position)->getOwnedBy();
+    return prop_owner;
+}
+
+//Gets cost of current property
+int Game::getPropertyCost(){
+    int pos = currentPlayer->getPosition();
+    int cost = gameSpaceList.at(pos)->getCost();
+    return cost;
+}
+
+//Gets rent of current property
+int Game::getPropertyRent(){
+    int pos = currentPlayer->getPosition();
+    int rent = gameSpaceList.at(pos)->getRent();
+    return rent;
+}
 //********************
 //
 //SET FUNCTIONS
