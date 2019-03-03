@@ -32,6 +32,7 @@ public:
     void displayOptions();
     QList <QLabel *> spaceList;
     QList <PropertyType*> gameSpaceList;
+    Game *game;
 
 private slots:
     void on_pushButton_clicked();

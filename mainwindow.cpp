@@ -6,12 +6,6 @@
 #include <QtGui>
 #include <QTCore>
 #include <QDebug>
-//#include "player.hpp"
-// #include "property.hpp"
-// #include "propertytype.hpp"
-//#include "boardSpace.hpp"
-//#include "game.hpp"
-//#include "board.hpp"
 
 // VARIBLES FOR TESTING
 static int NUMPLAYERS = 2;
@@ -33,7 +27,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     srand(time(NULL));
 
-    spaceList = initalizeBoard();
+    QList<QLabel *>spaceList = getSpaceList();
+    QList<PropertyType *> gameSpaceList = getGameSpaceList();
 
 //    gameSpaceList = game->getGameSpaceList();
 
@@ -65,7 +60,7 @@ QList<QLabel *> MainWindow::getSpaceList(){
      *
 */
 
-    QList<QLabel *> list = ui->groupBox_2->findChildren<QLabel *>();
+    QList<QLabel *> list = ui->PropertyInfo->findChildren<QLabel *>();
 
     qSort(list.begin(), list.end(), labelLessThan );
     list.takeFirst();
@@ -106,14 +101,14 @@ void MainWindow::updateDisplay(){
   // update board dislay
   PlayerType* currentPlayer = game->getCurrentPlayer();
 
-  int index = game->getPlayerPosition(currentPlayer);
+  int index = game->getPlayerPosition(*currentPlayer);
   spaceList[index]->setText("player here");
 
   // update information display
-  QString currentProperty = game->getPropertyName();
+  std::string currentProperty = game->getPropertyName();
   int currentPropertyCost = game->getPropertyCost();
   int currentPropertyRent = game->getPropertyRent();
-  QString currentPropertyInfo = game->getPropertyInfo();
+  std::string currentPropertyInfo = game->getPropertyInfo();
 
 }
 
@@ -122,4 +117,3 @@ I really just need the index of that click and then look it up in gameSpaceList
 
 */
 
-}
