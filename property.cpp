@@ -4,7 +4,7 @@
 
 //Constructor
 Property::Property() : PropertyType(){
-	string color = "brown";
+    color = "brown";
 	houseCost = 50;
 	hotelCost = 100;
 	houseCount = 0;
@@ -12,14 +12,15 @@ Property::Property() : PropertyType(){
 }
 
 //Overloaded Constructor
-Property::Property(string name, string &color, int houseCost, int hotelCost) : PropertyType(){
-    name = this->name;
-	color = this->color;
-	houseCost = this->houseCost;
-	hotelCost = this->hotelCost;
+Property::Property(string name, string color, int houseCost, int hotelCost) : PropertyType(){
+    this->name = name;
+    this->color = color;
+    this->houseCost = houseCost;
+    this->hotelCost = hotelCost;
 	houseCount = 0;
 	hotelCount = 0;
 }
+
 //Deconstructor
 Property::~Property(){
 
@@ -69,10 +70,10 @@ int Property::getHotelCount(){
 
 //Set # of Houses
 void Property::setHouseCount(int houseCount){
-	houseCount = this->houseCount;
+    this->houseCount = houseCount;
 }
 
 //Set # of Hotels
 void Property::setHotelCount(int hotelCount){
-	hotelCount = this->hotelCount;
+    this->hotelCount = hotelCount;
 }
