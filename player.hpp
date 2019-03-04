@@ -15,8 +15,9 @@ public:
 	string getName();
 	void setName(string &name);
 
-	string getPiece();
-	void setPiece(string &piece);
+    int getPiece();
+    // MASON:  I changed this to an int so I could use a switch statement
+    void setPiece(string &piece);
 	
 	int getMoney();
 	void setMoney(int money);
@@ -34,7 +35,7 @@ public:
 	void setJailStatus(bool jailStatus);
 private:
 	string name;
-	string piece;
+    int piece;
 	int money;
     QList<PropertyType*> ownedProperty;
 	//vector<SpecialCard> ownedSpecial;

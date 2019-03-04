@@ -7,7 +7,7 @@
 //Constructor
 PlayerType::PlayerType(){
 	name = "Player1";
-    piece = "Shoe";
+    piece = 1;
     money = 1500;
     //ownedProperty(0); Unnecessary?
     //ownedSpecial(0); Unnecessary?
@@ -17,9 +17,12 @@ PlayerType::PlayerType(){
 
 //Overloaded Constructor
 PlayerType::PlayerType(string &name, string &piece, int money){
-	name = this->name;
-	piece = this->piece;
-	money = this->money;
+    this->name = name;
+    // MASON -- I changed this so I could test with two players.
+    setPiece(piece);
+    // MASON -- please pay attention to right side assignment. in a lot of your constructors,
+    // you had ( argument = this->attribute ) which doesnt make sense and causes a lot of weird behavior.
+    this->money = money;
     //ownedProperty(0); Unnecessary?
     //ownedSpecial(0); Unnecessary?
 	position = 0;
@@ -43,7 +46,7 @@ string PlayerType::getName(){
 }
 
 //Get Piece
-string PlayerType::getPiece(){
+int PlayerType::getPiece(){
     return piece;
 }
 
@@ -85,8 +88,12 @@ void PlayerType::setName(string &name){
 
 //Set Piece
 void PlayerType::setPiece(string &piece){
-	piece = this->piece;
-}
+    if (piece == "shoe"){
+        this->piece = 1;
+    }
+    else {
+        this->piece = 2;
+    }}
 
 //Set Money
 void PlayerType::setMoney(int money){
