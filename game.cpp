@@ -19,7 +19,7 @@ Game::Game(){
 
     //Adds EIGHT players to playerList(Instantiated in header)
     for(int i = 0; i < 8; i++){
-        PlayerType *player; //Creates new player pointer
+        PlayerType *player = new PlayerType; //Creates new player pointer
         playerList.push_back(player); //Adds new player to playerList
     }
 
@@ -35,7 +35,7 @@ Game::Game(int pl){
     for(int i = 0; i < 40; i++){
         // MASON -- please make sure you are actually creating these objects, debugging this took almost an hour.
         // ( if you declare a pointer, it needs to actually point to something )
-        PropertyType *property = new Property;;
+        PropertyType *property = new Property;
         gameSpaceList.push_back(property);
     }
 
@@ -158,6 +158,7 @@ int Game::getPropertyRent(){
     int rent = gameSpaceList.at(pos)->getRent();
     return rent;
 }
+
 //********************
 //
 //SET FUNCTIONS
@@ -168,7 +169,13 @@ int Game::getPropertyRent(){
 // MASON -- This is broken.
 void Game::incrementCurrentPlayer(){
     int pos = getCurrentPlayerIndex();
-    currentPlayer = playerList.at(pos+1);
+    if(pos + 1 >= playerList.length()){
+        pos = (pos+1) % playerList.length();
+        currentPlayer = playerList.at(pos);
+    }
+    else{
+        currentPlayer = playerList.at(pos+1);
+    }
 }
 
 //********************
