@@ -165,8 +165,27 @@ int Game::getPropertyRent(){
 //
 //********************
 
+//Adds all board spaces to gameSpaceList
+void Game::addBoardSpaces(){
+    //WE NEED:
+    //-NAME
+    //-COST
+    //-COLOR
+    //-MORTGAGE
+    //-UNMORTGAGE
+    //-COST TO ADD HOUSE
+    //-COST TO ADD HOTEL
+    //-RENT
+    //-RENT IF ALL OF SAME COLOR OWNED
+    //-FINE FROM 1 HOUSE
+    //-FINE FROM 2 HOUSES
+    //-FINE FROM 3 HOUSES
+    //-FINE FROM 4 HOUSES
+    //-FINE FROM HOTEL
+}
+
 //Sets new current player
-// MASON -- This is broken.
+// IF THIS IS BROKEN ITS A SLIGHT LOGIC ERROR
 void Game::incrementCurrentPlayer(){
     int pos = getCurrentPlayerIndex();
     if(pos + 1 >= playerList.length()){
@@ -183,12 +202,6 @@ void Game::incrementCurrentPlayer(){
 //ACCESS FUNCTIONS
 //
 //********************
-
-//New Game
-// might not need this function if the constructor does everything, your choice though.
-void Game::newGame(){
-
-}
 
 //End Turn
 void Game::endturn(){

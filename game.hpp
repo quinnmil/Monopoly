@@ -48,6 +48,7 @@ public:
     int dieRoll(); //DONE: this probably shouldn't return void, maybe an int or a tuple of each roll? However you want to implement. Should also call MainWindow::update();
     void movePlayer(int die1, int die2); //DONE: adds roll to to previous position and calls currentplayer::setposition(int x)
     void endturn();  //HALF-DONE--NEEDS UPDATE FUNCTION: 1. switches CurrentPlayer to next player. 2. Calls MainWindow::update() to update graphics.
+    void addBoardSpaces();
 
     // I would have these next three all use a banker(p1,p2). buyProperty and payRent would just have playerX pay a "banker player" with inf money.
 
@@ -70,6 +71,5 @@ private:
 
     QList<PlayerType*> playerList;       // a list of playerType objects
     QList<PropertyType*> gameSpaceList;  // a list of PropertyType objects. gameSpaceList[0]->getName() = "Go"  gameSpaceList[40]->getName() = "BoardWalk"
-
 };
 #endif /* GAME_HPP_ */
