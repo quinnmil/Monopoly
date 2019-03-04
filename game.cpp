@@ -1,6 +1,7 @@
 #include <cstdlib>
 #include <string>
 #include <vector>
+#include <QDebug>
 #include "game.hpp"
 #include "boardSpace.hpp"
 
@@ -32,15 +33,26 @@ Game::Game(){
 Game::Game(int pl){
     //Adds properties to gameSpaceList(Instantiated in header)
     for(int i = 0; i < 40; i++){
-        PropertyType *property;
+        // MASON -- please make sure you are actually creating these objects, debugging this took almost an hour.
+        // ( if you declare a pointer, it needs to actually point to something )
+        PropertyType *property = new Property;;
         gameSpaceList.push_back(property);
     }
 
     //Adds players to playerList(Instantiated in header)
-    for(int i = 0; i < pl; i++){
-        PlayerType * player = new PlayerType(); //Creates new player object
-        playerList.push_back(player); //Adds new player to playerList
-    }
+    // PLACEHOLDER VARS
+    string PLAYER1 = "Player 1";
+    string PLAYER2 = "Player 2";
+    string PIECE1 = "car";
+    string PIECE2 = "shoe";
+    PlayerType * playerOne = new PlayerType(PLAYER1, PIECE1, 1000); //Creates new player object
+    PlayerType * playerTwo = new PlayerType(PLAYER2, PIECE2, 1000);
+
+    playerList.push_back(playerOne); //Adds new player to playerList
+    playerList.push_back(playerTwo);
+
+//    qDebug() << "current playerlist at game creation: " << playerList;
+
 
     currentPlayer = playerList.at(0); //Sets current player
     die1 = 1; //Do we need these at all?
@@ -153,6 +165,7 @@ int Game::getPropertyRent(){
 //********************
 
 //Sets new current player
+// MASON -- This is broken.
 void Game::incrementCurrentPlayer(){
     int pos = getCurrentPlayerIndex();
     currentPlayer = playerList.at(pos+1);
@@ -255,4 +268,3 @@ void Game::addHouse(BoardSpace boardSpace){
 void Game::addHotel(BoardSpace boardSpace){
 
 }
-
