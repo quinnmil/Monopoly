@@ -26,19 +26,35 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     void updateDisplay();
-    QList <QLabel *>getSpaceList();
-    QList<PropertyType*> getGameSpaceList();
+
+    void setSpaceList();
+    QList <QLabel *>getSpaceList() { return this->SpaceList; }
+
+    void setGameSpaceList();
+    QList<PropertyType*> getGameSpaceList() { return this->GameSpaceList; }
+
+    void setPlayerList();
+    QList<PlayerType*> getPlayerList();
+
 
     void displayOptions();
-    QList <QLabel *> spaceList;
-    QList <PropertyType*> gameSpaceList;
-    Game *game;
+    void setGame(Game * game) { this->game = game; }
+    Game* getGame(){ return this->game; }
+
+    void startGame(int playerCount);
 
 private slots:
     void on_pushButton_clicked();
 
+    void on_pushButton_2_clicked();
+
 private:
     Ui::MainWindow *ui;
+    Game* game;
+
+    QList <QLabel *> SpaceList;
+    QList<PropertyType*> GameSpaceList;
+    QList<PlayerType*> PlayerList;
 };
 
 #endif // MAINWINDOW_H

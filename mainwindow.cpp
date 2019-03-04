@@ -7,35 +7,12 @@
 #include <QTCore>
 #include <QDebug>
 
-// VARIBLES FOR TESTING
-static int NUMPLAYERS = 2;
-
-//THIS WAS MOVED TO GAME.CPP
-//int dieRoll(){
-//    int roll;
-//    roll = rand()%6+1;
-//    return roll;
-//}
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-    // todo, this will be called when newGame button is pressed.
-    Game *game = new Game();
-
     ui->setupUi(this);
-    srand(time(NULL));
-
-    QList<QLabel *>spaceList = getSpaceList();
-    QList<PropertyType *> gameSpaceList = getGameSpaceList();
-
-//    gameSpaceList = game->getGameSpaceList();
-
-    qDebug() << spaceList;
-//    spaceList[0]->setHidden(true);
-
-
 }
 
 MainWindow::~MainWindow()
@@ -48,11 +25,10 @@ bool labelLessThan (QLabel * L1, QLabel * L2){
     return L1->objectName() < L2->objectName();
 }
 
-QList<QLabel *> MainWindow::getSpaceList(){
-// TODO, get number of players from NEWSCREEN
-/*
+void MainWindow::setSpaceList(){
+    /*
+     * gets list of labels from mainwindow.ui, sets as spaceList
      *
-     * creates a list of lables on the board
      * order of board:
      *  5 6 6
      *  4   8
@@ -60,15 +36,17 @@ QList<QLabel *> MainWindow::getSpaceList(){
      *
 */
 
-    QList<QLabel *> list = ui->PropertyInfo->findChildren<QLabel *>();
+    QList<QLabel *> list = ui->Board->findChildren<QLabel *>();
 
-    qSort(list.begin(), list.end(), labelLessThan );
+    std::sort(list.begin(), list.end(), labelLessThan );
     list.takeFirst();
+
+    this->SpaceList = list;
 
 }
 
-QList<PropertyType*> MainWindow::getGameSpaceList(){
-  return game->getGameSpaceList();
+void MainWindow::setGameSpaceList(){
+  this->GameSpaceList = game->getGameSpaceList();
 }
 
 void MainWindow::on_pushButton_clicked(){
@@ -79,7 +57,7 @@ void MainWindow::on_pushButton_clicked(){
     int die2 = game->dieRoll();
 
     // move player.
-    game->movePlayer(die1, die2);
+    this->game->movePlayer(die1, die2);
 
 
     // update dice
@@ -102,18 +80,46 @@ void MainWindow::updateDisplay(){
   PlayerType* currentPlayer = game->getCurrentPlayer();
 
   int index = game->getPlayerPosition(*currentPlayer);
-  spaceList[index]->setText("player here");
+  // TODO keep track of previous position and reset on move.
+  qDebug() << "setting player position to :" << index;
+  SpaceList[index]->setText("player here");
+  SpaceList[index]->setPixmap(QPixmap(":/graphics/Graphics/car.png"));
 
   // update information display
   std::string currentProperty = game->getPropertyName();
   int currentPropertyCost = game->getPropertyCost();
   int currentPropertyRent = game->getPropertyRent();
-  std::string currentPropertyInfo = game->getPropertyInfo();
+//  std::string currentPropertyInfo = game->getPropertyInfo();
 
 }
 
-/* note for later, if we want to get info on a selected propoerty, we could
+/* note for later, if we want to get info on a selected property, we could
 I really just need the index of that click and then look it up in gameSpaceList
 
 */
 
+void MainWindow::startGame(int playerCount){
+ /*
+     * called when start game button is pressed.
+     * makes a new game instance and players and lists.
+     *
+*/
+
+    Game *game = new Game(playerCount);
+    setGame(game);
+
+//    srand(time(NULL));
+
+    setSpaceList();
+    QList<QLabel *>spaceList = getSpaceList();
+    QList<PropertyType *> gameSpaceList = game->getGameSpaceList();
+
+}
+
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    int pCount = ui->playerCount->value();
+    startGame(pCount);
+    ui->NewGame->setHidden(true);
+}
