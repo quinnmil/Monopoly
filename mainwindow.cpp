@@ -49,6 +49,8 @@ void MainWindow::setGameSpaceList(){
   this->GameSpaceList = game->getGameSpaceList();
 }
 
+
+// ROLL DICE BUTTON
 void MainWindow::on_pushButton_clicked(){
     // int v1 = dieRoll();
     // int v2 = dieRoll();
@@ -66,6 +68,8 @@ void MainWindow::on_pushButton_clicked(){
 
     this->updateDisplay();
 
+    game->endturn();
+
 
 //    spaceList[total]->setHidden(false);
 }
@@ -76,26 +80,52 @@ void MainWindow::displayOptions(){
 }
 
 void MainWindow::updateDisplay(){
+
+    // reset the board first
+    for (int i=0; i<SpaceList.length(); i++) {
+//        SpaceList[i]->setStyleSheet("");
+        SpaceList[i]->clear();
+    }
+
   // update board dislay
   PlayerType* currentPlayer = game->getCurrentPlayer();
+  for (int i=0; i< PlayerList.length(); i++){
+      int index = game->getPlayerPosition(*PlayerList[i]);
+      if (PlayerList[i] == currentPlayer){
+          // update current player position
+          // TODO keep track of previous position and reset on move.
+          qDebug() << "current player positionsetting player position to :" << index;
+          SpaceList[index]->setStyleSheet("background: rgba(62, 162, 47,.5)");
+      }
 
-  int index = game->getPlayerPosition(*currentPlayer);
-  // TODO keep track of previous position and reset on move.
-  qDebug() << "setting player position to :" << index;
-  SpaceList[index]->setText("player here");
-  SpaceList[index]->setPixmap(QPixmap(":/graphics/Graphics/car.png"));
+      // TODO, add special case where players are on the same spot.
+      // do for everyone players. can add more pieces later.
+      switch (PlayerList[i]->getPiece()){
+      case 1:
+          SpaceList[index]->setPixmap(QPixmap(":/graphics/Graphics/shoe.png"));
+          break;
+      case 2:
+          SpaceList[index]->setPixmap(QPixmap(":/graphics/Graphics/car.png"));
+          break;
+
+      }
+
+  }
 
   // update information display
-  std::string currentProperty = game->getPropertyName();
+  QString currentProperty = QString::fromStdString(game->getPropertyName());
   int currentPropertyCost = game->getPropertyCost();
   int currentPropertyRent = game->getPropertyRent();
-//  std::string currentPropertyInfo = game->getPropertyInfo();
 
+  ui->PropertyString->setText(currentProperty);
+//  std::string currentPropertyInfo = game->getPropertyInfo();
+  ui->PriceString->setNum(currentPropertyCost);
+  ui->RentString->setNum(currentPropertyRent);
 }
 
-/* note for later, if we want to get info on a selected property, we could
+/*
+note for later, if we want to get info on a selected property, we could
 I really just need the index of that click and then look it up in gameSpaceList
-
 */
 
 void MainWindow::startGame(int playerCount){
