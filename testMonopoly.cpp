@@ -4,9 +4,7 @@
 #include "player.hpp"
 #include "property.hpp"
 #include "propertytype.hpp"
-#include "boardSpace.hpp"
 #include "game.hpp"
-#include "board.hpp"
 #include "mainwindow.h"
 #include <QApplication>
 

@@ -12,7 +12,7 @@ Property::Property() : PropertyType(){
 }
 
 //Overloaded Constructor
-Property::Property(string name, string color, int houseCost, int hotelCost) : PropertyType(){
+Property::Property(string name, string color, int cost, int rent, int colorRent, int houseRent, int houseCost, int hotelCost) : PropertyType(){
     this->name = name;
     this->color = color;
     this->houseCost = houseCost;

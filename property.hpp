@@ -8,7 +8,7 @@ using namespace std;
 class Property : public PropertyType{
 public:
 	Property();
-    Property(string name, string color, int houseCost, int hotelCost);
+    Property(string name, string color, int cost, int rent, int colorRent, int houseRent, int houseCost, int hotelCost);
 	~Property();
     string getName();
 	string getColor();

@@ -20,8 +20,6 @@ PlayerType::PlayerType(string &name, string &piece, int money){
     this->name = name;
     // MASON -- I changed this so I could test with two players.
     setPiece(piece);
-    // MASON -- please pay attention to right side assignment. in a lot of your constructors,
-    // you had ( argument = this->attribute ) which doesnt make sense and causes a lot of weird behavior.
     this->money = money;
     //ownedProperty(0); Unnecessary?
     //ownedSpecial(0); Unnecessary?
@@ -93,7 +91,8 @@ void PlayerType::setPiece(string &piece){
     }
     else {
         this->piece = 2;
-    }}
+    }
+}
 
 //Set Money
 void PlayerType::setMoney(int money){

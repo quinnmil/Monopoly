@@ -4,7 +4,6 @@
 #include <string>
 #include <vector>
 #include <QApplication>
-#include "boardSpace.hpp"
 #include "player.hpp"
 
 
@@ -60,8 +59,8 @@ public:
 
     void startTrade(PlayerType p1, PlayerType p2, PropertyType property);
     void jailPlayer(); //DONE
-	void addHouse(BoardSpace boardSpace);
-	void addHotel(BoardSpace boardSpace);
+    void addHouse();
+    void addHotel();
 
 private:
     PlayerType *currentPlayer;   // this is key, as most of the functions above act relative to the currentPlayer.

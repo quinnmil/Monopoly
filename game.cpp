@@ -3,7 +3,6 @@
 #include <vector>
 #include <QDebug>
 #include "game.hpp"
-#include "boardSpace.hpp"
 
 //8 Player Default Constructor
 Game::Game(){
@@ -280,11 +279,11 @@ void Game::movePlayer(int die1, int die2){
 }
 
 //Add House
-void Game::addHouse(BoardSpace boardSpace){
+void Game::addHouse(){
 
 }
 
 //Add Hotel
-void Game::addHotel(BoardSpace boardSpace){
+void Game::addHotel(){
 
 }
