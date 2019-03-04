@@ -2,5 +2,6 @@
     <qresource prefix="/graphics">
         <file>Graphics/monopolyWhite.jpg</file>
         <file>Graphics/car.png</file>
+        <file>Graphics/boot.png</file>
     </qresource>
 </RCC>
