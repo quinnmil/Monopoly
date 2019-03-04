@@ -38,7 +38,7 @@ Game::Game(int pl){
 
     //Adds players to playerList(Instantiated in header)
     for(int i = 0; i < pl; i++){
-        PlayerType *player; //Creates new player object
+        PlayerType * player = new PlayerType(); //Creates new player object
         playerList.push_back(player); //Adds new player to playerList
     }
 
