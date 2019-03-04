@@ -13,6 +13,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    // hide features before newgame is created.
+    ui->Board->setHidden(true);
+    ui->Dice->setHidden(true);
 }
 
 MainWindow::~MainWindow()
@@ -45,10 +49,6 @@ void MainWindow::setSpaceList(){
 
 }
 
-void MainWindow::setGameSpaceList(){
-  this->GameSpaceList = game->getGameSpaceList();
-}
-
 
 // ROLL DICE BUTTON
 void MainWindow::on_pushButton_clicked(){
@@ -68,8 +68,10 @@ void MainWindow::on_pushButton_clicked(){
 
     this->updateDisplay();
 
-    game->endturn();
-
+    // TODO, MAKE ENDTURN BUTTON AND FUNCTION.
+//    game->endturn();
+    // disable button after dice rolled.
+    ui->pushButton->setEnabled(false);
 
 //    spaceList[total]->setHidden(false);
 }
@@ -83,24 +85,23 @@ void MainWindow::updateDisplay(){
 
     // reset the board first
     for (int i=0; i<SpaceList.length(); i++) {
-//        SpaceList[i]->setStyleSheet("");
+        SpaceList[i]->setStyleSheet("");
         SpaceList[i]->clear();
     }
 
   // update board dislay
   PlayerType* currentPlayer = game->getCurrentPlayer();
-  for (int i=0; i< PlayerList.length(); i++){
-      int index = game->getPlayerPosition(*PlayerList[i]);
-      if (PlayerList[i] == currentPlayer){
+  for (int j=0; j< PlayerList.length(); j++){
+      int index = game->getPlayerPosition(*PlayerList[j]);
+      if (PlayerList[j] == currentPlayer){
           // update current player position
-          // TODO keep track of previous position and reset on move.
-          qDebug() << "current player positionsetting player position to :" << index;
           SpaceList[index]->setStyleSheet("background: rgba(62, 162, 47,.5)");
       }
 
       // TODO, add special case where players are on the same spot.
-      // do for everyone players. can add more pieces later.
-      switch (PlayerList[i]->getPiece()){
+      // implemented for two players. can add more pieces later.
+      qDebug() << "update location for player : " << QString::fromStdString(PlayerList[j]->getName());
+      switch (PlayerList[j]->getPiece()){
       case 1:
           SpaceList[index]->setPixmap(QPixmap(":/graphics/Graphics/shoe.png"));
           break;
@@ -141,15 +142,28 @@ void MainWindow::startGame(int playerCount){
 //    srand(time(NULL));
 
     setSpaceList();
-    QList<QLabel *>spaceList = getSpaceList();
-    QList<PropertyType *> gameSpaceList = game->getGameSpaceList();
+    this->GameSpaceList = game->getGameSpaceList();
+    this->PlayerList = game->getPlayerList();
 
 }
 
-
+// NEWGAME BUTTON
 void MainWindow::on_pushButton_2_clicked()
 {
     int pCount = ui->playerCount->value();
     startGame(pCount);
+
     ui->NewGame->setHidden(true);
+    ui->Board->setHidden(false);
+    ui->Dice->setHidden(false);
+}
+
+void MainWindow::on_endTurn_button_clicked()
+// hacky for now, will just call an endTurn() function.
+{
+
+    game->endturn();
+    updateDisplay();
+
+    ui->pushButton->setEnabled(true);
 }

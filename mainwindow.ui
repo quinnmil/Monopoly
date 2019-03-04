@@ -739,9 +739,6 @@
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
      </property>
-     <property name="pixmap">
-      <pixmap resource="graphics.qrc">:/graphics/Graphics/car.png</pixmap>
-     </property>
      <property name="scaledContents">
       <bool>true</bool>
      </property>
@@ -911,8 +908,7 @@
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background: rgba(0, 151, 19, 0.6); 
-</string>
+      <string notr="true"/>
      </property>
      <property name="frameShape">
       <enum>QFrame::Box</enum>
@@ -1523,7 +1519,7 @@
     <property name="geometry">
      <rect>
       <x>60</x>
-      <y>710</y>
+      <y>590</y>
       <width>271</width>
       <height>171</height>
      </rect>
@@ -1532,17 +1528,23 @@
      <string>Dice</string>
     </property>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="0" column="1">
-      <widget class="QPushButton" name="pushButton">
-       <property name="text">
-        <string>Roll Die</string>
-       </property>
-      </widget>
-     </item>
      <item row="1" column="0">
       <widget class="QLabel" name="label_die1">
        <property name="text">
         <string>Die 1</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0" colspan="3">
+      <widget class="QPushButton" name="pushButton">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>Roll Dice</string>
        </property>
       </widget>
      </item>
@@ -1558,10 +1560,10 @@
    <widget class="QGroupBox" name="PropertyInfo">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>150</y>
+      <x>60</x>
+      <y>120</y>
       <width>265</width>
-      <height>191</height>
+      <height>231</height>
      </rect>
     </property>
     <property name="title">
@@ -1656,9 +1658,9 @@
    <widget class="QGroupBox" name="NewGame">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>430</y>
-      <width>291</width>
+      <x>60</x>
+      <y>390</y>
+      <width>271</width>
       <height>191</height>
      </rect>
     </property>
@@ -1669,7 +1671,7 @@
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>40</y>
+       <y>30</y>
        <width>231</width>
        <height>21</height>
       </rect>
@@ -1697,8 +1699,8 @@
     <widget class="QPushButton" name="pushButton_2">
      <property name="geometry">
       <rect>
-       <x>90</x>
-       <y>140</y>
+       <x>80</x>
+       <y>130</y>
        <width>114</width>
        <height>32</height>
       </rect>
@@ -1711,8 +1713,8 @@
      <property name="geometry">
       <rect>
        <x>160</x>
-       <y>80</y>
-       <width>31</width>
+       <y>70</y>
+       <width>71</width>
        <height>31</height>
       </rect>
      </property>
@@ -1735,6 +1737,25 @@
     </property>
     <property name="text">
      <string>Property:</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="endTurn_button">
+    <property name="geometry">
+     <rect>
+      <x>69</x>
+      <y>773</y>
+      <width>261</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>13</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>End Turn</string>
     </property>
    </widget>
   </widget>
