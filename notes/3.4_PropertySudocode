@@ -1,0 +1,51 @@
+Property(string name, string color, int cost, int rent, int houseRent, int HotelRent, int morgage, ){
+this-name = "Luxury Tax"
+-color = ""
+-cost = 0
+-rent = 0
+etc etc = 0
+}
+
+std::tuple<stirng, int, int, int ,int
+
+
+
+
+[
+naem2 0 0 0 0 0
+asdf 10 0 0 0 0
+asdf 0 0 0 0 0 
+asdfasdfa 0 0 0 0
+
+
+]
+
+
+
+
+
+then we'll have cases for odd properties
+
+//IrregularProperties = [railroads, tax, community chest, utility]
+
+if (boardSpace[player->getPosition] in IrregularProperties){
+
+OR (boardSpace[player->getPosition]->getRent == 0){
+  then we know it's an irregular property, deal with it.
+
+  if tax:
+  do This
+
+  else if utility:
+  do This
+
+  else if go:
+
+  else if freePark
+
+  else if
+
+  else if railroad:
+  do this
+
+}
