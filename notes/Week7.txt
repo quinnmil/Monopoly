@@ -1,0 +1,37 @@
+Meeting Notes for 2/24. Week 7.
+
+Began discussion by covering last weeks/weekend progress in leaning QT and beginning 
+development.
+
+Quinn -
+finished half of tutorial series, developed dice rolling "widget" as an
+example of labels and buttons, dice rolling will eventually be implemented as
+feature for the game. Ported basic class/header files into qt projects using
+qMake, still cleaning up some of function prototypes. Want to preference qt
+structures (like QList and QString) across the board.
+
+Mason -
+Didn't make it though many tutorials yet, had issues with Qt Creator installation.
+Make outline header and class files for PropertyType, BoardType, PlayerType, and
+GameType. Started work on TestMonopoly.ccp file which will use for preliminary testing
+of class functions.
+
+
+Plan for this week:
+
+Quinn -
+wants to have a working prototype of the application by Friday. Biggest
+challenge is going to be creating the board visualization. going to spend some
+time learning methods of Qt graphicsView. If this proves too intensive or not
+necessarly for this project, could use qt built in visual classes like qbutton
+and qlable. Going to be spending some time in the docs. Also going to nail down
+game function order, ie: which buttons on the front end will create the game,
+where is completion going to be checked. Ideally, player movement and display
+is functioning by friday so that we can add features on top of this base structure
+next week.
+
+Mason -
+Going to finish implementing backend functions as outlined in /2-23 tasks.
+Need to get oriented with QT though tutorials and looking through the included
+example projects. Begin desinging out game functins and features that will be used
+for later features such as buyProperty(), tradeProperty(), goToJail(), etc.
