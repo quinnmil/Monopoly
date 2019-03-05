@@ -3,13 +3,15 @@ Mason's Week 8 Accomplishments and Thoughts for Next Week:
 This week I implemented about 80% of the essential functions necessary to begin testing the Qt main window. 
 This included a wide range of functions, from the Game class constructor which begins running the game, to the buyProperty() function which allows a player to purchase an available property.
 On top of this, some class condensing and bug-fixing was done by both Quinn and I to ensure a smoother time implementing functions in the future.
-I also watched more Qt tutorials in order to better understand how I will begin my visual work in Week 9, but I will continue to watch a few more to have a decent grasp on what I am doing. This will allow me to be able to properly present the necessary aspects of our project.
-In week 9, I plan on both implementing more tedious back-end functions such as startTrade() and beginning my front-end work on various things. I also need to begin inputting all of the information from the actual Monopoly game properties.
+I also watched more Qt tutorials in order to better understand how I will begin my visual work in Week 9, but I will continue to watch a few more to have a decent grasp on what I am doing.
+This will allow me to be able to properly present the necessary aspects of our project.
+In week 9, I plan on both implementing more tedious back-end functions such as startTrade() and beginning my front-end work on various things.
+I also need to begin inputting all of the information from the actual Monopoly game properties.
 
 Quinn's Week 8 Accomplishments and Thoughts for Next Week:
 
 This week I got the Qt main window functioning, which begins with asking how many players will be playing the game.
 After the amount of players is selected, the Monopoly board appears and the first player is able to roll their dice.
 Our incrementPlayer() function now works, and you can visually see a player's piece move around the board.
-This week also included some bug-fixing and reworking of the back-end along with Mason to keep the classes simpler and less prone to bugs. In week 9, I will continue to work on polishing the Monopoly board as well as beginning to implement some of the larger functions in the Game class once the placeholder properties are removed and the correct properties are in place.
-
+This week also included some bug-fixing and reworking of the back-end along with Mason to keep the classes simpler and less prone to bugs. 
+In week 9, I will continue to work on polishing the Monopoly board as well as beginning to implement some of the larger functions in the Game class once the placeholder properties are removed and the correct properties are in place.
