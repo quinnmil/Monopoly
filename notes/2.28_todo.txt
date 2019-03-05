@@ -1,0 +1,10 @@
+2/28 todo
+
+A lot of what you were working on in testMonopoly needs to be implemented in respective classes. (Mostly the game class)
+
+task1 : new game screen. There's a couple options for this:
+
+1. have a button that when clicked opens a new window/overlay and prompts the user to create say how many players are playing.
+2. have have these options displayed on the screen my default, hide the display after user has entered and clicked submit.
+
+after submission, call the Game() constructer with proper arguments. This constructer should create the playerList and fill the gameSpaceList.
