@@ -4,20 +4,34 @@
 
 //Constructor
 Property::Property() : PropertyType(){
-    color = "brown";
-	houseCost = 50;
+    name = "Property1";
+    color = "orange";
+    cost = 0;
+    rent = 0;
+    colorSetRent = 0;
+    perHouseRent = 0;
+    houseCost = 100;
 	hotelCost = 100;
 	houseCount = 0;
 	hotelCount = 0;
+    mortgage = 0;
+    unmortgage = 0;
 }
 
 //Overloaded Constructor
-Property::Property(string name, string color, int cost, int rent, int colorRent, int houseRent, int houseCost, int hotelCost) : PropertyType(){
+Property::Property(string name, string color, int cost, int rent, int colorSetRent, int perHouseRent, int hotelRent, int houseCost, int hotelCost, int mortgage, int unmortgage){
     this->name = name;
     this->color = color;
+    this->cost = cost;
+    this->rent = rent;
+    this->colorSetRent = colorSetRent;
+    this->perHouseRent = perHouseRent;
+    this->hotelRent = hotelRent;
     this->houseCost = houseCost;
     this->hotelCost = hotelCost;
-	houseCount = 0;
+    this->mortgage = mortgage;
+    this->unmortgage = unmortgage;
+    houseCount = 0;
 	hotelCount = 0;
 }
 
@@ -42,9 +56,39 @@ string Property::getColor(){
 	return color;
 }
 
+//Get Rent
+int Property::getRent(){
+    return rent;
+}
+
+//Get Color Set Rent
+int Property::getColorRent(){
+    return colorSetRent;
+}
+
+//Get Per House Rent
+int Property::getPerHouseRent(){
+    return perHouseRent;
+}
+
+//Get Rent w/ Hotel
+int Property::getHotelRent(){
+    return hotelRent;
+}
+
+//Get Mortgage Price
+int Property::getMortgage(){
+    return mortgage;
+}
+
+//Get Unmortgage Price
+int Property::getUnmortgage(){
+    return unmortgage;
+}
+
 //Get House Cost
 int Property::getHouseCost(){
-	return houseCount;
+    return houseCount;
 }
 
 //Get Hotel Cost
