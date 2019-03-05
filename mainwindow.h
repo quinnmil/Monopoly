@@ -10,9 +10,7 @@
 #include <QGraphicsRectItem>
 #include "property.hpp"
 #include "propertytype.hpp"
-#include "boardSpace.hpp"
 #include "game.hpp"
-#include "board.hpp"
 
 namespace Ui {
 class MainWindow;

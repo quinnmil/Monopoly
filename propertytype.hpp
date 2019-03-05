@@ -14,7 +14,6 @@ public:
 	string getOwnedBy();
 private:
 	string name;
-	string color;
 	int cost;
 	int rent;
     string ownedBy; //PlayerType?

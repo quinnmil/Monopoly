@@ -16,7 +16,6 @@ public:
 	void setName(string &name);
 
     int getPiece();
-    // MASON:  I changed this to an int so I could use a switch statement
     void setPiece(string &piece);
 	
 	int getMoney();
