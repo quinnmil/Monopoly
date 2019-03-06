@@ -95,10 +95,39 @@ void MainWindow::displayOptions(){
             offer.setDefaultButton(QMessageBox::Yes);
             int ret = offer.exec();
 
+            switch (ret) {
+
+            case QMessageBox::Yes:{
+                // buy property.
+                game->buyProperty();
+                updateDisplay();
+
+            }
+            case QMessageBox::No:{
+                // might implement bidding later.
+            }
+            }
 
         }
+        else {
+            // if GO
 
+            // if community chest
 
+            // if income tax
+
+            // if chance
+
+            // if just visiting jail
+
+            // if electric company / water works
+
+            // if free parking
+
+            // if go to jail
+
+            // if luxury tax
+        }
 
     }
   // if property is unowned, display offer to buy
@@ -140,13 +169,16 @@ void MainWindow::updateDisplay(){
 
   // update information display
   QString currentProperty = QString::fromStdString(game->getPropertyName());
+  QString currentPropertyOwner = QString::fromStdString(game->getPropertyOwner());
   int currentPropertyCost = game->getPropertyCost();
   int currentPropertyRent = game->getPropertyRent();
 
   ui->PropertyString->setText(currentProperty);
+  ui->OwnerString->setText(currentPropertyOwner);
 //  std::string currentPropertyInfo = game->getPropertyInfo();
   ui->PriceString->setNum(currentPropertyCost);
   ui->RentString->setNum(currentPropertyRent);
+
 }
 
 /*
