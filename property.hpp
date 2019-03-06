@@ -43,4 +43,12 @@ private:
     int mortgage;
     int unmortgage;
 };
+
+class SpecialCard{
+public:
+    SpecialCard();
+    ~SpecialCard();
+private:
+};
+
 #endif /* PROPERTY_HPP_ */
