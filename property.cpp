@@ -135,7 +135,7 @@ bool Property::canBuy(){
 //********************
 
 //Set Owned By
-void Property::setOwnedBy(string &name){
+void Property::setOwnedBy(string name){
     ownedBy = name;
 }
 

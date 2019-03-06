@@ -131,7 +131,8 @@ string Game::getPropertyName(){
 //Gets name of owner of property current player is on
 string Game::getPropertyOwner(){
     int position = currentPlayer->getPosition();
-    string prop_owner = gameSpaceList.at(position)->getOwnedBy();
+    Property *prop = gameSpaceList.at(position);
+    string prop_owner = prop->getName();
     return prop_owner;
 }
 
@@ -360,6 +361,7 @@ void Game::buyProperty(){
             currentPlayer->setMoney(currentPlayer->getMoney() - currProp->getCost()); //Subtract cost from player
             bankMoney += currProp->getCost(); //Add cost to bankMoney
             currentPlayer->setProperty(currProp); //Give player the property
+            currProp->setOwnedBy(currentPlayer->getName());
         }
     }
     else{

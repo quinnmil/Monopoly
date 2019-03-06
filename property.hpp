@@ -22,7 +22,7 @@ public:
 	int getHouseCost();
 	int getHotelCost();
 	int getHouseCount();
-    void setOwnedBy(string &name);
+    void setOwnedBy(string name);
 	void setHouseCount(int houseCount);
 	int getHotelCount();
 	void setHotelCount(int hotelCount);
