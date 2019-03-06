@@ -22,6 +22,8 @@ Game::Game(){
     die1 = 1; //Do we need these at all?
     die2 = 1;
     bankMoney = 10000; //Be sure to properly set this
+
+    srand(time(NULL)); // for random rools.
 }
 
 //Dynamic Overloaded Constructor
@@ -217,7 +219,7 @@ void Game::addBoardSpaces(){
     gameSpaceList.push_back(p12);
 
     //Electric Company
-    Property *p13 = new Property("Electric Company", "Utilities", 150, 0, 0, 0, 0, 0, 0, 75, 83);
+    Property *p13 = new Property("Electric Company", "Utilities", 0, 150, 0, 0, 0, 0, 0, 75, 83);
     gameSpaceList.push_back(p13);
 
     //States Avenue
@@ -281,7 +283,7 @@ void Game::addBoardSpaces(){
     gameSpaceList.push_back(p28);
 
     //Water Works
-    Property *p29 = new Property("Water Works", "Utilities", 150, 0, 0, 0, 0, 0, 0, 75, 83);
+    Property *p29 = new Property("Water Works", "Utilities", 0, 150, 0, 0, 0, 0, 0, 75, 83);
     gameSpaceList.push_back(p29);
 
     //Marvin Gardens
