@@ -22,18 +22,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 # Input
-HEADERS += board.hpp \
-           boardSpace.hpp \
-           game.hpp \
+HEADERS += game.hpp \
            player.hpp \
            property.hpp \
            propertytype.hpp \
            mainwindow.h
 FORMS += \
            mainwindow.ui
-SOURCES += board.cpp \
-           boardSpace.cpp \
-           game.cpp \
+SOURCES += game.cpp \
            player.cpp \
            property.cpp \
            propertytype.cpp \
