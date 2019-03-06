@@ -57,7 +57,7 @@ public:
 
     // lower priority functions, don't worry about these for now.
 
-    void startTrade(PlayerType p1, PlayerType p2, PropertyType property);
+    void startTrade(PlayerType p1, PlayerType p2, Property *property);
     void jailPlayer(); //DONE
     void addHouse();
     void addHotel();

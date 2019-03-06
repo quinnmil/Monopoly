@@ -398,7 +398,7 @@ void Game::payPlayer(PlayerType p1, PlayerType p2, int value){ //p1 = who is pay
 }
 
 //Start Trade
-void Game::startTrade(PlayerType p1, PlayerType p2, PropertyType property){
+void Game::startTrade(PlayerType p1, PlayerType p2, Property *property){
 
 }
 
