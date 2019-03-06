@@ -10,27 +10,31 @@
 
 class Game{
 public:
+    //********************
+    //
     //Constructors and Deconstructor
+    //
+    //********************
 
     Game(); // DONE: either use this constructor or use newGame() to create playerList and gameSpaceList
     Game(int pl); //DONE: overloaded for #players parameter
     ~Game(); //DONE
 
-    // These functions are called by MainWindow::Update() and used to update the displays.
+    //********************
+    //
+    //Get Functions
+    //
+    //********************
 
-    QList<int> getAllPositions(); //DONE: returns list of all player position indexies. (4,37,10)
-    int getDieOne();
-    int getDieTwo();
-
-    // These give me info relative to a player.
+    QList<int> getAllPositions(); //DONE: returns list of all player position indicies. (4,37,10)
+    int getDieOne(); //DONE
+    int getDieTwo(); //DONE
 
     PlayerType* getCurrentPlayer(); //DONE: gets current player
     QList<PlayerType*> getPlayerList(); //DONE: return qlist of players
     int getPlayerPosition(PlayerType player); //DONE: returns a number 0-40 that i'll use to display location on board
     string getCurrentPlayerName();  //DONE: returns name of current player "player 1" is fine for now
     int getCurrentPlayerIndex(); //DONE: returns index of current player in playerList
-
-    // QUINN-TODO: These are property related AND MAY BE IN MAINWINDOW.CPP
 
     QList<Property*> getGameSpaceList(); //DONE: returns entire list of properties
     string getPropertyName();   //DONE: name of property ie: "Boardwalk"
@@ -39,36 +43,46 @@ public:
     int getPropertyRent(); //DONE
     string getPropertyInfo(); // property description if special property, otherwise empty string is fine.
 
+    //********************
+    //
+    //Game Functions
+    //
+    //********************
 
-    // These are essential game functions.
-
-    void newGame();  //OUTDATED--USED CONSTRUCTOR: either use this or the constructor to create playerList and gameSpaceList
-    void incrementCurrentPlayer();   //DONE: getting the current player is really important. I would keep a CurrentPlayer pointer. Probably rename this function. ("incrementCurrentPlayer()"?)
-    int dieRoll(); //DONE: this probably shouldn't return void, maybe an int or a tuple of each roll? However you want to implement. Should also call MainWindow::update();
-    void movePlayer(int die1, int die2); //DONE: adds roll to to previous position and calls currentplayer::setposition(int x)
+    void addBoardSpaces(); //DONE
+    int dieRoll(); //DONE
+    void movePlayer(int die1, int die2); //DONE
+    void incrementCurrentPlayer();   //DONE
     void endturn();  //HALF-DONE--NEEDS UPDATE FUNCTION: 1. switches CurrentPlayer to next player. 2. Calls MainWindow::update() to update graphics.
-    void addBoardSpaces();
-
-    // I would have these next three all use a banker(p1,p2). buyProperty and payRent would just have playerX pay a "banker player" with inf money.
-
-    void buyProperty(); //DONE
-    void payRent(); //DONE
-    void payPlayer(PlayerType p1, PlayerType p2, int value); //DONE
-
-    // lower priority functions, don't worry about these for now.
-
-    void startTrade(PlayerType p1, PlayerType p2, Property *property);
+    void startTrade(PlayerType p1, PlayerType p2, Property *property); //NEEDS TO BE STARTED, HAS TO WORK WITH INTERFACE.
     void jailPlayer(); //DONE
     void addHouse();
     void addHotel();
 
+    //********************
+    //
+    //Money Functions
+    //
+    //********************
+
+    void buyProperty(); //DONE and WORKING
+    void payRent(); //DONE and WORKING
+    void payPlayer(PlayerType p1, PlayerType p2, int value); //NEEDS WORK, NEEDS TO WORK WITH INTERFACE?
+
+    void payTax(); //adds to free parking money
+    void getFreeParking(); //gets money in free parking
+
+
 private:
     PlayerType *currentPlayer;   // this is key, as most of the functions above act relative to the currentPlayer.
-    int turn; //is this necessary?
 	int die1, die2;
 	int bankMoney;
+    int freeParkingMoney;
 
     QList<PlayerType*> playerList;       // a list of playerType objects
-    QList<Property*> gameSpaceList;  // a list of PropertyType objects. gameSpaceList[0]->getName() = "Go"  gameSpaceList[40]->getName() = "BoardWalk"
+    QList<Property*> gameSpaceList;  // a list of PropertyType objects. gameSpaceList[0]->getName() = "Go"  gameSpaceList[39]->getName() = "BoardWalk"
+    //QList<SpecialCard*> communityChestList; --> See that you land on a special card position, pull (and remove) a card from this QList and add it to the PlayerType's special card QList.
+    //QList<SpecialCard*> chanceList;         --> After using this card, it will be removed from PlayerType's QList and re-added to the back of the Game Class's QList.
+    //                                        --> Card will be selected from the Game's QList using a random integer in the .at() function.
 };
 #endif /* GAME_HPP_ */

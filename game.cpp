@@ -114,15 +114,13 @@ string Game::getCurrentPlayerName(){
     return currentPlayer->getName();
 }
 
-// gameSpaceList -> list of BoardSpaces (have a list of players, and property)
-// thinking about this, we might not actually need to keep a list of players on that position. Could store property directly here...
+//Gets the entire list of spaces on the board
 QList<Property*> Game::getGameSpaceList(){
     return gameSpaceList;
 }
 
 //Gets name of property that current player is on
 string Game::getPropertyName(){
-    // 'player' could/should be replaced with a CurrentPlayer pointer you keep in this class.
     int position = currentPlayer->getPosition();
     string name = gameSpaceList.at(position)->getName();
     return name;
@@ -390,11 +388,18 @@ void Game::payRent(){
 void Game::payPlayer(PlayerType p1, PlayerType p2, int value){ //p1 = who is paying, p2 = who is getting paid
     p1.setMoney(p1.getMoney() - value);
     if(p1.getMoney() < 0){
-        //Do they own properties?
-        //Do they want to sell them?
-        p2.setMoney(p2.getMoney() + value);
+        if(p1.getProperty().length() > 0){
+            //Do they own properties?
+            //Do they want to sell/mortgage them?
+            //If so, sell them and pay p2
+            p2.setMoney(p2.getMoney() + value);
+        }
+        else{
+            //Otherwise player removed from game?
+        }
     }
     else{
+        //If p1 is not bankrupt
         p2.setMoney(p2.getMoney() + value);
     }
 }
