@@ -1238,40 +1238,6 @@
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QLabel" name="space_11">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>810</y>
-       <width>111</width>
-       <height>65</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-       <stylestrategy>NoAntialias</stylestrategy>
-      </font>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="lineWidth">
-      <number>6</number>
-     </property>
-     <property name="textFormat">
-      <enum>Qt::AutoText</enum>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
-     </property>
-     <property name="wordWrap">
-      <bool>true</bool>
-     </property>
-    </widget>
     <widget class="QLabel" name="space_39">
      <property name="enabled">
       <bool>false</bool>
@@ -1487,7 +1453,6 @@
     <zorder>space_15</zorder>
     <zorder>space_07</zorder>
     <zorder>space_39</zorder>
-    <zorder>space_11</zorder>
     <zorder>space_01</zorder>
     <zorder>space_30</zorder>
     <zorder>space_03</zorder>
