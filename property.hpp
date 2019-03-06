@@ -25,6 +25,7 @@ public:
 	void setHouseCount(int houseCount);
 	int getHotelCount();
 	void setHotelCount(int hotelCount);
+    bool canBuy();
 private:
     string name;
 	string color;

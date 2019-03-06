@@ -56,6 +56,11 @@ string Property::getColor(){
 	return color;
 }
 
+//Get Cost
+int Property::getCost(){
+    return cost;
+}
+
 //Get Rent
 int Property::getRent(){
     return rent;
@@ -104,6 +109,16 @@ int Property::getHouseCount(){
 //Get # of Hotels
 int Property::getHotelCount(){
     return hotelCount;
+}
+
+//
+bool Property::canBuy(){
+    if (cost == 0){
+        return false;
+    }
+    else {
+        return true;
+    }
 }
 
 //********************
