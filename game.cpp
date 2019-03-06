@@ -123,7 +123,7 @@ string Game::getCurrentPlayerName(){
 
 // gameSpaceList -> list of BoardSpaces (have a list of players, and property)
 // thinking about this, we might not actually need to keep a list of players on that position. Could store property directly here...
-QList<PropertyType*> Game::getGameSpaceList(){
+QList<Property*> Game::getGameSpaceList(){
     return gameSpaceList;
 }
 
@@ -328,6 +328,8 @@ void Game::addBoardSpaces(){
     Property *p40 = new Property("Boardwalk", "Blue", 400, 50, 100, 200, 2000, 200, 200, 200, 220);
     gameSpaceList.push_back(p40);
 }
+
+
 
 //Sets new current player
 void Game::incrementCurrentPlayer(){

@@ -32,7 +32,7 @@ public:
 
     // QUINN-TODO: These are property related AND MAY BE IN MAINWINDOW.CPP
 
-    QList<PropertyType*> getGameSpaceList(); //DONE: returns entire list of properties
+    QList<Property*> getGameSpaceList(); //DONE: returns entire list of properties
     string getPropertyName();   //DONE: name of property ie: "Boardwalk"
     string getPropertyOwner();  //DONE: name of owner or "unowned"
     int getPropertyCost(); //DONE
@@ -69,6 +69,6 @@ private:
 	int bankMoney;
 
     QList<PlayerType*> playerList;       // a list of playerType objects
-    QList<PropertyType*> gameSpaceList;  // a list of PropertyType objects. gameSpaceList[0]->getName() = "Go"  gameSpaceList[40]->getName() = "BoardWalk"
+    QList<Property*> gameSpaceList;  // a list of PropertyType objects. gameSpaceList[0]->getName() = "Go"  gameSpaceList[40]->getName() = "BoardWalk"
 };
 #endif /* GAME_HPP_ */
