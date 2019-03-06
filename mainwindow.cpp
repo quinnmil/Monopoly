@@ -6,6 +6,7 @@
 #include <QtGui>
 #include <QTCore>
 #include <QDebug>
+#include <QMessageBox>
 
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -66,16 +67,40 @@ void MainWindow::on_pushButton_clicked(){
     ui->label_die1->setText(QString::number(die1));
     ui->label_die2->setText(QString::number(die2));
 
-    this->updateDisplay();
+    updateDisplay();
 
-    // TODO, MAKE ENDTURN BUTTON AND FUNCTION.
-//    game->endturn();
+    displayOptions();
+
     // disable button after dice rolled.
     ui->pushButton->setEnabled(false);
 
 //    spaceList[total]->setHidden(false);
 }
 void MainWindow::displayOptions(){
+    Property *currentProperty = GameSpaceList[game->getCurrentPlayer()->getPosition()];
+    QString name = QString::fromStdString(currentProperty->getName());
+
+    if (currentProperty->canBuy()){
+        // if the spot is a standard property.
+
+        // if unowned
+        if (currentProperty->getOwnedBy() == ""){
+            QString title = "Buy " + name;
+            QString message = QString("%1 is unowned. Would you like to purchse for %2?").arg(name).arg(QString::number(currentProperty->getCost()));
+            QMessageBox offer;
+
+            offer.setWindowTitle(title);
+            offer.setText(message);
+            offer.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+            offer.setDefaultButton(QMessageBox::Yes);
+            int ret = offer.exec();
+
+
+        }
+
+
+
+    }
   // if property is unowned, display offer to buy
 
   // if property is owned, notify player of rent payment.

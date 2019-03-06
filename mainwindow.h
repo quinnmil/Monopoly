@@ -29,7 +29,7 @@ public:
     QList <QLabel *>getSpaceList() { return this->SpaceList; }
 
     void setGameSpaceList();
-    QList<PropertyType*> getGameSpaceList() { return this->GameSpaceList; }
+    QList<Property*> getGameSpaceList() { return this->GameSpaceList; }
 
     void setPlayerList();
     QList<PlayerType*> getPlayerList();
@@ -53,7 +53,7 @@ private:
     Game* game;
 
     QList <QLabel *> SpaceList;
-    QList<PropertyType*> GameSpaceList;
+    QList<Property*> GameSpaceList;
     QList<PlayerType*> PlayerList;
 };
 
