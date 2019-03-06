@@ -10,6 +10,7 @@ public:
 	Property();
     Property(string name, string color, int cost, int rent, int colorSetRent, int perHouseRent, int hotelRent, int houseCost, int hotelCost, int mortgage, int unmortgage);
 	~Property();
+    string getOwnedBy();
     string getName();
 	string getColor();
     int getCost();
@@ -22,11 +23,13 @@ public:
 	int getHouseCost();
 	int getHotelCost();
 	int getHouseCount();
+    void setOwnedBy(string &name);
 	void setHouseCount(int houseCount);
 	int getHotelCount();
 	void setHotelCount(int hotelCount);
     bool canBuy();
 private:
+    string ownedBy;
     string name;
 	string color;
     int cost;

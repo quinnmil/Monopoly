@@ -4,6 +4,7 @@
 
 //Constructor
 Property::Property() : PropertyType(){
+    ownedBy = "";
     name = "Property1";
     color = "orange";
     cost = 0;
@@ -20,6 +21,7 @@ Property::Property() : PropertyType(){
 
 //Overloaded Constructor
 Property::Property(string name, string color, int cost, int rent, int colorSetRent, int perHouseRent, int hotelRent, int houseCost, int hotelCost, int mortgage, int unmortgage){
+    ownedBy = "";
     this->name = name;
     this->color = color;
     this->cost = cost;
@@ -45,6 +47,11 @@ Property::~Property(){
 //GET FUNCTIONS
 //
 //********************
+
+//Get Owned By
+string Property::getOwnedBy(){
+    return ownedBy;
+}
 
 //Get Name
 string Property::getName(){
@@ -126,6 +133,11 @@ bool Property::canBuy(){
 //SET FUNCTIONS
 //
 //********************
+
+//Set Owned By
+void Property::setOwnedBy(string &name){
+    ownedBy = name;
+}
 
 //Set # of Houses
 void Property::setHouseCount(int houseCount){
