@@ -96,7 +96,7 @@ void PlayerType::setPiece(string &piece){
 
 //Set Money
 void PlayerType::setMoney(int money){
-	money = this->money;
+    this->money = money;
 }
 
 //Set Property
@@ -119,5 +119,5 @@ void PlayerType::setPosition(int die1, int die2){
 
 //Set Jail Status
 void PlayerType::setJailStatus(bool jailStatus){
-	jailStatus = this->jailStatus;
+    this->jailStatus = jailStatus;
 }
