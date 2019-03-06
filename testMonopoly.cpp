@@ -57,7 +57,7 @@ int main(int argc, char *argv[]){
     QApplication a(argc, argv);
     MainWindow w;
     w.show();
-
+    srand(1080); // for random rools.
     return a.exec();
 
 	return 0;
