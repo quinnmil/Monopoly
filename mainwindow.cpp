@@ -157,7 +157,7 @@ void MainWindow::updateDisplay(){
       qDebug() << "update location for player : " << QString::fromStdString(PlayerList[j]->getName());
       switch (PlayerList[j]->getPiece()){
       case 1:
-          SpaceList[index]->setPixmap(QPixmap(":/graphics/Graphics/shoe.png"));
+          SpaceList[index]->setPixmap(QPixmap(":/graphics/Graphics/boot.png"));
           break;
       case 2:
           SpaceList[index]->setPixmap(QPixmap(":/graphics/Graphics/car.png"));
