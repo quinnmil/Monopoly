@@ -318,8 +318,6 @@ void Game::addBoardSpaces(){
     gameSpaceList.push_back(p39);
 }
 
-
-
 //Sets new current player
 void Game::incrementCurrentPlayer(){
     int pos = getCurrentPlayerIndex();
@@ -354,7 +352,7 @@ int Game::dieRoll(){
 //Buy Property
 void Game::buyProperty(){
     int pos = currentPlayer->getPosition();
-    PropertyType *currProp = gameSpaceList.at(pos);
+    Property *currProp = gameSpaceList.at(pos);
     if(currProp->getOwnedBy().compare("") == 0){
         //IF NOT OWNED
         if(currentPlayer->getMoney() > currProp->getCost()){
@@ -372,7 +370,7 @@ void Game::buyProperty(){
 //Pay Rent
 void Game::payRent(){
     int pos = currentPlayer->getPosition(); //Gets position of current player
-    PropertyType *currProp = gameSpaceList.at(pos); //Gets current property
+    Property *currProp = gameSpaceList.at(pos); //Gets current property
     int rent = currProp->getRent(); //Gets rent
     if(currProp->getOwnedBy().compare("") > 0){ //If there is an owner of said property
         PlayerType *owner;

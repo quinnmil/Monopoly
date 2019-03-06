@@ -64,7 +64,7 @@ unsigned int PlayerType::getPosition(){
 }
 
 //Get Property
-QList<PropertyType*> PlayerType::getProperty(){
+QList<Property*> PlayerType::getProperty(){
     return ownedProperty;
 }
 
@@ -100,7 +100,7 @@ void PlayerType::setMoney(int money){
 }
 
 //Set Property
-void PlayerType::setProperty(PropertyType *property){
+void PlayerType::setProperty(Property *property){
     ownedProperty.push_back(property);
 }
 

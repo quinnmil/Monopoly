@@ -21,8 +21,8 @@ public:
 	int getMoney();
 	void setMoney(int money);
 	
-    QList<PropertyType*> getProperty();
-    void setProperty(PropertyType *property);
+    QList<Property*> getProperty();
+    void setProperty(Property *property);
 
 	//vector<SpecialCard> getSpecial();
 	void setSpecial();
@@ -36,7 +36,7 @@ private:
 	string name;
     int piece;
 	int money;
-    QList<PropertyType*> ownedProperty;
+    QList<Property*> ownedProperty;
 	//vector<SpecialCard> ownedSpecial;
     unsigned int position;
 	bool jailStatus;

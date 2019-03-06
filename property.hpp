@@ -2,10 +2,9 @@
 #define PROPERTY_HPP_
 #include <cstdlib>
 #include <string>
-#include "propertytype.hpp"
 using namespace std;
 
-class Property : public PropertyType{
+class Property{
 public:
 	Property();
     Property(string name, string color, int cost, int rent, int colorSetRent, int perHouseRent, int hotelRent, int houseCost, int hotelCost, int mortgage, int unmortgage);
@@ -43,12 +42,5 @@ private:
 	int hotelCount;
     int mortgage;
     int unmortgage;
-};
-
-class SpecialProperty : public PropertyType{
-public:
-    SpecialProperty();
-    ~SpecialProperty();
-private:	
 };
 #endif /* PROPERTY_HPP_ */
