@@ -56,8 +56,8 @@ void MainWindow::on_pushButton_clicked(){
     // int v1 = dieRoll();
     // int v2 = dieRoll();
     // int total = v1 + v2;
-    int die1 = game->dieRoll();
-    int die2 = game->dieRoll();
+    int die1 = game->getDieOne();
+    int die2 = game->getDieTwo();
 
     // move player.
     this->game->movePlayer(die1, die2);

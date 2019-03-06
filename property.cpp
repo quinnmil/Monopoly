@@ -3,7 +3,7 @@
 #include "property.hpp"
 
 //Constructor
-Property::Property() : PropertyType(){
+Property::Property(){
     ownedBy = "";
     name = "Property1";
     color = "orange";
