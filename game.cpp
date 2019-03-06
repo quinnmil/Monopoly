@@ -23,7 +23,7 @@ Game::Game(){
     die2 = 1;
     bankMoney = 10000; //Be sure to properly set this
 
-    srand(time(NULL)); // for random rools.
+
 }
 
 //Dynamic Overloaded Constructor
