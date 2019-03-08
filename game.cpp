@@ -130,7 +130,7 @@ string Game::getPropertyName(){
 string Game::getPropertyOwner(){
     int position = currentPlayer->getPosition();
     Property *prop = gameSpaceList.at(position);
-    string prop_owner = prop->getName();
+    string prop_owner = prop->getOwnedBy();
     return prop_owner;
 }
 
