@@ -1,17 +1,27 @@
 Notes for Week9
 
-We have been doing the majority of our discussion over iMessage chat and email,
-though we did meet after class on Monday and Wednesday.
+// We have been doing the majority of our discussion over iMessage chat and email,
+though we did meet after class on Monday and Wednesday. //
+
+Sunday:
+
 
 Over the weekend I built up the display features, including a new graphic panel
 which displays information about the current space the player is on. I would find
 errors in the GameClass and sometimes Property and Player classes as well, and
-would usually be able to debug quickly, though because I only wrote the header
-files for these class, leaving the implementation to Mason, I figured that some
-debugging would be more effective if done by him, and I wanted him to understand
-the changes I was making.
+would usually be able to debug in reasonable time, though because I only wrote
+the header files for these class, leaving the implementation to Mason, I figured
+that some debugging would be more effective if done by him.  I wanted him to understand
+the changes I was making as well. Still, we didn't expect to use most of this weekend
+debugging, so it definitely slowed down development progress. We have decided to
+cut some non-essential features like the trading system and larger player support.
+I am trying to develop my code with extendability in mind so that adding these
+features (such as additional players) would not require too much additional work,
+if either I have time before the deadline or want to come back to polish this
+project later on.
 
 
+Monday:
 I found over the weekend that some of the functions Mason had written in the Game
 class did not do what they were supposed to. I showed Mason a bit about how to
 use the Qt debugger which I found very useful in my debugging over the weekend.
@@ -21,6 +31,7 @@ they were committed, I was not enjoying the pattern of implementing a function
 was pursued would work only to have it crash. I showed mason that Qt has a built
 in testing suite as well where we could run unit tests.
 
+Thursday:
 Later in the week, I clarified a request I gave to mason to code up the actual
 objects for the PropertyList, a list of our PropertyType objects containing all
 of the spaces on the board. Mason wrote these up and I would handle non-standard
@@ -32,7 +43,8 @@ such as adding a tranferMoney() method that would be used for both tax and playe
 payouts from the bank. This was more versatile than the PayTax() method which
 was previously implemented.
 
-So far this weekend, I’ve added a game info section to the display which shows 
+Saturday:
+So far this weekend, I’ve added a game info section to the display which shows
 each players money, and a button which will eventually open to list their owned
 property. (currently, the button just reads the total property each player owns)
 I have told Mason that it would be a big help if he could write up that widget,
