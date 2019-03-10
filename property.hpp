@@ -47,8 +47,26 @@ private:
 class SpecialCard{
 public:
     SpecialCard();
+    SpecialCard(string message, int move_to, int moneyValue, bool getPaid, bool youPay, bool toGo, bool getOutOfJail, bool toJail);
     ~SpecialCard();
+    string getMessage();
+    int getMoveTo();
+    int getMoneyValue();
+    bool getGetPaid();
+    bool getYouPay();
+    bool getToGo();
+    bool getSprung(); //get out of jail
+    bool getToJail(); //go to jail
 private:
+    string message;
+    int move_to; //+ or - position
+    int moneyValue;
+    bool getPaid;
+    bool youPay;
+    bool toGo;
+    bool getOutOfJail;
+    bool toJail;
+
 };
 
 #endif /* PROPERTY_HPP_ */

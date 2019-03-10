@@ -317,6 +317,77 @@ void Game::addBoardSpaces(){
     gameSpaceList.push_back(p39);
 }
 
+//Adds all special cards to board
+void Game::addSpecialCards(){
+    //CHANCE CARDS
+    SpecialCard *s1 = new SpecialCard("You have been elected as chairman of the board. Pay each player $50.", 0, 50, false, true, false, false, false);
+    chanceList.push_back(s1);
+
+    SpecialCard *s2 = new SpecialCard("Go back 3 spaces.", -3, 0, false, false, false, false, false);
+    chanceList.push_back(s2);
+
+    SpecialCard *s3 = new SpecialCard("Speeding fine. Pay $15.", 0, 15, false, true, false, false, false);
+    chanceList.push_back(s3);
+
+    SpecialCard *s4 = new SpecialCard("Get out of jail free!", 0, 0, false, false, false, true, false);
+    chanceList.push_back(s4);
+
+    SpecialCard *s5 = new SpecialCard("Your building loan matures. Collect $150.", 0, 150, true, false, false, false, false);
+    chanceList.push_back(s5);
+
+    SpecialCard *s6 = new SpecialCard("Go to jail. Do not pass go. Do not collect $200.", 0, 0, false, false, false, false, true);
+    chanceList.push_back(s6);
+
+    SpecialCard *s7 = new SpecialCard("Advance to GO. Collect $200.", 0, 200, true, false, true, false, false);
+    chanceList.push_back(s7);
+
+    //COMMUNITY CHEST CARDS
+    SpecialCard *c1 = new SpecialCard("Advance to GO. Collect $200.", 0, 200, true, false, true, false, false);
+    communityChestList.push_back(c1);
+
+    SpecialCard *c2 = new SpecialCard("Bank error in your favor. Collect $200.", 0, 200, true, false, false, false, false);
+    communityChestList.push_back(c2);
+
+    SpecialCard *c3 = new SpecialCard("You have won second prize in a beauty contest. Collect $10.", 0, 10, true, false, false, false, false);
+    communityChestList.push_back(c3);
+
+    SpecialCard *c4 = new SpecialCard("Get out of jail free!", 0, 0, false, false, false, true, false);
+    communityChestList.push_back(c4);
+
+    SpecialCard *c5 = new SpecialCard("Doctor's fees. Pay $50.", 0, 50, false, true, false, false, false);
+    communityChestList.push_back(c5);
+
+    SpecialCard *c6 = new SpecialCard("From sale of stock, you get $50", 0, 50, true, false, false, false, false);
+    communityChestList.push_back(c6);
+
+    SpecialCard *c7 = new SpecialCard("You inherit $100.", 0, 100, true, false, false, false, false);
+    communityChestList.push_back(c7);
+
+    SpecialCard *c8 = new SpecialCard("It's your birthday. Collect $10 from each player.", 0, 10, true, false, false, false, false);
+    communityChestList.push_back(c8);
+
+    SpecialCard *c9 = new SpecialCard("Collect $25 consultancy fee.", 0, 25, true, false, false, false, false);
+    communityChestList.push_back(c9);
+
+    SpecialCard *c10 = new SpecialCard("Go to jail. Do not pass go. Do not collect $200.", 0, 0, false, false, false, false, true);
+    communityChestList.push_back(c10);
+
+    SpecialCard *c11 = new SpecialCard("Hospital Fees. Pay $100.", 0, 100, false, true, false, false, false);
+    communityChestList.push_back(c11);
+
+    SpecialCard *c12 = new SpecialCard("Income tax refund. Collect $20.", 0, 20, true, false, false, false, false);
+    communityChestList.push_back(c12);
+
+    SpecialCard *c13 = new SpecialCard("School fees. Pay $50.", 0, 50, false, true, false, false, false);
+    communityChestList.push_back(c13);
+
+    SpecialCard *c14 = new SpecialCard("Life insurance matures. Collect $100.", 0, 100, true, false, false, false, false);
+    communityChestList.push_back(c14);
+
+    SpecialCard *c15 = new SpecialCard("Holiday fund matures. Collect $100.", 0, 100, true, false, false, false, false);
+    communityChestList.push_back(c15);
+}
+
 //Sets new current player
 void Game::incrementCurrentPlayer(){
     int pos = getCurrentPlayerIndex();

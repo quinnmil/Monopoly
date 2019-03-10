@@ -148,3 +148,70 @@ void Property::setHouseCount(int houseCount){
 void Property::setHotelCount(int hotelCount){
     this->hotelCount = hotelCount;
 }
+
+//**************************************************
+//
+//SPECIAL CARDS
+//
+//**************************************************
+
+//Constructor
+SpecialCard::SpecialCard(){
+    message = "default";
+    move_to = 0;
+    moneyValue = 0;
+    getPaid = false;
+    youPay = false;
+    toGo = false;
+    getOutOfJail = false;
+    toJail = false;
+}
+
+//Overloaded Constructor
+SpecialCard::SpecialCard(string message, int move_to, int moneyValue, bool getPaid, bool youPay, bool toGo, bool getOutOfJail, bool toJail){
+    this->message = message;
+    this->move_to = move_to;
+    this->moneyValue = moneyValue;
+    this->getPaid = getPaid;
+    this->youPay = youPay;
+    this->toGo = toGo;
+    this->getOutOfJail = getOutOfJail;
+    this->toJail = toJail;
+}
+
+//Deconstructor
+SpecialCard::~SpecialCard(){
+
+}
+
+string SpecialCard::getMessage(){
+    return message;
+}
+
+int SpecialCard::getMoveTo(){
+    return move_to;
+}
+
+int SpecialCard::getMoneyValue(){
+    return moneyValue;
+}
+
+bool SpecialCard::getGetPaid(){
+    return getPaid;
+}
+
+bool SpecialCard::getYouPay(){
+    return youPay;
+}
+
+bool SpecialCard::getToGo(){
+    return toGo;
+}
+
+bool SpecialCard::getSprung(){
+    return getOutOfJail;
+}
+
+bool SpecialCard::getToJail(){
+    return toJail;
+}

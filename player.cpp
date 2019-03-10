@@ -69,9 +69,9 @@ QList<Property*> PlayerType::getProperty(){
 }
 
 //Get Special Cards
-//vector<SpecialCard> PlayerType::getSpecial(){
-//	return ownedSpecial;
-//}
+QList<SpecialCard*> PlayerType::getSpecialCards(){
+    return ownedSpecialCards;
+}
 
 //********************
 //
@@ -105,9 +105,9 @@ void PlayerType::setProperty(Property *property){
 }
 
 //Set Special Cards
-//void PlayerType::setSpecial(){
-
-//}
+void PlayerType::setSpecial(SpecialCard *special){
+    ownedSpecialCards.push_back(special);
+}
 
 //Set Position
 void PlayerType::setPosition(int die1, int die2){

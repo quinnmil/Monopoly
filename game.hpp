@@ -50,6 +50,7 @@ public:
     //********************
 
     void addBoardSpaces(); //DONE
+    void addSpecialCards(); //WIP
     int dieRoll(); //DONE
     void movePlayer(int die1, int die2); //DONE
     void incrementCurrentPlayer();   //DONE
@@ -73,6 +74,14 @@ public:
     int getFreeParking(); //gets money in free parking
     void transferMoney(PlayerType *p1, int amount, bool ifTax);
 
+    //********************
+    //
+    //Special Card Functions
+    //
+    //********************
+
+    //string getSpecialMessage();
+
 
 private:
     PlayerType *currentPlayer;   // this is key, as most of the functions above act relative to the currentPlayer.
@@ -82,8 +91,8 @@ private:
 
     QList<PlayerType*> playerList;       // a list of playerType objects
     QList<Property*> gameSpaceList;  // a list of PropertyType objects. gameSpaceList[0]->getName() = "Go"  gameSpaceList[39]->getName() = "BoardWalk"
-    //QList<SpecialCard*> communityChestList; --> See that you land on a special card position, pull (and remove) a card from this QList and add it to the PlayerType's special card QList.
-    //QList<SpecialCard*> chanceList;         --> After using this card, it will be removed from PlayerType's QList and re-added to the back of the Game Class's QList.
-    //                                        --> Card will be selected from the Game's QList using a random integer in the .at() function.
+    QList<SpecialCard*> communityChestList; //--> See that you land on a special card position, pull (and remove) a card from this QList and add it to the PlayerType's special card QList.
+    QList<SpecialCard*> chanceList;        // --> After using this card, it will be removed from PlayerType's QList and re-added to the back of the Game Class's QList.
+                                           // --> Card will be selected from the Game's QList using a random integer in the .at() function.
 };
 #endif /* GAME_HPP_ */
