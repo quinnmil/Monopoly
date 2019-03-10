@@ -1,0 +1,47 @@
+Notes for Week9
+
+We have been doing the majority of our discussion over iMessage chat and email,
+though we did meet after class on Monday and Wednesday.
+
+Over the weekend I built up the display features, including a new graphic panel
+which displays information about the current space the player is on. I would find
+errors in the GameClass and sometimes Property and Player classes as well, and
+would usually be able to debug quickly, though because I only wrote the header
+files for these class, leaving the implementation to Mason, I figured that some
+debugging would be more effective if done by him, and I wanted him to understand
+the changes I was making.
+
+
+I found over the weekend that some of the functions Mason had written in the Game
+class did not do what they were supposed to. I showed Mason a bit about how to
+use the Qt debugger which I found very useful in my debugging over the weekend.
+I also explained that he could / should be writing test scripts for any new functions.
+It was better to put in the time to have functions tested for most cases before
+they were committed, I was not enjoying the pattern of implementing a function
+was pursued would work only to have it crash. I showed mason that Qt has a built
+in testing suite as well where we could run unit tests.
+
+Later in the week, I clarified a request I gave to mason to code up the actual
+objects for the PropertyList, a list of our PropertyType objects containing all
+of the spaces on the board. Mason wrote these up and I would handle non-standard
+properties (taxes/free parking/ etc) on the frontend mainwindow class, since I
+wanted to present the player with a short informational blurb when a action was
+taken. I also finalized the logic to buy property and pay rent on property
+owned by other players. I also made some changes to some game class functions
+such as adding a tranferMoney() method that would be used for both tax and player
+payouts from the bank. This was more versatile than the PayTax() method which
+was previously implemented.
+
+So far this weekend, I’ve added a game info section to the display which shows 
+each players money, and a button which will eventually open to list their owned
+property. (currently, the button just reads the total property each player owns)
+I have told Mason that it would be a big help if he could write up that widget,
+though I’m not sure how proficient he is with the Qt graphics framework yet, as
+he’s been sticking to working on the backend class functions so far. I just want
+to be able to prioritize the core features of the game and have those working
+well. I hope to meet with Mason again early next week. So far, things have come
+together fairly well, though a lack of proper testing early on definitely slowed
+down development. We’ve worked out the kinks and we are making solid progress
+towards having a functional and impressive project by the presentation.
+
+ - Q
