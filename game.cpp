@@ -165,7 +165,7 @@ void Game::addBoardSpaces(){
     gameSpaceList.push_back(p1);
 
     //Community Chest
-    Property *p2 = new Property("Community Chest 1", "SpecialCard", 0, 0, 0, 0, 0, 0, 0, 0, 0);
+    Property *p2 = new Property("Community Chest", "SpecialCard", 0, 0, 0, 0, 0, 0, 0, 0, 0);
     gameSpaceList.push_back(p2);
 
     //Baltic Avenue
@@ -185,7 +185,7 @@ void Game::addBoardSpaces(){
     gameSpaceList.push_back(p6);
 
     //Chance
-    Property *p7 = new Property("Chance 1", "SpecialCard", 0, 0, 0, 0, 0, 0, 0, 0, 0);
+    Property *p7 = new Property("Chance", "SpecialCard", 0, 0, 0, 0, 0, 0, 0, 0, 0);
     gameSpaceList.push_back(p7);
 
     //Vermont Avenue
@@ -225,7 +225,7 @@ void Game::addBoardSpaces(){
     gameSpaceList.push_back(p16);
 
     //Community Chest
-    Property *p17 = new Property("Community Chest 2", "SpecialCard", 0, 0, 0, 0, 0, 0, 0, 0, 0);
+    Property *p17 = new Property("Community Chest", "SpecialCard", 0, 0, 0, 0, 0, 0, 0, 0, 0);
     gameSpaceList.push_back(p17);
 
     //Tennessee Avenue
@@ -245,7 +245,7 @@ void Game::addBoardSpaces(){
     gameSpaceList.push_back(p21);
 
     //Chance
-    Property *p22 = new Property("Chance 2", "SpecialCard", 0, 0, 0, 0, 0, 0, 0, 0, 0);
+    Property *p22 = new Property("Chance", "SpecialCard", 0, 0, 0, 0, 0, 0, 0, 0, 0);
     gameSpaceList.push_back(p22);
 
     //Indiana Avenue
@@ -301,7 +301,7 @@ void Game::addBoardSpaces(){
     gameSpaceList.push_back(p35);
 
     //Chance
-    Property *p36 = new Property("Chance 3", "SpecialCard", 0, 0, 0, 0, 0, 0, 0, 0, 0);
+    Property *p36 = new Property("Chance", "SpecialCard", 0, 0, 0, 0, 0, 0, 0, 0, 0);
     gameSpaceList.push_back(p36);
 
     //Park Place
@@ -402,6 +402,18 @@ void Game::payPlayer(PlayerType p1, PlayerType p2, int value){ //p1 = who is pay
         //If p1 is not bankrupt
         p2.setMoney(p2.getMoney() + value);
     }
+}
+
+void Game::transferMoney(PlayerType *p1, int amount, bool ifTax){
+    if (ifTax == true){
+        // if paying a tax, take money from player and tranfer to free parking pile.
+        p1->setMoney(p1->getMoney() - amount);
+        this->freeParkingMoney += amount;
+    }
+}
+
+int Game::getFreeParking(){
+    return this->freeParkingMoney;
 }
 
 //Start Trade

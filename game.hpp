@@ -70,7 +70,8 @@ public:
     void payPlayer(PlayerType p1, PlayerType p2, int value); //NEEDS WORK, NEEDS TO WORK WITH INTERFACE?
 
     void payTax(); //adds to free parking money
-    void getFreeParking(); //gets money in free parking
+    int getFreeParking(); //gets money in free parking
+    void transferMoney(PlayerType *p1, int amount, bool ifTax);
 
 
 private:
