@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1347</width>
-    <height>937</height>
+    <height>1039</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,8 +20,8 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>370</x>
-      <y>-150</y>
+      <x>520</x>
+      <y>-170</y>
       <width>850</width>
       <height>1000</height>
      </rect>
@@ -1612,7 +1612,7 @@
      <rect>
       <x>90</x>
       <y>50</y>
-      <width>171</width>
+      <width>201</width>
       <height>61</height>
      </rect>
     </property>
@@ -1691,19 +1691,6 @@
      </property>
     </widget>
    </widget>
-   <widget class="QLabel" name="Property_6">
-    <property name="geometry">
-     <rect>
-      <x>650</x>
-      <y>820</y>
-      <width>287</width>
-      <height>37</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Property:</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="endTurn_button">
     <property name="geometry">
      <rect>
@@ -1722,6 +1709,89 @@
     <property name="text">
      <string>End Turn</string>
     </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>860</y>
+      <width>731</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Game Info</string>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_3">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Player 1 Money</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>Player 1 Property </string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>Player 2 Money</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QLabel" name="p2Money">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string>Player 2 Property</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QPushButton" name="p1Property">
+       <property name="text">
+        <string>No Owned Property </string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="p1Money">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="3">
+      <widget class="QPushButton" name="p2Property">
+       <property name="text">
+        <string>No Owned Property </string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
