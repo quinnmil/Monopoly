@@ -105,14 +105,16 @@ void PlayerType::setProperty(Property *property){
 }
 
 //Set Special Cards
-void PlayerType::setSpecial(){
+//void PlayerType::setSpecial(){
 
-}
+//}
 
 //Set Position
 void PlayerType::setPosition(int die1, int die2){
     position += (die1 + die2);
     if(position > 40){
+        // if passes go, pays 200.
+        this->setMoney(this->getMoney()+200);
         position = position % 40;
     }
 }
