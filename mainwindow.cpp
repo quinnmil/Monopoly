@@ -86,7 +86,7 @@ void MainWindow::displayOptions(){
         // if unowned
         if (currentProperty->getOwnedBy() == ""){
             QString title = "Buy " + name;
-            QString message = QString("%1 is unowned. Would you like to purchse for %2?").arg(name).arg(QString::number(currentProperty->getCost()));
+            QString message = QString("%1 is unowned. Would you like to purchase for $%2?").arg(name).arg(QString::number(currentProperty->getCost()));
             QMessageBox offer;
 
             offer.setWindowTitle(title);
@@ -102,38 +102,89 @@ void MainWindow::displayOptions(){
                 game->buyProperty();
                 updateDisplay();
 
-            }
+                }
             case QMessageBox::No:{
                 // might implement bidding later.
+                }
+               }
+
             }
+        else {
+
+
+        // if property is owned, pay rent.
+        QString title = name;
+        QString message = QString("You landed on %1, and pay $%2 to %3").arg(name).arg(QString::number(currentProperty->getRent())).arg(QString::fromStdString(currentProperty->getOwnedBy()));
+        game->transferMoney(game->getCurrentPlayer(),game->getFreeParking(),false);
+        QMessageBox info;
+        info.setWindowTitle(title);
+        info.setText(message);
+        info.setStandardButtons(QMessageBox::Ok);
+        info.exec();
+        game->payRent();
+        }
+    }
+        else {
+            // if GO -- could payout some extra money here, depending on house rules.
+            if (currentProperty->getName() == "GO"){
+                game->transferMoney(game->getCurrentPlayer(), 0, false);
             }
 
-        }
-        else {
-            // if GO
 
             // if community chest
+            if (currentProperty->getName() == "Community Chest"){
+                // draw community chest card.
+            }
 
             // if income tax
+            if (currentProperty->getName() == "Income Tax"){
+                game->transferMoney(game->getCurrentPlayer(), 100, true);
+
+            }
 
             // if chance
+            if (currentProperty->getName() == "Chance"){
+                // draw chance card
+            }
 
             // if just visiting jail
-
-            // if electric company / water works
+            if (currentProperty->getName() == "Jail"){
+                // nothin
+            }
 
             // if free parking
+            if (currentProperty->getName() == "FreeParking"){
+                QString title = "Free Parking!";
+                QString message = QString("Congraulates, you land on free parking and collect %1").arg(QString::number(game->getFreeParking()));
+                game->transferMoney(game->getCurrentPlayer(),game->getFreeParking(),false);
+                QMessageBox info;
+                info.setWindowTitle(title);
+                info.setText(message);
+                info.setStandardButtons(QMessageBox::Ok);
+                info.exec();
+            }
+
 
             // if go to jail
+            if (currentProperty->getName() == "Go to Jail"){
+                game->jailPlayer();
+                QString title = "Go to Jail";
+                QString message = "Go directly to jail. Do not pass Go or collect $200";
+                QMessageBox info;
+                info.setWindowTitle(title);
+                info.setText(message);
+                info.setStandardButtons(QMessageBox::Ok);
+                info.exec();
+            }
 
             // if luxury tax
-        }
+            game->transferMoney(game->getCurrentPlayer(), 100, true);
+     }
 
-    }
-  // if property is unowned, display offer to buy
+}
 
   // if property is owned, notify player of rent payment.
-}
+
 
 void MainWindow::updateDisplay(){
 
@@ -170,6 +221,7 @@ void MainWindow::updateDisplay(){
   // update information display
   QString currentProperty = QString::fromStdString(game->getPropertyName());
   QString currentPropertyOwner = QString::fromStdString(game->getPropertyOwner());
+  qDebug() << "PropertyOwner: "  <<  currentPropertyOwner ;
   int currentPropertyCost = game->getPropertyCost();
   int currentPropertyRent = game->getPropertyRent();
 
@@ -179,7 +231,14 @@ void MainWindow::updateDisplay(){
   ui->PriceString->setNum(currentPropertyCost);
   ui->RentString->setNum(currentPropertyRent);
 
+  //update game stats
+  ui->p1Money->setText(QString::number(PlayerList[0]->getMoney()));
+  ui->p2Money->setText(QString::number(PlayerList[1]->getMoney()));
+  ui->p1Property->setText(QString("%1 Properties").arg(QString::number(PlayerList[0]->getProperty().length())));
+  ui->p2Property->setText(QString("%1 Properties").arg(QString::number(PlayerList[1]->getProperty().length())));
+
 }
+//void MainWindow::PassGo(PlayerType *p1){}
 
 /*
 note for later, if we want to get info on a selected property, we could
