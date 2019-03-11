@@ -49,6 +49,8 @@ private slots:
 
     void on_p1Property_clicked();
 
+    void on_p2Property_clicked();
+
 private:
     Ui::MainWindow *ui;
     Game* game;

@@ -12,7 +12,7 @@ PlayerType::PlayerType(){
     //ownedProperty(0); Unnecessary?
     //ownedSpecial(0); Unnecessary?
     position = 0;
-    jailStatus = false;
+    jailTime = 0;
 }
 
 //Overloaded Constructor
@@ -24,7 +24,7 @@ PlayerType::PlayerType(string &name, string &piece, int money){
     //ownedProperty(0); Unnecessary?
     //ownedSpecial(0); Unnecessary?
 	position = 0;
-	jailStatus = false;
+    jailTime = 0;
 }
 
 //Deconstructor
@@ -54,8 +54,8 @@ int PlayerType::getMoney(){
 }
 
 //Get Jail Status
-bool PlayerType::getJailStatus(){
-    return jailStatus;
+int PlayerType::getJailTime(){
+    return jailTime;
 }
 
 //Get Position
@@ -120,6 +120,6 @@ void PlayerType::setPosition(int die1, int die2){
 }
 
 //Set Jail Status
-void PlayerType::setJailStatus(bool jailStatus){
-    this->jailStatus = jailStatus;
+void PlayerType::setJailTime(int jailTime){
+    this->jailTime = jailTime;
 }
