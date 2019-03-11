@@ -3,5 +3,11 @@
         <file>Graphics/monopolyWhite.jpg</file>
         <file>Graphics/car.png</file>
         <file>Graphics/boot.png</file>
+        <file>Graphics/die1.png</file>
+        <file>Graphics/die2.png</file>
+        <file>Graphics/die3.png</file>
+        <file>Graphics/die4.png</file>
+        <file>Graphics/die5.png</file>
+        <file>Graphics/die6.png</file>
     </qresource>
 </RCC>
