@@ -25,14 +25,16 @@ Game::Game(){
 }
 
 //Dynamic Overloaded Constructor
-Game::Game(int pl){
+Game::Game(QString p1, QString p2){
 
     addBoardSpaces(); //SHOULD FILL THE ENTIRE BOARD WITH THE CORRECT SPACES
 
     //Adds players to playerList(Instantiated in header)
     // PLACEHOLDER VARS
-    string PLAYER1 = "Player 1";
-    string PLAYER2 = "Player 2";
+
+    // updated these to take name arguments - Q
+    string PLAYER1 = p1.toStdString();
+    string PLAYER2 = p2.toStdString();
     string PIECE1 = "car";
     string PIECE2 = "shoe";
     PlayerType * playerOne = new PlayerType(PLAYER1, PIECE1, 1000); //Creates new player object

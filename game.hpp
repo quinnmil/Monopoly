@@ -17,7 +17,7 @@ public:
     //********************
 
     Game(); // DONE: either use this constructor or use newGame() to create playerList and gameSpaceList
-    Game(int pl); //DONE: overloaded for #players parameter
+    Game(QString p1, QString p2); //DONE: overloaded for #players parameter
     ~Game(); //DONE
 
     //********************

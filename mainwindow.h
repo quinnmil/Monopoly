@@ -32,21 +32,22 @@ public:
     QList<Property*> getGameSpaceList() { return this->GameSpaceList; }
 
     void setPlayerList();
-    QList<PlayerType*> getPlayerList();
+    QList<PlayerType*> getPlayerList() { return this->PlayerList; }
 
 
     void displayOptions();
     void setGame(Game * game) { this->game = game; }
     Game* getGame(){ return this->game; }
 
-    void startGame(int playerCount);
+    void startGame(QString p1, QString p2);
+    void endGame();
 
 private slots:
     void on_pushButton_clicked();
 
-    void on_pushButton_2_clicked();
-
     void on_endTurn_button_clicked();
+
+    void on_p1Property_clicked();
 
 private:
     Ui::MainWindow *ui;
