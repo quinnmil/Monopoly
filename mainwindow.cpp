@@ -321,8 +321,30 @@ void MainWindow::startGame(QString p1, QString p2){
 
 void MainWindow::endGame(){
     qDebug() << "Game over";
+    QString name;
     // get winner.
+    if (PlayerList[0]->getProperty().length() > PlayerList[1]->getProperty().length()){
+        // player 1 wins
+       QString name = QString::fromStdString(PlayerList[0]->getName());
+    }
+    else {
+        QString name = QString::fromStdString(PlayerList[0]->getName());
+    }
+    QString title = "Game Over";
+    QString message = QString("%1 is the winner! Watch out for the FCC!").arg(name);
+    QMessageBox win;
+    win.setWindowTitle(title);
+    win.setText(message);
+    QAbstractButton* end = win.addButton(("End Game"),QMessageBox::YesRole);
+    win.exec();
 
+    if (win.clickedButton()==end){
+        // end game
+
+        delete this->getGame();
+        delete this;
+
+}
 
     // announce winner.
 
