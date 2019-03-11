@@ -512,7 +512,7 @@ void Game::addHotel(){
 
 }
 
-//Handles Special Cards
+//Handles Special Cards -- !!!UNTESTED!!!
 void Game::handleSpecialCard(SpecialCard *special){
     if(special->getMoveTo() != 0){
         currentPlayer->setPosition(special->getMoveTo(), 0); //uses the SpecialCard's int position for die1 parameter
@@ -545,6 +545,10 @@ void Game::handleSpecialCard(SpecialCard *special){
     }
     else if(special->getToJail() == true){
         //Go to jail
+        int currPos = currentPlayer->getPosition();
+        int needs = 10 - currPos;
+        currentPlayer->setPosition(needs, 0);
+        currentPlayer->setJailStatus(true);
     }
     else if(special->getSprung() == true){
         //Add to player's getOutOfJail var
