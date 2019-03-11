@@ -112,10 +112,10 @@ void PlayerType::setSpecial(SpecialCard *special){
 //Set Position
 void PlayerType::setPosition(int die1, int die2){
     position += (die1 + die2);
-    if(position > 40){
+    if(position > 39){
         // if passes go, pays 200.
         this->setMoney(this->getMoney()+200);
-        position = position % 40;
+        position = position % 39;
     }
 }
 
