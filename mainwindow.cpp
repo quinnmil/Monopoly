@@ -15,9 +15,37 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
+//    newGameDialog nGD;
+//    nGD.setModal(true);
+//    nGD.exec();
+
     // hide features before newgame is created.
-    ui->Board->setHidden(true);
-    ui->Dice->setHidden(true);
+//    ui->Board->setHidden(true);
+//    ui->Dice->setHidden(true);
+
+    ui->endTurn_button->setText("Roll dice first!");
+    ui->endTurn_button->setEnabled(false);
+
+    // reference for QInputDialog getText https://doc.qt.io/qt-5/qinputdialog.html#getText
+    bool p1, p2;
+    QString p1Name = QInputDialog::getText(this, "QInputDialog::getText()",
+                                         tr("Player 1 name:"), QLineEdit::Normal,
+                                         QDir::home().dirName(), &p1);
+    if (p1 && !p1Name.isEmpty()){
+
+        QString p1NameStr = p1Name;
+        }
+
+    QString p2Name = QInputDialog::getText(this, "QInputDialog::getText()",
+                                         tr("Player 2 name:"), QLineEdit::Normal,
+                                         QDir::home().dirName(), &p2);
+    if (p2 && !p2Name.isEmpty()){
+
+        QString p2NameStr = p2Name;
+        }
+
+    this->startGame(p1Name, p2Name);
+    this->updateDisplay();
 }
 
 MainWindow::~MainWindow()
