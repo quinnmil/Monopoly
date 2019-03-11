@@ -92,8 +92,22 @@ void MainWindow::on_pushButton_clicked(){
 
 
     // update dice
-    ui->label_die1->setText(QString::number(die1));
-    ui->label_die2->setText(QString::number(die2));
+    switch(die1){
+    case 1: { ui->label_die1->setPixmap(QPixmap(":/graphics/Graphics/die1.png"));} break;
+    case 2: { ui->label_die1->setPixmap(QPixmap(":/graphics/Graphics/die2.png"));} break;
+    case 3: { ui->label_die1->setPixmap(QPixmap(":/graphics/Graphics/die3.png"));} break;
+    case 4: { ui->label_die1->setPixmap(QPixmap(":/graphics/Graphics/die4.png"));} break;
+    case 5: { ui->label_die1->setPixmap(QPixmap(":/graphics/Graphics/die5.png"));} break;
+    case 6: { ui->label_die1->setPixmap(QPixmap(":/graphics/Graphics/die6.png"));} break;
+    }
+    switch(die2){
+    case 1: { ui->label_die2->setPixmap(QPixmap(":/graphics/Graphics/die1.png"));} break;
+    case 2: { ui->label_die2->setPixmap(QPixmap(":/graphics/Graphics/die2.png"));} break;
+    case 3: { ui->label_die2->setPixmap(QPixmap(":/graphics/Graphics/die3.png"));} break;
+    case 4: { ui->label_die2->setPixmap(QPixmap(":/graphics/Graphics/die4.png"));} break;
+    case 5: { ui->label_die2->setPixmap(QPixmap(":/graphics/Graphics/die5.png"));} break;
+    case 6: { ui->label_die2->setPixmap(QPixmap(":/graphics/Graphics/die6.png"));} break;
+    }
 
     updateDisplay();
     displayOptions();
@@ -184,7 +198,7 @@ void MainWindow::displayOptions(){
         }
 
     }
-    else {
+    else { // can't buy this property
         // if GO -- could payout some extra money here, depending on house rules.
         if (currentProperty->getName() == "GO"){
             game->transferMoney(game->getCurrentPlayer(), 0, false);
@@ -198,7 +212,7 @@ void MainWindow::displayOptions(){
 
         // if income tax
         if (currentProperty->getName() == "Income Tax"){
-            game->transferMoney(game->getCurrentPlayer(), 100, true);
+            game->transferMoney(game->getCurrentPlayer(), 200, true);
 
         }
 
@@ -238,7 +252,10 @@ void MainWindow::displayOptions(){
         }
 
         // if luxury tax
+        if (currentProperty->getName() == "Luxury Tax"){
         game->transferMoney(game->getCurrentPlayer(), 100, true);
+
+        }
     }
 
 }
@@ -280,7 +297,7 @@ void MainWindow::updateDisplay(){
   // update information display
   QString currentProperty = QString::fromStdString(game->getPropertyName());
   QString currentPropertyOwner = QString::fromStdString(game->getPropertyOwner());
-  qDebug() << "PropertyOwner: "  <<  currentPropertyOwner ;
+//  qDebug() << "PropertyOwner: "  <<  currentPropertyOwner ;
   int currentPropertyCost = game->getPropertyCost();
   int currentPropertyRent = game->getPropertyRent();
 
