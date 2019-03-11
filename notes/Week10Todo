@@ -1,0 +1,32 @@
+## Tasks to complete before Submission ##
+
+Game Features - top priority
+
+- Game ending sequence
+  - check if players have money
+  - if they don't offer options to mortgage.
+  - offer to declare bankruptcy and lose.
+
+- property management
+  - list properties - M
+  - show information about owned properties - M
+  - allow to mortgage properties.
+
+- before playing rent, check that property is not mortgaged.
+  - add "active" attribute to propertyType, and bool isActive() method. - M
+
+- Jail
+  - go to jail should move player to jail. - M
+  - when in jail, allow player to try and roll doubles.
+  - in jail for three turns.
+  - make JailStatus an int. (initialize to 0, set to 3 when goToJail()) - M
+
+- don't let player end turn before roll.
+
+
+
+Game Features - lower priority
+
+- clean up game start screen.
+- add dice graphics
+- add 'about game' display.
