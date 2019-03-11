@@ -16,17 +16,24 @@ public:
     int getRent();
     int getColorRent();
     int getPerHouseRent();
+    int getOneHouseRent();
+    int getTwoHouseRent();
+    int getThreeHouseRent();
+    int getFourHouseRent();
     int getHotelRent();
     int getMortgage();
     int getUnmortgage();
 	int getHouseCost();
 	int getHotelCost();
 	int getHouseCount();
+    int getHotelCount();
     void setOwnedBy(string name);
 	void setHouseCount(int houseCount);
-	int getHotelCount();
 	void setHotelCount(int hotelCount);
+    void setActive(bool active);
     bool canBuy();
+    bool getIsActive();
+
 private:
     string ownedBy;
     string name;
@@ -42,6 +49,12 @@ private:
 	int hotelCount;
     int mortgage;
     int unmortgage;
+    bool isActive;
+
+    int oneHouseRent;
+    int twoHouseRent;
+    int threeHouseRent;
+    int fourHouseRent;
 };
 
 class SpecialCard{

@@ -218,21 +218,51 @@
     </layout>
    </widget>
   </widget>
-  <widget class="QPushButton" name="pushButton">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
+  <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
-     <x>370</x>
+     <x>330</x>
      <y>360</y>
-     <width>211</width>
-     <height>31</height>
+     <width>261</width>
+     <height>112</height>
     </rect>
    </property>
-   <property name="text">
-    <string>Mortage Property</string>
-   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QPushButton" name="houseButton">
+      <property name="text">
+       <string>Add House: $amt</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="hotelButton">
+      <property name="text">
+       <string>Add Hotel: $amt</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="mortgageButton">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>Mortage Property</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="unmortgageButton">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>Unmortage Property</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources/>

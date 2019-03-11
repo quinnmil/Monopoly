@@ -1,5 +1,6 @@
 #include <cstdlib>
 #include <string>
+#include <cmath>
 #include "property.hpp"
 
 //Constructor
@@ -17,6 +18,11 @@ Property::Property(){
 	hotelCount = 0;
     mortgage = 0;
     unmortgage = 0;
+    oneHouseRent = 0;
+    twoHouseRent = 0;
+    threeHouseRent = 0;
+    fourHouseRent = 0;
+    hotelRent = 0;
 }
 
 //Overloaded Constructor
@@ -35,6 +41,11 @@ Property::Property(string name, string color, int cost, int rent, int colorSetRe
     this->unmortgage = unmortgage;
     houseCount = 0;
 	hotelCount = 0;
+
+    oneHouseRent = perHouseRent;
+    twoHouseRent = oneHouseRent * 3;
+    threeHouseRent = twoHouseRent * 2;
+    fourHouseRent = floor(threeHouseRent * 1.25);
 }
 
 //Deconstructor
@@ -83,6 +94,26 @@ int Property::getPerHouseRent(){
     return perHouseRent;
 }
 
+//Get 1 house rent
+int Property::getOneHouseRent(){
+    return oneHouseRent;
+}
+
+//Get 2 house rent
+int Property::getTwoHouseRent(){
+    return twoHouseRent;
+}
+
+//Get 3 house rent
+int Property::getThreeHouseRent(){
+    return threeHouseRent;
+}
+
+//Get 4 house rent
+int Property::getFourHouseRent(){
+    return fourHouseRent;
+}
+
 //Get Rent w/ Hotel
 int Property::getHotelRent(){
     return hotelRent;
@@ -128,6 +159,10 @@ bool Property::canBuy(){
     }
 }
 
+bool Property::getIsActive(){
+    return isActive;
+}
+
 //********************
 //
 //SET FUNCTIONS
@@ -147,6 +182,10 @@ void Property::setHouseCount(int houseCount){
 //Set # of Hotels
 void Property::setHotelCount(int hotelCount){
     this->hotelCount = hotelCount;
+}
+
+void Property::setActive(bool active){
+    isActive = active;
 }
 
 //**************************************************
