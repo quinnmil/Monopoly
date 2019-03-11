@@ -3,6 +3,7 @@
 #include "mainwindow.h"
 #include "game.hpp"
 
+#include <QListWidget>
 #include <QDialog>
 
 namespace Ui {
@@ -16,6 +17,9 @@ class PropertyDisplay : public QDialog
 public:
     explicit PropertyDisplay(QWidget *parent = nullptr , PlayerType* player = nullptr);
     ~PropertyDisplay();
+
+private slots:
+    void on_PropertyList_itemClicked(QListWidgetItem *item);
 
 private:
     Ui::PropertyDisplay *ui;

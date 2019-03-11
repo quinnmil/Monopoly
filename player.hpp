@@ -30,8 +30,8 @@ public:
     unsigned int getPosition();
     void setPosition(int die1, int die2);
 	
-	bool getJailStatus();
-	void setJailStatus(bool jailStatus);
+    int getJailTime();
+    void setJailTime(int jailTime);
 private:
 	string name;
     int piece;
@@ -39,7 +39,6 @@ private:
     QList<Property*> ownedProperty;
     QList<SpecialCard*> ownedSpecialCards;
     unsigned int position;
-	bool jailStatus;
     int jailTime; //Think about how this will work
 
 };

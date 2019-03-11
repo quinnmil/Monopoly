@@ -229,7 +229,7 @@ void MainWindow::displayOptions(){
         if (currentProperty->getName() == "Go to Jail"){
             game->jailPlayer();
             QString title = "Go to Jail";
-            QString message = "Go directly to jail. Do not pass Go or collect $200";
+            QString message = "Go directly to jail. Do not pass Go. Do not collect $200";
             QMessageBox info;
             info.setWindowTitle(title);
             info.setText(message);
@@ -369,5 +369,14 @@ void MainWindow::on_endTurn_button_clicked()
 
 void MainWindow::on_p1Property_clicked()
 {
-    PropertyDisplay(this, game->getCurrentPlayer());
+    PropertyDisplay *p = new PropertyDisplay(this, game->getCurrentPlayer());
+    p->setModal(true);
+    p->exec();
+}
+
+void MainWindow::on_p2Property_clicked()
+{
+    PropertyDisplay *p = new PropertyDisplay(this, game->getCurrentPlayer());
+    p->setModal(true);
+    p->exec();
 }

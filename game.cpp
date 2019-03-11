@@ -496,7 +496,10 @@ void Game::startTrade(PlayerType *p1, PlayerType *p2, Property *property){
 
 //Jail Player
 void Game::jailPlayer(){
-    currentPlayer->setJailStatus(true);
+    int currPos = currentPlayer->getPosition();
+    int needs = 10 - currPos;
+    currentPlayer->setPosition(needs, 0);
+    currentPlayer->setJailTime(3);
 }
 
 //Move Player
@@ -550,7 +553,7 @@ void Game::handleSpecialCard(SpecialCard *special){
         int currPos = currentPlayer->getPosition();
         int needs = 10 - currPos;
         currentPlayer->setPosition(needs, 0);
-        currentPlayer->setJailStatus(true);
+        currentPlayer->setJailTime(3);
     }
     else if(special->getSprung() == true){
         //Add to player's getOutOfJail var
