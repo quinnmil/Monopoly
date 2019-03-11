@@ -55,7 +55,7 @@ public:
     void movePlayer(int die1, int die2); //DONE
     void incrementCurrentPlayer();   //DONE
     void endturn();  //HALF-DONE--NEEDS UPDATE FUNCTION: 1. switches CurrentPlayer to next player. 2. Calls MainWindow::update() to update graphics.
-    void startTrade(PlayerType p1, PlayerType p2, Property *property); //NEEDS TO BE STARTED, HAS TO WORK WITH INTERFACE.
+    void startTrade(PlayerType *p1, PlayerType *p2, Property *property); //NEEDS TO BE STARTED, HAS TO WORK WITH INTERFACE.
     void jailPlayer(); //DONE
     void addHouse();
     void addHotel();
@@ -68,7 +68,7 @@ public:
 
     void buyProperty(); //DONE and WORKING
     void payRent(); //DONE and WORKING
-    void payPlayer(PlayerType p1, PlayerType p2, int value); //NEEDS WORK, NEEDS TO WORK WITH INTERFACE?
+    void payPlayer(PlayerType *p1, PlayerType *p2, int value); //NEEDS WORK, NEEDS TO WORK WITH INTERFACE?
 
     void payTax(); //adds to free parking money
     int getFreeParking(); //gets money in free parking
@@ -80,6 +80,7 @@ public:
     //
     //********************
 
+    void handleSpecialCard(SpecialCard *special);
     //string getSpecialMessage();
 
 

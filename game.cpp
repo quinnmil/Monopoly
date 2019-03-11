@@ -456,14 +456,14 @@ void Game::payRent(){
 }
 
 //Pay Player
-void Game::payPlayer(PlayerType p1, PlayerType p2, int value){ //p1 = who is paying, p2 = who is getting paid
-    p1.setMoney(p1.getMoney() - value);
-    if(p1.getMoney() < 0){
-        if(p1.getProperty().length() > 0){
+void Game::payPlayer(PlayerType *p1, PlayerType *p2, int value){ //p1 = who is paying, p2 = who is getting paid
+    p1->setMoney(p1->getMoney() - value);
+    if(p1->getMoney() <= 0){
+        if(p1->getProperty().length() > 0){
             //Do they own properties?
             //Do they want to sell/mortgage them?
             //If so, sell them and pay p2
-            p2.setMoney(p2.getMoney() + value);
+            p2->setMoney(p2->getMoney() + value);
         }
         else{
             //Otherwise player removed from game?
@@ -471,7 +471,7 @@ void Game::payPlayer(PlayerType p1, PlayerType p2, int value){ //p1 = who is pay
     }
     else{
         //If p1 is not bankrupt
-        p2.setMoney(p2.getMoney() + value);
+        p2->setMoney(p2->getMoney() + value);
     }
 }
 
@@ -488,7 +488,7 @@ int Game::getFreeParking(){
 }
 
 //Start Trade
-void Game::startTrade(PlayerType p1, PlayerType p2, Property *property){
+void Game::startTrade(PlayerType *p1, PlayerType *p2, Property *property){
 
 }
 
@@ -510,4 +510,46 @@ void Game::addHouse(){
 //Add Hotel
 void Game::addHotel(){
 
+}
+
+//Handles Special Cards
+void Game::handleSpecialCard(SpecialCard *special){
+    if(special->getMoveTo() != 0){
+        currentPlayer->setPosition(special->getMoveTo(), 0); //uses the SpecialCard's int position for die1 parameter
+    }
+    else if(special->getMoneyValue() != 0){
+        if(special->getGetPaid() == true){
+            currentPlayer->setMoney(currentPlayer->getMoney()+special->getMoneyValue()); //Adds special card's value to current player
+        }
+        else if(special->getYouPay() == true){
+            int index = getCurrentPlayerIndex();
+            PlayerType *p;
+            if(playerList.at(index + 1)){ //if player at position exists
+                p = playerList.at(index + 1);
+            }
+            else{ //only 2 players, they have to be infront or behind of current player
+                p = playerList.at(index - 1);
+            }
+            currentPlayer->setMoney(currentPlayer->getMoney() - special->getMoneyValue()); //subtracts from current player
+            p->setMoney(p->getMoney() + special->getMoneyValue()); //pays 2nd player
+        }
+        else{
+            //Shouldnt happen
+        }
+    }
+    else if(special->getToGo() == true){
+        //Go to GO
+        int currPos = currentPlayer->getPosition();
+        int needs = 40 - currPos; //40 positions, 0-39, so pos 40 == pos 0
+        currentPlayer->setPosition(needs, 0); //should move to GO, uses "needs" as die1
+    }
+    else if(special->getToJail() == true){
+        //Go to jail
+    }
+    else if(special->getSprung() == true){
+        //Add to player's getOutOfJail var
+    }
+    else{
+        //Shouldnt happen
+    }
 }
