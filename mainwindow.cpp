@@ -184,7 +184,7 @@ void MainWindow::displayOptions(){
         }
 
     }
-    else {
+    else { // can't buy this property
         // if GO -- could payout some extra money here, depending on house rules.
         if (currentProperty->getName() == "GO"){
             game->transferMoney(game->getCurrentPlayer(), 0, false);
@@ -238,7 +238,10 @@ void MainWindow::displayOptions(){
         }
 
         // if luxury tax
+        if (currentProperty->getName() == "Luxury Tax"){
         game->transferMoney(game->getCurrentPlayer(), 100, true);
+
+        }
     }
 
 }
@@ -280,7 +283,7 @@ void MainWindow::updateDisplay(){
   // update information display
   QString currentProperty = QString::fromStdString(game->getPropertyName());
   QString currentPropertyOwner = QString::fromStdString(game->getPropertyOwner());
-  qDebug() << "PropertyOwner: "  <<  currentPropertyOwner ;
+//  qDebug() << "PropertyOwner: "  <<  currentPropertyOwner ;
   int currentPropertyCost = game->getPropertyCost();
   int currentPropertyRent = game->getPropertyRent();
 
