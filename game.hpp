@@ -50,11 +50,12 @@ public:
     //********************
 
     void addBoardSpaces(); //DONE
+    void addSpecialCards(); //WIP
     int dieRoll(); //DONE
     void movePlayer(int die1, int die2); //DONE
     void incrementCurrentPlayer();   //DONE
     void endturn();  //HALF-DONE--NEEDS UPDATE FUNCTION: 1. switches CurrentPlayer to next player. 2. Calls MainWindow::update() to update graphics.
-    void startTrade(PlayerType p1, PlayerType p2, Property *property); //NEEDS TO BE STARTED, HAS TO WORK WITH INTERFACE.
+    void startTrade(PlayerType *p1, PlayerType *p2, Property *property); //NEEDS TO BE STARTED, HAS TO WORK WITH INTERFACE.
     void jailPlayer(); //DONE
     void addHouse();
     void addHotel();
@@ -67,11 +68,20 @@ public:
 
     void buyProperty(); //DONE and WORKING
     void payRent(); //DONE and WORKING
-    void payPlayer(PlayerType p1, PlayerType p2, int value); //NEEDS WORK, NEEDS TO WORK WITH INTERFACE?
+    void payPlayer(PlayerType *p1, PlayerType *p2, int value); //NEEDS WORK, NEEDS TO WORK WITH INTERFACE?
 
     void payTax(); //adds to free parking money
     int getFreeParking(); //gets money in free parking
     void transferMoney(PlayerType *p1, int amount, bool ifTax);
+
+    //********************
+    //
+    //Special Card Functions
+    //
+    //********************
+
+    void handleSpecialCard(SpecialCard *special);
+    //string getSpecialMessage();
 
 
 private:
@@ -82,8 +92,8 @@ private:
 
     QList<PlayerType*> playerList;       // a list of playerType objects
     QList<Property*> gameSpaceList;  // a list of PropertyType objects. gameSpaceList[0]->getName() = "Go"  gameSpaceList[39]->getName() = "BoardWalk"
-    //QList<SpecialCard*> communityChestList; --> See that you land on a special card position, pull (and remove) a card from this QList and add it to the PlayerType's special card QList.
-    //QList<SpecialCard*> chanceList;         --> After using this card, it will be removed from PlayerType's QList and re-added to the back of the Game Class's QList.
-    //                                        --> Card will be selected from the Game's QList using a random integer in the .at() function.
+    QList<SpecialCard*> communityChestList; //--> See that you land on a special card position, pull (and remove) a card from this QList and add it to the PlayerType's special card QList.
+    QList<SpecialCard*> chanceList;        // --> After using this card, it will be removed from PlayerType's QList and re-added to the back of the Game Class's QList.
+                                           // --> Card will be selected from the Game's QList using a random integer in the .at() function.
 };
 #endif /* GAME_HPP_ */

@@ -319,6 +319,77 @@ void Game::addBoardSpaces(){
     gameSpaceList.push_back(p39);
 }
 
+//Adds all special cards to board
+void Game::addSpecialCards(){
+    //CHANCE CARDS
+    SpecialCard *s1 = new SpecialCard("You have been elected as chairman of the board. Pay each player $50.", 0, 50, false, true, false, false, false);
+    chanceList.push_back(s1);
+
+    SpecialCard *s2 = new SpecialCard("Go back 3 spaces.", -3, 0, false, false, false, false, false);
+    chanceList.push_back(s2);
+
+    SpecialCard *s3 = new SpecialCard("Speeding fine. Pay $15.", 0, 15, false, true, false, false, false);
+    chanceList.push_back(s3);
+
+    SpecialCard *s4 = new SpecialCard("Get out of jail free!", 0, 0, false, false, false, true, false);
+    chanceList.push_back(s4);
+
+    SpecialCard *s5 = new SpecialCard("Your building loan matures. Collect $150.", 0, 150, true, false, false, false, false);
+    chanceList.push_back(s5);
+
+    SpecialCard *s6 = new SpecialCard("Go to jail. Do not pass go. Do not collect $200.", 0, 0, false, false, false, false, true);
+    chanceList.push_back(s6);
+
+    SpecialCard *s7 = new SpecialCard("Advance to GO. Collect $200.", 0, 200, true, false, true, false, false);
+    chanceList.push_back(s7);
+
+    //COMMUNITY CHEST CARDS
+    SpecialCard *c1 = new SpecialCard("Advance to GO. Collect $200.", 0, 200, true, false, true, false, false);
+    communityChestList.push_back(c1);
+
+    SpecialCard *c2 = new SpecialCard("Bank error in your favor. Collect $200.", 0, 200, true, false, false, false, false);
+    communityChestList.push_back(c2);
+
+    SpecialCard *c3 = new SpecialCard("You have won second prize in a beauty contest. Collect $10.", 0, 10, true, false, false, false, false);
+    communityChestList.push_back(c3);
+
+    SpecialCard *c4 = new SpecialCard("Get out of jail free!", 0, 0, false, false, false, true, false);
+    communityChestList.push_back(c4);
+
+    SpecialCard *c5 = new SpecialCard("Doctor's fees. Pay $50.", 0, 50, false, true, false, false, false);
+    communityChestList.push_back(c5);
+
+    SpecialCard *c6 = new SpecialCard("From sale of stock, you get $50", 0, 50, true, false, false, false, false);
+    communityChestList.push_back(c6);
+
+    SpecialCard *c7 = new SpecialCard("You inherit $100.", 0, 100, true, false, false, false, false);
+    communityChestList.push_back(c7);
+
+    SpecialCard *c8 = new SpecialCard("It's your birthday. Collect $10 from each player.", 0, 10, true, false, false, false, false);
+    communityChestList.push_back(c8);
+
+    SpecialCard *c9 = new SpecialCard("Collect $25 consultancy fee.", 0, 25, true, false, false, false, false);
+    communityChestList.push_back(c9);
+
+    SpecialCard *c10 = new SpecialCard("Go to jail. Do not pass go. Do not collect $200.", 0, 0, false, false, false, false, true);
+    communityChestList.push_back(c10);
+
+    SpecialCard *c11 = new SpecialCard("Hospital Fees. Pay $100.", 0, 100, false, true, false, false, false);
+    communityChestList.push_back(c11);
+
+    SpecialCard *c12 = new SpecialCard("Income tax refund. Collect $20.", 0, 20, true, false, false, false, false);
+    communityChestList.push_back(c12);
+
+    SpecialCard *c13 = new SpecialCard("School fees. Pay $50.", 0, 50, false, true, false, false, false);
+    communityChestList.push_back(c13);
+
+    SpecialCard *c14 = new SpecialCard("Life insurance matures. Collect $100.", 0, 100, true, false, false, false, false);
+    communityChestList.push_back(c14);
+
+    SpecialCard *c15 = new SpecialCard("Holiday fund matures. Collect $100.", 0, 100, true, false, false, false, false);
+    communityChestList.push_back(c15);
+}
+
 //Sets new current player
 void Game::incrementCurrentPlayer(){
     int pos = getCurrentPlayerIndex();
@@ -387,14 +458,14 @@ void Game::payRent(){
 }
 
 //Pay Player
-void Game::payPlayer(PlayerType p1, PlayerType p2, int value){ //p1 = who is paying, p2 = who is getting paid
-    p1.setMoney(p1.getMoney() - value);
-    if(p1.getMoney() < 0){
-        if(p1.getProperty().length() > 0){
+void Game::payPlayer(PlayerType *p1, PlayerType *p2, int value){ //p1 = who is paying, p2 = who is getting paid
+    p1->setMoney(p1->getMoney() - value);
+    if(p1->getMoney() <= 0){
+        if(p1->getProperty().length() > 0){
             //Do they own properties?
             //Do they want to sell/mortgage them?
             //If so, sell them and pay p2
-            p2.setMoney(p2.getMoney() + value);
+            p2->setMoney(p2->getMoney() + value);
         }
         else{
             //Otherwise player removed from game?
@@ -402,7 +473,7 @@ void Game::payPlayer(PlayerType p1, PlayerType p2, int value){ //p1 = who is pay
     }
     else{
         //If p1 is not bankrupt
-        p2.setMoney(p2.getMoney() + value);
+        p2->setMoney(p2->getMoney() + value);
     }
 }
 
@@ -419,7 +490,7 @@ int Game::getFreeParking(){
 }
 
 //Start Trade
-void Game::startTrade(PlayerType p1, PlayerType p2, Property *property){
+void Game::startTrade(PlayerType *p1, PlayerType *p2, Property *property){
 
 }
 
@@ -441,4 +512,50 @@ void Game::addHouse(){
 //Add Hotel
 void Game::addHotel(){
 
+}
+
+//Handles Special Cards -- !!!UNTESTED!!!
+void Game::handleSpecialCard(SpecialCard *special){
+    if(special->getMoveTo() != 0){
+        currentPlayer->setPosition(special->getMoveTo(), 0); //uses the SpecialCard's int position for die1 parameter
+    }
+    else if(special->getMoneyValue() != 0){
+        if(special->getGetPaid() == true){
+            currentPlayer->setMoney(currentPlayer->getMoney()+special->getMoneyValue()); //Adds special card's value to current player
+        }
+        else if(special->getYouPay() == true){
+            int index = getCurrentPlayerIndex();
+            PlayerType *p;
+            if(playerList.at(index + 1)){ //if player at position exists
+                p = playerList.at(index + 1);
+            }
+            else{ //only 2 players, they have to be infront or behind of current player
+                p = playerList.at(index - 1);
+            }
+            currentPlayer->setMoney(currentPlayer->getMoney() - special->getMoneyValue()); //subtracts from current player
+            p->setMoney(p->getMoney() + special->getMoneyValue()); //pays 2nd player
+        }
+        else{
+            //Shouldnt happen
+        }
+    }
+    else if(special->getToGo() == true){
+        //Go to GO
+        int currPos = currentPlayer->getPosition();
+        int needs = 40 - currPos; //40 positions, 0-39, so pos 40 == pos 0
+        currentPlayer->setPosition(needs, 0); //should move to GO, uses "needs" as die1
+    }
+    else if(special->getToJail() == true){
+        //Go to jail
+        int currPos = currentPlayer->getPosition();
+        int needs = 10 - currPos;
+        currentPlayer->setPosition(needs, 0);
+        currentPlayer->setJailStatus(true);
+    }
+    else if(special->getSprung() == true){
+        //Add to player's getOutOfJail var
+    }
+    else{
+        //Shouldnt happen
+    }
 }

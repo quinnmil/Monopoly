@@ -69,9 +69,9 @@ QList<Property*> PlayerType::getProperty(){
 }
 
 //Get Special Cards
-//vector<SpecialCard> PlayerType::getSpecial(){
-//	return ownedSpecial;
-//}
+QList<SpecialCard*> PlayerType::getSpecialCards(){
+    return ownedSpecialCards;
+}
 
 //********************
 //
@@ -105,17 +105,17 @@ void PlayerType::setProperty(Property *property){
 }
 
 //Set Special Cards
-//void PlayerType::setSpecial(){
-
-//}
+void PlayerType::setSpecial(SpecialCard *special){
+    ownedSpecialCards.push_back(special);
+}
 
 //Set Position
 void PlayerType::setPosition(int die1, int die2){
     position += (die1 + die2);
-    if(position > 40){
+    if(position > 39){
         // if passes go, pays 200.
         this->setMoney(this->getMoney()+200);
-        position = position % 40;
+        position = position % 39;
     }
 }
 
