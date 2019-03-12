@@ -131,7 +131,7 @@ int Property::getUnmortgage(){
 
 //Get House Cost
 int Property::getHouseCost(){
-    return houseCount;
+    return houseCost;
 }
 
 //Get Hotel Cost

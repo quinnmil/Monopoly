@@ -218,7 +218,7 @@
     </layout>
    </widget>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>330</x>
@@ -234,7 +234,7 @@
        <bool>false</bool>
       </property>
       <property name="text">
-       <string>Add House: $amt</string>
+       <string>Add House</string>
       </property>
      </widget>
     </item>
@@ -244,7 +244,7 @@
        <bool>false</bool>
       </property>
       <property name="text">
-       <string>Add Hotel: $amt</string>
+       <string>Add Hotel</string>
       </property>
      </widget>
     </item>

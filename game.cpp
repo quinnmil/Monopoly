@@ -150,6 +150,18 @@ int Game::getPropertyRent(){
     return rent;
 }
 
+int Game::getPropertyHouses(){
+    int pos = currentPlayer->getPosition();
+    int houses = gameSpaceList.at(pos)->getHouseCount();
+    return houses;
+}
+
+int Game::getPropertyHotels(){
+    int pos = currentPlayer->getPosition();
+    int hotels = gameSpaceList.at(pos)->getHotelCount();
+    return hotels;
+}
+
 //********************
 //
 //SET FUNCTIONS

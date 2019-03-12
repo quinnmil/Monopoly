@@ -74,6 +74,9 @@ void PropertyDisplay::on_PropertyList_itemClicked(QListWidgetItem *item)
             ui->mortgageString->setText(QString::number(p->getMortgage()));
             ui->unmortgageString->setText(QString::number(p->getUnmortgage()));
 
+            ui->houseButton->setText(QString("Add house: $%1").arg(p->getHouseCost()));
+            ui->hotelButton->setText(QString("Add hotel: $%1").arg(p->getHotelCost()));
+
             //Handles which rent is displayed
             if(p->getHotelCount() > 0){
                 ui->hotelButton->setEnabled(false);
@@ -109,6 +112,8 @@ void PropertyDisplay::on_PropertyList_itemClicked(QListWidgetItem *item)
 
 void PropertyDisplay::on_houseButton_clicked()
 {
+    Game *g = ((MainWindow*)parentWidget())->getGame();
+    PlayerType *cp = g->getCurrentPlayer();
     QString currPropName = ui->PropertyList->currentItem()->text();
     for(int i = 0; i < PropertyList.length(); i++){
         Property *p = PropertyList.at(i);
@@ -118,18 +123,22 @@ void PropertyDisplay::on_houseButton_clicked()
             case 0:
                 p->setRent(p->getOneHouseRent());
                 p->setHouseCount(1);
+                cp->setMoney(cp->getMoney() - p->getHouseCost());
                 break;
             case 1:
                 p->setRent(p->getTwoHouseRent());
                 p->setHouseCount(2);
+                cp->setMoney(cp->getMoney() - p->getHouseCost());
                 break;
             case 2:
                 p->setRent(p->getThreeHouseRent());
                 p->setHouseCount(3);
+                cp->setMoney(cp->getMoney() - p->getHouseCost());
                 break;
             case 3:
                 p->setRent(p->getFourHouseRent());
                 p->setHouseCount(4);
+                cp->setMoney(cp->getMoney() - p->getHouseCost());
                 break;
             default:
                 //Shouldn't matter
@@ -141,6 +150,8 @@ void PropertyDisplay::on_houseButton_clicked()
 
 void PropertyDisplay::on_hotelButton_clicked()
 {
+    Game *g = ((MainWindow*)parentWidget())->getGame();
+    PlayerType *cp = g->getCurrentPlayer();
     QString currPropName = ui->PropertyList->currentItem()->text();
     for(int i = 0; i < PropertyList.length(); i++){
         Property *p = PropertyList.at(i);
@@ -149,6 +160,7 @@ void PropertyDisplay::on_hotelButton_clicked()
             if(hotel == 0){
                 p->setRent(p->getHotelRent());
                 p->setHotelCount(1);
+                cp->setMoney(cp->getMoney() - p->getHotelCost());
             }
         }
     }
