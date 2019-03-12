@@ -31,6 +31,7 @@ public:
 	void setHouseCount(int houseCount);
 	void setHotelCount(int hotelCount);
     void setActive(bool active);
+    void setRent(int rent);
     bool canBuy();
     bool getIsActive();
 

@@ -188,6 +188,10 @@ void Property::setActive(bool active){
     isActive = active;
 }
 
+void Property::setRent(int rent){
+    this->rent = rent;
+}
+
 //**************************************************
 //
 //SPECIAL CARDS

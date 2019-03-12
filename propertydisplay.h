@@ -21,6 +21,10 @@ public:
 private slots:
     void on_PropertyList_itemClicked(QListWidgetItem *item);
 
+    void on_houseButton_clicked();
+
+    void on_hotelButton_clicked();
+
 private:
     Ui::PropertyDisplay *ui;
     QList<Property*> PropertyList;

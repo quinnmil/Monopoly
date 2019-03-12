@@ -21,15 +21,14 @@ PropertyDisplay::PropertyDisplay(QWidget *parent, PlayerType* player) :
         ui->PropertyList->addItem(name);
     }
 
+    ui->hotelButton->setEnabled(false); //Always grey until 4 houses
     if(player->getName().compare(g->getCurrentPlayerName()) != 0){
         ui->houseButton->setEnabled(false);
-        ui->hotelButton->setEnabled(false);
         ui->mortgageButton->setEnabled(false);
         ui->unmortgageButton->setEnabled(false);
     }
     else{
         ui->houseButton->setEnabled(true);
-        ui->hotelButton->setEnabled(true);
         ui->mortgageButton->setEnabled(true);
         ui->unmortgageButton->setEnabled(true);
     }
@@ -77,10 +76,15 @@ void PropertyDisplay::on_PropertyList_itemClicked(QListWidgetItem *item)
 
             //Handles which rent is displayed
             if(p->getHotelCount() > 0){
+                ui->hotelButton->setEnabled(false);
                 ui->rentString->setText(QString::number(p->getHotelRent()));
             }
             else if(p->getHouseCount() > 0){
                 int count = p->getHouseCount();
+                if(count == 4){
+                    ui->houseButton->setEnabled(false);
+                    ui->hotelButton->setEnabled(true);
+                }
                 switch(count){
                 case 1:
                     ui->rentString->setText(QString::number(p->getOneHouseRent()));
@@ -101,4 +105,41 @@ void PropertyDisplay::on_PropertyList_itemClicked(QListWidgetItem *item)
             }
         }
     }
+}
+
+void PropertyDisplay::on_houseButton_clicked()
+{
+    QString currPropName = ui->PropertyList->currentItem()->text();
+    for(int i = 0; i < PropertyList.length(); i++){
+        Property *p = PropertyList.at(i);
+        if(p->getName().compare(currPropName.toStdString()) == 0){
+            int houses = p->getHouseCount();
+            switch(houses){
+            case 0:
+                p->setRent(p->getOneHouseRent());
+                p->setHouseCount(1);
+                break;
+            case 1:
+                p->setRent(p->getTwoHouseRent());
+                p->setHouseCount(2);
+                break;
+            case 2:
+                p->setRent(p->getThreeHouseRent());
+                p->setHouseCount(3);
+                break;
+            case 3:
+                p->setRent(p->getFourHouseRent());
+                p->setHouseCount(4);
+                break;
+            default:
+                //Shouldn't matter
+                break;
+            }
+        }
+    }
+}
+
+void PropertyDisplay::on_hotelButton_clicked()
+{
+
 }
