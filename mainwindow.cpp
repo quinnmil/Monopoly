@@ -300,11 +300,14 @@ void MainWindow::updateDisplay(){
 //  qDebug() << "PropertyOwner: "  <<  currentPropertyOwner ;
   int currentPropertyCost = game->getPropertyCost();
   int currentPropertyRent = game->getPropertyRent();
+  int currentPropertyHouses = game->getPropertyHouses();
+  int currentPropertyHotels = game->getPropertyHotels();
 
   ui->PropertyString->setText(currentProperty);
   ui->OwnerString->setText(currentPropertyOwner);
   ui->PriceString->setNum(currentPropertyCost);
   ui->RentString->setNum(currentPropertyRent);
+  ui->InfoString->setText(QString("%1 houses, %2 hotels").arg(QString::number(currentPropertyHouses), QString::number(currentPropertyHotels)));
 
   //update game stats
   ui->p1Money->setText(QString::number(PlayerList[0]->getMoney()));
