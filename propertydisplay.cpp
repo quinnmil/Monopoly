@@ -141,5 +141,15 @@ void PropertyDisplay::on_houseButton_clicked()
 
 void PropertyDisplay::on_hotelButton_clicked()
 {
-
+    QString currPropName = ui->PropertyList->currentItem()->text();
+    for(int i = 0; i < PropertyList.length(); i++){
+        Property *p = PropertyList.at(i);
+        if(p->getName().compare(currPropName.toStdString()) == 0){
+            int hotel = p->getHotelCount();
+            if(hotel == 0){
+                p->setRent(p->getHotelRent());
+                p->setHotelCount(1);
+            }
+        }
+    }
 }
