@@ -162,6 +162,12 @@ int Game::getPropertyHotels(){
     return hotels;
 }
 
+bool Game::getIsPropertyActive(){
+    int pos = currentPlayer->getPosition();
+    bool isActive = gameSpaceList.at(pos)->getIsActive();
+    return isActive;
+}
+
 //********************
 //
 //SET FUNCTIONS

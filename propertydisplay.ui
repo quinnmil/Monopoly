@@ -48,7 +48,7 @@
      <item>
       <widget class="QLabel" name="rentLabel">
        <property name="text">
-        <string>Rent</string>
+        <string>Rent:</string>
        </property>
       </widget>
      </item>
@@ -74,7 +74,7 @@
      <item>
       <widget class="QLabel" name="nameLabel">
        <property name="text">
-        <string>Name</string>
+        <string>Name:</string>
        </property>
       </widget>
      </item>
@@ -100,7 +100,7 @@
      <item>
       <widget class="QLabel" name="houseLabel">
        <property name="text">
-        <string>Houses</string>
+        <string>Houses:</string>
        </property>
       </widget>
      </item>
@@ -126,38 +126,12 @@
      <item>
       <widget class="QLabel" name="hotelLabel">
        <property name="text">
-        <string>Hotels</string>
+        <string>Hotels:</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="hotelString">
-       <property name="text">
-        <string>No object selected</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="layoutWidget_8">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>220</y>
-      <width>251</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_9">
-     <item>
-      <widget class="QLabel" name="mortgageLabel">
-       <property name="text">
-        <string>Mortgage price</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="mortgageString">
        <property name="text">
         <string>No object selected</string>
        </property>
@@ -178,7 +152,7 @@
      <item>
       <widget class="QLabel" name="colorLabel">
        <property name="text">
-        <string>Color</string>
+        <string>Color:</string>
        </property>
       </widget>
      </item>
@@ -195,21 +169,21 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>260</y>
+      <y>220</y>
       <width>251</width>
       <height>31</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_11">
      <item>
-      <widget class="QLabel" name="unmortgageLabel">
+      <widget class="QLabel" name="mortgageLabel">
        <property name="text">
-        <string>Unmortgage Price</string>
+        <string>Mortgaged:</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="unmortgageString">
+      <widget class="QLabel" name="mortgageString">
        <property name="text">
         <string>No object selected</string>
        </property>

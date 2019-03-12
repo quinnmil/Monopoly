@@ -23,6 +23,7 @@ Property::Property(){
     threeHouseRent = 0;
     fourHouseRent = 0;
     hotelRent = 0;
+    isActive = true;
 }
 
 //Overloaded Constructor
@@ -41,6 +42,7 @@ Property::Property(string name, string color, int cost, int rent, int colorSetRe
     this->unmortgage = unmortgage;
     houseCount = 0;
 	hotelCount = 0;
+    isActive = true;
 
     oneHouseRent = perHouseRent;
     twoHouseRent = oneHouseRent * 3;

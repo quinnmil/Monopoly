@@ -41,8 +41,9 @@ public:
     string getPropertyOwner();  //DONE: name of owner or "unowned"
     int getPropertyCost(); //DONE
     int getPropertyRent(); //DONE
-    int getPropertyHouses();
-    int getPropertyHotels();
+    int getPropertyHouses(); //DONE
+    int getPropertyHotels(); //DONE
+    bool getIsPropertyActive(); //DONE
     string getPropertyInfo(); // property description if special property, otherwise empty string is fine.
 
     //********************

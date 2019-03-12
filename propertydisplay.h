@@ -25,6 +25,10 @@ private slots:
 
     void on_hotelButton_clicked();
 
+    void on_mortgageButton_clicked();
+
+    void on_unmortgageButton_clicked();
+
 private:
     Ui::PropertyDisplay *ui;
     QList<Property*> PropertyList;
