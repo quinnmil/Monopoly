@@ -23,6 +23,8 @@ private slots:
 
 private:
     Ui::PropertyDisplay *ui;
+    QList<Property*> PropertyList;
+    QList<PlayerType*> PlayerList;
 };
 
 #endif // PROPERTYDISPLAY_H

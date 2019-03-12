@@ -383,14 +383,14 @@ void MainWindow::on_endTurn_button_clicked()
 
 void MainWindow::on_p1Property_clicked()
 {
-    PropertyDisplay *p = new PropertyDisplay(this, game->getCurrentPlayer());
+    PropertyDisplay *p = new PropertyDisplay(this, PlayerList.at(0));
     p->setModal(true);
     p->exec();
 }
 
 void MainWindow::on_p2Property_clicked()
 {
-    PropertyDisplay *p = new PropertyDisplay(this, game->getCurrentPlayer());
+    PropertyDisplay *p = new PropertyDisplay(this, PlayerList.at(1));
     p->setModal(true);
     p->exec();
 }

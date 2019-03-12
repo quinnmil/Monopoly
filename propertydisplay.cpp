@@ -13,11 +13,11 @@ PropertyDisplay::PropertyDisplay(QWidget *parent, PlayerType* player) :
     // get game from parent
     // get propertyList from player
     Game *g = ((MainWindow*)parentWidget())->getGame();
-    QList<Property*> propertyList = player->getProperty();
-    QList<PlayerType*> playerList = g->getPlayerList();
+    PropertyList = player->getProperty();
+    PlayerList = g->getPlayerList();
 
-    for (int i = 0; i < propertyList.length(); i++){
-        QString name = QString::fromStdString(propertyList[i]->getName());
+    for (int i = 0; i < PropertyList.length(); i++){
+        QString name = QString::fromStdString(PropertyList[i]->getName());
         ui->PropertyList->addItem(name);
     }
     /*
@@ -51,10 +51,8 @@ PropertyDisplay::~PropertyDisplay()
 void PropertyDisplay::on_PropertyList_itemClicked(QListWidgetItem *item)
 {
     QString currPropName = item->text(); //Property name
-    Game *g = ((MainWindow*)parentWidget())->getGame(); //Gets game for currentPlayer
-    QList<Property*> propertyList = g->getCurrentPlayer()->getProperty(); //Gets currentPlayer's properties
-    for(int i = 0; i < propertyList.length(); i++){
-        Property *p = propertyList.at(i);
+    for(int i = 0; i < PropertyList.length(); i++){
+        Property *p = PropertyList.at(i);
         if(p->getName().compare(currPropName.toStdString()) == 0){ //If property matches the given "item"s name
             ui->nameString->setText(QString::fromStdString(p->getName()));
             ui->colorString->setText(QString::fromStdString(p->getColor()));
