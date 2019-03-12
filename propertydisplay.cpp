@@ -20,6 +20,20 @@ PropertyDisplay::PropertyDisplay(QWidget *parent, PlayerType* player) :
         QString name = QString::fromStdString(PropertyList[i]->getName());
         ui->PropertyList->addItem(name);
     }
+
+    if(player->getName().compare(g->getCurrentPlayerName()) != 0){
+        ui->houseButton->setEnabled(false);
+        ui->hotelButton->setEnabled(false);
+        ui->mortgageButton->setEnabled(false);
+        ui->unmortgageButton->setEnabled(false);
+    }
+    else{
+        ui->houseButton->setEnabled(true);
+        ui->hotelButton->setEnabled(true);
+        ui->mortgageButton->setEnabled(true);
+        ui->unmortgageButton->setEnabled(true);
+    }
+
     /*
      *  this generates the list.
         for (int i = 0; i < propertyList.length(); i++){
