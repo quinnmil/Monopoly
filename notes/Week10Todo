@@ -3,30 +3,30 @@
 Game Features - top priority
 
 - Game ending sequence
-  - check if players have money
-  - if they don't offer options to mortgage.
-  - offer to declare bankruptcy and lose.
+  - check if players have money - Q
+  - if they don't offer options to mortgage. - Q
+  - offer to declare bankruptcy and lose. - Q
 
 - property management
-  - list properties - M
-  - show information about owned properties - M
-  - allow to mortgage properties.
+  - list properties - DONE
+  - show information about owned properties - DONE
+  - allow to mortgage properties. - DONE
 
-- before playing rent, check that property is not mortgaged.
-  - add "active" attribute to propertyType, and bool isActive() method. - M
+- before playing rent, check that property is not mortgaged. - Q
+  - add "active" attribute to propertyType, and bool isActive() method. - DONE
 
 - Jail
-  - go to jail should move player to jail. - M
+  - go to jail should move player to jail. - DONE?
   - when in jail, allow player to try and roll doubles.
   - in jail for three turns.
-  - make JailStatus an int. (initialize to 0, set to 3 when goToJail()) - M
+  - make JailStatus an int. (initialize to 0, set to 3 when goToJail()) - DONE
 
-- don't let player end turn before roll.
+- don't let player end turn before roll. - Q
 
-
+- think about how to identify a colorSet and how incorperate colorSetRent - Q/M
 
 Game Features - lower priority
 
 - clean up game start screen.
-- add dice graphics
+- add dice graphics - DONE
 - add 'about game' display.
