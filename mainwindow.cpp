@@ -33,6 +33,12 @@ MainWindow::MainWindow(QWidget *parent) :
     QString p1Name = login.getPlayerOne();
     QString p2Name = login.getPlayerTwo();
 
+    QFont f("Sans Serif", 14, QFont::Bold);
+    ui->p1Money->setAlignment(Qt::AlignCenter);
+    ui->p2Money->setAlignment(Qt::AlignCenter);
+    ui->p1Money->setFont(f);
+    ui->p2Money->setFont(f);
+
     this->startGame(p1Name, p2Name);
     this->updateDisplay();
 }
@@ -289,12 +295,22 @@ void MainWindow::updateDisplay(){
   int currentPropertyRent = game->getPropertyRent();
   int currentPropertyHouses = game->getPropertyHouses();
   int currentPropertyHotels = game->getPropertyHotels();
+  int currentOneHouse = game->getPropertyOneHouse();
+  int currentTwoHouse = game->getPropertyTwoHouse();
+  int currentThreeHouse = game->getPropertyThreeHouse();
+  int currentFourHouse = game->getPropertyFourHouse();
+  int currentHotel = game->getPropertyHotelRent();
 
-  ui->PropertyString->setText(currentProperty);
-  ui->OwnerString->setText(currentPropertyOwner);
-  ui->PriceString->setNum(currentPropertyCost);
-  ui->RentString->setNum(currentPropertyRent);
-  ui->InfoString->setText(QString("%1 houses, %2 hotels").arg(QString::number(currentPropertyHouses), QString::number(currentPropertyHotels)));
+  ui->propertyString->setText(currentProperty);
+  ui->ownerString->setText(currentPropertyOwner);
+  ui->priceString->setNum(currentPropertyCost);
+  ui->rentString->setNum(currentPropertyRent);
+  ui->oneHouseString->setNum(currentOneHouse);
+  ui->twoHouseString->setNum(currentTwoHouse);
+  ui->threeHouseString->setNum(currentThreeHouse);
+  ui->fourHouseString->setNum(currentFourHouse);
+  ui->hotelString->setNum(currentHotel);
+  ui->infoString->setText(QString("%1 houses, %2 hotels").arg(QString::number(currentPropertyHouses), QString::number(currentPropertyHotels)));
 
   //update game stats
   ui->p1Money->setText(QString::number(PlayerList[0]->getMoney()));
