@@ -83,6 +83,7 @@ void MainWindow::on_pushButton_clicked(){
     // if player not in jail
     if (game->getCurrentPlayer()->getJailTime() == 0) {
         // move player.
+        this->game->movePlayer(die1, die2);
 
     }
     else {
