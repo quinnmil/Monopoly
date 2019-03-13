@@ -8,30 +8,41 @@ using namespace std;
 
 class PlayerType{
 public:
-	PlayerType();
+    //********************
+    //
+    //Constructors/Deconstructors
+    //
+    //********************
+    PlayerType();
 	PlayerType(string &name, string &piece, int money);
 	~PlayerType();
 
-	string getName();
-	void setName(string &name);
+    //********************
+    //
+    //Getters
+    //
+    //********************
+    string getName(); //Gets player name
+    int getPiece(); //Gets the piece the player uses
+    int getMoney(); //Gets a player's money
+    QList<Property*> getProperty(); //Gets the player's owned property list
+    QList<SpecialCard*> getSpecialCards(); //Gets the player's stored special cards
+    unsigned int getPosition(); //Gets the player's position on the board
+    int getJailTime(); //Gets the amount of turns the player is left in jail
 
-    int getPiece();
-    void setPiece(string &piece);
-	
-	int getMoney();
-	void setMoney(int money);
-	
-    QList<Property*> getProperty();
-    void setProperty(Property *property);
+    //********************
+    //
+    //Setters
+    //
+    //********************
+    void setName(string &name); //Set player name
+    void setPiece(string &piece); //Set player piece
+    void setMoney(int money); //Set player money amount
+    void setProperty(Property *property); //Add to player property list
+    void setSpecial(SpecialCard* special); //Add special card to special card list
+    void setPosition(int die1, int die2); //Set player position on board
+    void setJailTime(int jailTime); //Set time player is in jail
 
-    QList<SpecialCard*> getSpecialCards();
-    void setSpecial(SpecialCard* special);
-	
-    unsigned int getPosition();
-    void setPosition(int die1, int die2);
-	
-    int getJailTime();
-    void setJailTime(int jailTime);
 private:
 	string name;
     int piece;
@@ -39,7 +50,7 @@ private:
     QList<Property*> ownedProperty;
     QList<SpecialCard*> ownedSpecialCards;
     unsigned int position;
-    int jailTime; //Think about how this will work
+    int jailTime;
 
 };
 

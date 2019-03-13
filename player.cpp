@@ -4,13 +4,17 @@
 #include "player.hpp"
 #include "property.hpp"
 
+//********************
+//
+//Constructors/Deconstructor
+//
+//********************
+
 //Constructor
 PlayerType::PlayerType(){
 	name = "Player1";
     piece = 1;
     money = 1500;
-    //ownedProperty(0); Unnecessary?
-    //ownedSpecial(0); Unnecessary?
     position = 0;
     jailTime = 0;
 }
@@ -18,11 +22,8 @@ PlayerType::PlayerType(){
 //Overloaded Constructor
 PlayerType::PlayerType(string &name, string &piece, int money){
     this->name = name;
-    // MASON -- I changed this so I could test with two players.
-    setPiece(piece);
     this->money = money;
-    //ownedProperty(0); Unnecessary?
-    //ownedSpecial(0); Unnecessary?
+    setPiece(piece);
 	position = 0;
     jailTime = 0;
 }
@@ -99,12 +100,12 @@ void PlayerType::setMoney(int money){
     this->money = money;
 }
 
-//Set Property
+//Add property to propertyList
 void PlayerType::setProperty(Property *property){
     ownedProperty.push_back(property);
 }
 
-//Set Special Cards
+//Add special card to list
 void PlayerType::setSpecial(SpecialCard *special){
     ownedSpecialCards.push_back(special);
 }

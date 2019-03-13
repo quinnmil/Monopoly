@@ -4,6 +4,13 @@
 #include <QDebug>
 #include "game.hpp"
 
+
+//********************
+//
+//Constructors/Deconstructor
+//
+//********************
+
 //8 Player Default Constructor
 Game::Game(){
     addBoardSpaces(); //Adds properties to gameSpaceList(Instantiated in header)

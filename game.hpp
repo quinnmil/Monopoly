@@ -77,7 +77,7 @@ public:
     void payPlayer(PlayerType *p1, PlayerType *p2, int value); //Pay a player
     void payTax(); //Pays Tax
     int getFreeParking(); //Pays the current player the money that is sitting in free parking
-    void transferMoney(PlayerType *p1, int amount, bool ifTax); //
+    void transferMoney(PlayerType *p1, int amount, bool ifTax); //Pays tax to free parking
 
     //********************
     //
@@ -85,7 +85,7 @@ public:
     //
     //********************
 
-    void handleSpecialCard(SpecialCard *special);
+    void handleSpecialCard(SpecialCard *special); //Handles cases for special cards
 
 private:
     PlayerType *currentPlayer;   // this is key, as most of the functions above act relative to the currentPlayer.

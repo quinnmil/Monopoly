@@ -25,7 +25,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
 HEADERS += game.hpp \
            player.hpp \
            property.hpp \
-           propertytype.hpp \
            mainwindow.h \
     propertydisplay.h \
     login.h
@@ -36,7 +35,6 @@ FORMS += \
 SOURCES += game.cpp \
            player.cpp \
            property.cpp \
-           propertytype.cpp \
            mainwindow.cpp \
     propertydisplay.cpp \
     login.cpp \

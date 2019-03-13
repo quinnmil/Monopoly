@@ -7,10 +7,10 @@ Login::Login(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    QFont f("Times New Roman", 20);
-    ui->welcomeLabel->setFont(f);
-    ui->welcomeLabel->setAlignment(Qt::AlignCenter);
-    this->setWindowTitle("Login");
+    QFont f("Times New Roman", 20); //Creates new font to use
+    ui->welcomeLabel->setFont(f); //Sets font
+    ui->welcomeLabel->setAlignment(Qt::AlignCenter); //Aligns text to center
+    this->setWindowTitle("Login"); //Sets window title
 }
 
 Login::~Login()
@@ -28,7 +28,7 @@ QString Login::getPlayerTwo(){
 
 void Login::on_enterNameButton_clicked()
 {
-    playerOne = ui->p1_lineEdit->text();
+    playerOne = ui->p1_lineEdit->text(); //Store usernames
     playerTwo = ui->p2_lineEdit->text();
-    ui->buttonBox->setEnabled(true);
+    ui->buttonBox->setEnabled(true); //Log in with "ok"
 }

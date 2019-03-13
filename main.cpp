@@ -3,7 +3,6 @@
 #include <iostream>
 #include "player.hpp"
 #include "property.hpp"
-#include "propertytype.hpp"
 #include "game.hpp"
 #include "mainwindow.h"
 #include <QApplication>
