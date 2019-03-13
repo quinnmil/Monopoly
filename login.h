@@ -14,9 +14,16 @@ class Login : public QDialog
 public:
     explicit Login(QWidget *parent = nullptr);
     ~Login();
+    QString getPlayerOne();
+    QString getPlayerTwo();
+
+private slots:
+    void on_enterNameButton_clicked();
 
 private:
     Ui::Login *ui;
+    QString playerOne;
+    QString playerTwo;
 };
 
 #endif // LOGIN_H
