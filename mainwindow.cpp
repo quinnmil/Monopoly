@@ -80,8 +80,30 @@ void MainWindow::on_pushButton_clicked(){
     int die1 = game->getDieOne();
     int die2 = game->getDieTwo();
 
-    // move player.
-    this->game->movePlayer(die1, die2);
+    // if player not in jail
+    if (game->getCurrentPlayer()->getJailTime() == 0) {
+        // move player.
+
+    }
+    else {
+        if (die1 == die2){
+            // if they roll doubles.
+            game->getCurrentPlayer()->setJailTime(0);
+            this->game->movePlayer(die1, die2);
+            int ret = QMessageBox::information(this, tr("Jail Escape!"),
+                                           tr("You roll doubles and and break out of prison!"),
+                                           QMessageBox::Ok);
+
+        }
+        else {game->getCurrentPlayer()->setJailTime(game->getCurrentPlayer()->getJailTime()-1);
+            this->game->movePlayer(die1, die2);
+            int ret = QMessageBox::information(this, tr("In Jail"),
+                                           tr("You're still in jail, roll doubles or wait %1 more turns!").arg(QString::number(game->getCurrentPlayer()->getJailTime())),
+                                           QMessageBox::Ok);
+        }
+
+    }
+
 
 
     // update dice display
