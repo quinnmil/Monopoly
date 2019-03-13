@@ -4,8 +4,10 @@ Game Features - top priority
 
 - Game ending sequence
   - check if players have money - DONE
-  - if they don't offer options to mortgage. - Q
+  - if they don't offer options to mortgage. - DONE
   - offer to declare bankruptcy and lose. - DONE
+
+  - get rent from player after they mortgage properties
 
 - property management
   - list properties - DONE
@@ -30,3 +32,5 @@ Game Features - lower priority
 - clean up game start screen.
 - add dice graphics - DONE
 - add 'about game' display.
+- improve player icons - Q
+- write readme
