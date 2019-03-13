@@ -25,4 +25,5 @@ void Login::on_enterNameButton_clicked()
 {
     playerOne = ui->p1_lineEdit->text();
     playerTwo = ui->p2_lineEdit->text();
+    ui->buttonBox->setEnabled(true);
 }
