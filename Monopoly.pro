@@ -27,17 +27,20 @@ HEADERS += game.hpp \
            property.hpp \
            propertytype.hpp \
            mainwindow.h \
-    propertydisplay.h
+    propertydisplay.h \
+    login.h
 FORMS += \
            mainwindow.ui \
-    propertydisplay.ui
+    propertydisplay.ui \
+    login.ui
 SOURCES += game.cpp \
            player.cpp \
            property.cpp \
            propertytype.cpp \
            testMonopoly.cpp \
            mainwindow.cpp \
-    propertydisplay.cpp
+    propertydisplay.cpp \
+    login.cpp
 
 RESOURCES += \
     graphics.qrc
