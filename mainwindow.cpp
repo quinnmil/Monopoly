@@ -239,11 +239,11 @@ void MainWindow::displayOptions(){
                 }
                 else { // not enough money to pay
                     QMessageBox warning;
-                    QString title = "insufficient funds!";
+                    QString title = "Insufficient funds!";
                     QString message = "You are unable unable to pay rent! \n"
-                                      "Either mortage propperty, or declare bankruptcy";
+                                      "Either mortgage property, or declare bankruptcy";
                     QAbstractButton* declare = warning.addButton(("I...DECLARE...BANKRUPTCY"),QMessageBox::YesRole);
-                    QAbstractButton* mortage = warning.addButton(("Mortage Property"),QMessageBox::NoRole);
+                    QAbstractButton* mortage = warning.addButton(("Mortgage Property"),QMessageBox::NoRole);
                     warning.exec();
 
                     if (warning.clickedButton()==declare){
@@ -294,7 +294,7 @@ void MainWindow::displayOptions(){
         // if free parking
         if (currentProperty->getName() == "FreeParking"){
             QString title = "Free Parking!";
-            QString message = QString("congratulations, you land on free parking and collect %1").arg(QString::number(game->getFreeParking()));
+            QString message = QString("Congratulations, you land on free parking and collect %1").arg(QString::number(game->getFreeParking()));
             game->transferMoney(game->getCurrentPlayer(),game->getFreeParking(),false);
             QMessageBox info;
             info.setWindowTitle(title);
@@ -402,7 +402,7 @@ void MainWindow::drawCard(){
     int i = rand()%1;
     QList<int> values = {200, -50, 100, 200, 300};
     QList<QString> messages = {"You receive first place at the Eugene Luks Programming Contest!\n"
-                              "Receive $200 in prize money.", "Celebrate passing 330 at Taylors, lose $50"};
+                              "Receive $200 in prize money.", "Celebrate passing 330 at Taylor's, lose $50"};
 
     QString title = "Card draw";
     QString message = messages[i];
