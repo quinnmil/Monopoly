@@ -37,10 +37,10 @@ SOURCES += game.cpp \
            player.cpp \
            property.cpp \
            propertytype.cpp \
-           testMonopoly.cpp \
            mainwindow.cpp \
     propertydisplay.cpp \
-    login.cpp
+    login.cpp \
+    main.cpp
 
 RESOURCES += \
     graphics.qrc
