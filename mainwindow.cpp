@@ -84,7 +84,7 @@ void MainWindow::on_pushButton_clicked(){
     this->game->movePlayer(die1, die2);
 
 
-    // update dice
+    // update dice display
     switch(die1){
     case 1: { ui->label_die1->setPixmap(QPixmap(":/graphics/Graphics/die1.png"));} break;
     case 2: { ui->label_die1->setPixmap(QPixmap(":/graphics/Graphics/die2.png"));} break;
@@ -152,8 +152,10 @@ void MainWindow::displayOptions(){
             }
             else { // if not enough money to purchase
                 QString title = "Can't purchase " + name;
-                QString message = QString("%1 is unowned, but you don't have enough money to purchase. Price: $%2?").arg(name).arg(QString::number(currentProperty->getCost()));
+                QString message = QString("%1 is unowned, but you don't have enough money to purchase. Price: $%2").arg(name).arg(QString::number(currentProperty->getCost()));
                 QMessageBox offer;
+
+
 
                 offer.setWindowTitle(title);
                 offer.setText(message);
@@ -162,30 +164,67 @@ void MainWindow::displayOptions(){
             }
         }
         else { // if property is owned
-
-
-            if (currentPlayer->getMoney() > currentProperty->getRent()) { // enough money to pay rent
-
-                QString title = name;
-                QString message = QString("You landed on %1, and pay $%2 to %3").arg(name).arg(QString::number(currentProperty->getRent())).arg(QString::fromStdString(currentProperty->getOwnedBy()));
-                game->transferMoney(game->getCurrentPlayer(),game->getFreeParking(),false);
-                QMessageBox info;
-                info.setWindowTitle(title);
-                info.setText(message);
-                info.setStandardButtons(QMessageBox::Ok);
-                info.exec();
-                game->payRent();
+            PlayerType *owner;
+            for(int i = 0; i < PlayerList.length(); i++){
+                if(currentProperty->getOwnedBy().compare(PlayerList.at(i)->getName()) == 0){ //If owner of current property == PlayerType.getName()
+                    owner = PlayerList.at(i);
+                }
             }
-            else { // not enough money to pay
-                QMessageBox warning;
-                QString title = "insufficient funds!";
-                QString message = "You are unable unable to pay rent! \n"
-                                  "Either mortage propperty, or declare bankruptcy";
-                QAbstractButton* declare = warning.addButton(("I...DECLARE...BANKRUPTCY"),QMessageBox::YesRole);
-                warning.exec();
 
-                if (warning.clickedButton()==declare){
-                    this->endGame();
+
+            if (currentProperty->getIsActive() && currentProperty->getOwnedBy() != currentPlayer->getName()){ // if not mortaged and owned by someone else
+                int rentCost = 0; // initalize rent cost
+
+                if (currentProperty->getColor() == "Railroad"){
+                    rentCost = 25 * game->countColors(owner, currentProperty->getColor());
+                }
+
+                else if (currentProperty->getHotelCount() != 0){
+                    rentCost = currentProperty->getHotelRent();
+                }
+                switch (currentProperty->getHouseCount()) {
+                case 0:
+                    rentCost = currentProperty->getRent();
+                    break;
+                case 1:
+                    rentCost = currentProperty->getOneHouseRent();
+                    break;
+                case 2:
+                    rentCost = currentProperty->getTwoHouseRent();
+                    break;
+                case 3:
+                    rentCost = currentProperty->getThreeHouseRent();
+                    break;
+                case 4:
+                    rentCost = currentProperty->getFourHouseRent();
+                    break;
+                default:
+                    break;
+                }
+
+                if (currentPlayer->getMoney() > currentProperty->getRent()) { // enough money to pay rent
+
+                    QString title = name;
+                    QString message = QString("You landed on %1, and pay $%2 to %3").arg(name).arg(rentCost).arg(QString::fromStdString(currentProperty->getOwnedBy()));
+                    game->transferMoney(game->getCurrentPlayer(),game->getFreeParking(),false);
+                    QMessageBox info;
+                    info.setWindowTitle(title);
+                    info.setText(message);
+                    info.setStandardButtons(QMessageBox::Ok);
+                    info.exec();
+                    game->payRent(rentCost);
+                }
+                else { // not enough money to pay
+                    QMessageBox warning;
+                    QString title = "insufficient funds!";
+                    QString message = "You are unable unable to pay rent! \n"
+                                      "Either mortage propperty, or declare bankruptcy";
+                    QAbstractButton* declare = warning.addButton(("I...DECLARE...BANKRUPTCY"),QMessageBox::YesRole);
+                    warning.exec();
+
+                    if (warning.clickedButton()==declare){
+                        this->endGame();
+                    }
                 }
             }
         }
@@ -201,6 +240,7 @@ void MainWindow::displayOptions(){
         // if community chest
         if (currentProperty->getName() == "Community Chest"){
             // draw community chest card.
+            drawCard();
         }
 
         // if income tax
@@ -212,6 +252,7 @@ void MainWindow::displayOptions(){
         // if chance
         if (currentProperty->getName() == "Chance"){
             // draw chance card
+            drawCard();
         }
 
         // if just visiting jail
@@ -311,7 +352,10 @@ void MainWindow::updateDisplay(){
   ui->fourHouseString->setNum(currentFourHouse);
   ui->hotelString->setNum(currentHotel);
   ui->infoString->setText(QString("%1 houses, %2 hotels").arg(QString::number(currentPropertyHouses), QString::number(currentPropertyHotels)));
-
+  ui->label->setText(QString::fromStdString(PlayerList[0]->getName())+"'s Money");
+  ui->label_3->setText(QString::fromStdString(PlayerList[0]->getName())+"'s Property");
+  ui->label_2->setText(QString::fromStdString(PlayerList[1]->getName())+"'s Money");
+  ui->label_4->setText(QString::fromStdString(PlayerList[1]->getName())+"'s Propery");
   //update game stats
   ui->p1Money->setText(QString::number(PlayerList[0]->getMoney()));
   ui->p2Money->setText(QString::number(PlayerList[1]->getMoney()));
@@ -319,12 +363,26 @@ void MainWindow::updateDisplay(){
   ui->p2Property->setText(QString("%1 Properties").arg(QString::number(PlayerList[1]->getProperty().length())));
 
 }
-//void MainWindow::PassGo(PlayerType *p1){}
 
-/*
-note for later, if we want to get info on a selected property, we could
-I really just need the index of that click and then look it up in gameSpaceList
-*/
+void MainWindow::drawCard(){
+    // draws random card from chance/community chest.
+    // not using specialCard class right not to save time.
+    // Could get around to implement later.
+    int i = rand()%1;
+    QList<int> values = {200, -50, 100, 200, 300};
+    QList<QString> messages = {"You receive first place at the Eugene Luks Programming Contest!\n"
+                              "Receive $200 in prize money.", "Celebrate passing 330 at Taylors, lose $50"};
+
+    QString title = "Card draw";
+    QString message = messages[i];
+    QMessageBox win;
+    win.setWindowTitle(title);
+    win.setText(message);
+    game->transferMoney(game->getCurrentPlayer(),values[i],false);
+    win.exec();
+
+
+}
 
 void MainWindow::startGame(QString p1, QString p2){
  /*
@@ -367,11 +425,9 @@ void MainWindow::endGame(){
         delete this->getGame();
         delete this;
 
-}
+    }
 
-    // announce winner.
 
-    // set game to being over.
 }
 
 

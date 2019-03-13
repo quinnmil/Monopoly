@@ -77,6 +77,13 @@ void PropertyDisplay::on_PropertyList_itemClicked(QListWidgetItem *item)
             ui->mortgageButton->setText(QString("Mortgage Property: $%1").arg(p->getMortgage()));
             ui->unmortgageButton->setText(QString("Unmortgage Property: $%1").arg(p->getUnmortgage()));
 
+            ui->houseButton->setDisabled(true);
+            // if the player has a monopoly, can buy houses.
+            if (g->countColors(cp,p->getColor()) == 3){
+                qDebug() << "count colors return 3";
+                ui->houseButton->setEnabled(true);
+            }
+
             //Handles mortgage/unmortgage button availability
             if(p->getIsActive() == true){
                 //If current player owns this property
@@ -219,3 +226,4 @@ void PropertyDisplay::on_unmortgageButton_clicked()
         }
     }
 }
+

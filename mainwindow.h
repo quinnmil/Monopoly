@@ -34,7 +34,7 @@ public:
     void setPlayerList();
     QList<PlayerType*> getPlayerList() { return this->PlayerList; }
 
-
+    void drawCard();
     void displayOptions();
     void setGame(Game * game) { this->game = game; }
     Game* getGame(){ return this->game; }
