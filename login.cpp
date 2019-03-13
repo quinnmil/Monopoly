@@ -6,6 +6,11 @@ Login::Login(QWidget *parent) :
     ui(new Ui::Login)
 {
     ui->setupUi(this);
+
+    QFont f("Times New Roman", 20);
+    ui->welcomeLabel->setFont(f);
+    ui->welcomeLabel->setAlignment(Qt::AlignCenter);
+    this->setWindowTitle("Login");
 }
 
 Login::~Login()

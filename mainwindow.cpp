@@ -26,7 +26,7 @@ MainWindow::MainWindow(QWidget *parent) :
     // hide features before newgame is created.
     // ui->Board->setHidden(true);
     // ui->Dice->setHidden(true);
-
+    this->setWindowTitle("Monopoly");
     ui->endTurn_button->setText("Roll dice first!");
     ui->endTurn_button->setEnabled(false);
 

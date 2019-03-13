@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>300</height>
+    <height>221</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,18 +19,18 @@
      <x>10</x>
      <y>10</y>
      <width>381</width>
-     <height>111</height>
+     <height>81</height>
     </rect>
    </property>
    <property name="text">
-    <string>WELCOME TO MONOPOLY!!!</string>
+    <string>MONOPOLY</string>
    </property>
   </widget>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>140</y>
+     <y>90</y>
      <width>371</width>
      <height>60</height>
     </rect>
@@ -70,7 +70,7 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>240</y>
+     <y>190</y>
      <width>371</width>
      <height>26</height>
     </rect>

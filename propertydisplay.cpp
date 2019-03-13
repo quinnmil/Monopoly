@@ -13,7 +13,7 @@ PropertyDisplay::PropertyDisplay(QWidget *parent, PlayerType* player) :
     ui(new Ui::PropertyDisplay)
 {
     ui->setupUi(this);
-
+    this->setWindowTitle("Properties");
 
     // get game from parent
     // get propertyList from player
