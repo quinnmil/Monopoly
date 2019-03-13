@@ -16,9 +16,9 @@ public:
     //
     //********************
 
-    Game(); // DONE: either use this constructor or use newGame() to create playerList and gameSpaceList
-    Game(QString p1, QString p2); //DONE: overloaded for #players parameter
-    ~Game(); //DONE
+    Game(); //Constructor
+    Game(QString p1, QString p2); //Overloaded Constructor
+    ~Game(); //Deconstructor
 
     //********************
     //
@@ -26,32 +26,30 @@ public:
     //
     //********************
 
-    QList<int> getAllPositions(); //DONE: returns list of all player position indicies. (4,37,10)
-    int getDieOne(); //DONE
-    int getDieTwo(); //DONE
+    QList<int> getAllPositions(); //List of indices of players on the board
+    int getDieOne(); //Returns result of die roll
+    int getDieTwo();
 
-    PlayerType* getCurrentPlayer(); //DONE: gets current player
-    QList<PlayerType*> getPlayerList(); //DONE: return qlist of players
-    int getPlayerPosition(PlayerType player); //DONE: returns a number 0-40 that i'll use to display location on board
-    string getCurrentPlayerName();  //DONE: returns name of current player "player 1" is fine for now
-    int getCurrentPlayerIndex(); //DONE: returns index of current player in playerList
+    PlayerType* getCurrentPlayer(); //Returns current player
+    QList<PlayerType*> getPlayerList(); //Returns list of all players
+    int getPlayerPosition(PlayerType player); //Returns where a given player is on the board
+    string getCurrentPlayerName(); //Returns current player's name
+    int getCurrentPlayerIndex(); //Returns player's index in player list
 
-    QList<Property*> getGameSpaceList(); //DONE: returns entire list of properties
-    string getPropertyName();   //DONE: name of property ie: "Boardwalk"
-    string getPropertyOwner();  //DONE: name of owner or "unowned"
-    int getPropertyCost(); //DONE
-    int getPropertyRent(); //DONE
-    int getPropertyHouses(); //DONE
-    int getPropertyHotels(); //DONE
-    bool getIsPropertyActive(); //DONE
-    int getPropertyOneHouse();
+    QList<Property*> getGameSpaceList(); //Returns the list of properties
+    string getPropertyName(); //Returns property name
+    string getPropertyOwner(); //Returns property owner
+    int getPropertyCost(); //Returns property cost
+    int getPropertyRent(); //Returns property rent
+    int getPropertyHouses(); //Returns # houses on property
+    int getPropertyHotels(); //Returns # hotels on property
+    bool getIsPropertyActive(); //Returns if the property is mortgaged, true = unmortgaged
+    int getPropertyOneHouse(); //Returns rent with 1 house
     int getPropertyTwoHouse();
     int getPropertyThreeHouse();
     int getPropertyFourHouse();
-    int getPropertyHotelRent();
-    string getPropertyInfo(); // property description if special property, otherwise empty string is fine.
-
-    int countColors(PlayerType *player, string color);
+    int getPropertyHotelRent(); //Returns rent with a hotel
+    int countColors(PlayerType *player, string color); //Returns how many properties a player owns of the same color
 
     //********************
     //
@@ -59,16 +57,14 @@ public:
     //
     //********************
 
-    void addBoardSpaces(); //DONE
-    void addSpecialCards(); //WIP
-    int dieRoll(); //DONE
-    void movePlayer(int die1, int die2); //DONE
-    void incrementCurrentPlayer();   //DONE
-    void endturn();  //HALF-DONE--NEEDS UPDATE FUNCTION: 1. switches CurrentPlayer to next player. 2. Calls MainWindow::update() to update graphics.
-    void startTrade(PlayerType *p1, PlayerType *p2, Property *property); //NEEDS TO BE STARTED, HAS TO WORK WITH INTERFACE.
-    void jailPlayer(); //DONE
-    void addHouse();
-    void addHotel();
+    void addBoardSpaces(); //Adds board spaces to property list
+    void addSpecialCards(); //Adds special cards to chance/community chest lists
+    int dieRoll(); //Rolls dice
+    void movePlayer(int die1, int die2); //Moves player
+    void incrementCurrentPlayer(); //Changes who's turn it is
+    void endturn(); //Ends turn
+    void startTrade(PlayerType *p1, PlayerType *p2, Property *property); //Unfinished
+    void jailPlayer(); //Sends player to jail
 
     //********************
     //
@@ -76,13 +72,12 @@ public:
     //
     //********************
 
-    void buyProperty(); //DONE and WORKING
-    void payRent(int rent); //DONE and WORKING
-    void payPlayer(PlayerType *p1, PlayerType *p2, int value); //NEEDS WORK, NEEDS TO WORK WITH INTERFACE?
-
-    void payTax(); //adds to free parking money
-    int getFreeParking(); //gets money in free parking
-    void transferMoney(PlayerType *p1, int amount, bool ifTax);
+    void buyProperty(); //Buy the property you are currently on
+    void payRent(int rent); //Pay rent to owner of property
+    void payPlayer(PlayerType *p1, PlayerType *p2, int value); //Pay a player
+    void payTax(); //Pays Tax
+    int getFreeParking(); //Pays the current player the money that is sitting in free parking
+    void transferMoney(PlayerType *p1, int amount, bool ifTax); //
 
     //********************
     //
@@ -91,8 +86,6 @@ public:
     //********************
 
     void handleSpecialCard(SpecialCard *special);
-    //string getSpecialMessage();
-
 
 private:
     PlayerType *currentPlayer;   // this is key, as most of the functions above act relative to the currentPlayer.

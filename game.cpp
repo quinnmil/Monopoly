@@ -6,14 +6,10 @@
 
 //8 Player Default Constructor
 Game::Game(){
-    // should take number of players as an argument.
-    // should create playerlist and gameSpaceList
-    // gameSpaceList needs to contain 40 property entries.
-
     addBoardSpaces(); //Adds properties to gameSpaceList(Instantiated in header)
 
-    //Adds EIGHT players to playerList(Instantiated in header)
-    for(int i = 0; i < 8; i++){
+    //Adds 2 players to playerList(Instantiated in header)
+    for(int i = 0; i < 2; i++){
         PlayerType *player = new PlayerType; //Creates new player pointer
         playerList.push_back(player); //Adds new player to playerList
     }
@@ -29,11 +25,7 @@ Game::Game(QString p1, QString p2){
 
     addBoardSpaces(); //SHOULD FILL THE ENTIRE BOARD WITH THE CORRECT SPACES
 
-    //Adds players to playerList(Instantiated in header)
-    // PLACEHOLDER VARS
-
-    // updated these to take name arguments - Q
-    string PLAYER1 = p1.toStdString();
+    string PLAYER1 = p1.toStdString(); //Gets names from login screen
     string PLAYER2 = p2.toStdString();
     string PIECE1 = "car";
     string PIECE2 = "shoe";
@@ -42,9 +34,6 @@ Game::Game(QString p1, QString p2){
 
     playerList.push_back(playerOne); //Adds new player to playerList
     playerList.push_back(playerTwo);
-
-//    qDebug() << "current playerlist at game creation: " << playerList;
-
 
     currentPlayer = playerList.at(0); //Sets current player
     die1 = 1; //Do we need these at all?
@@ -199,10 +188,32 @@ int Game::getPropertyHotelRent(){
     return hotel;
 }
 
+//Gets if the property is mortgaged
 bool Game::getIsPropertyActive(){
     int pos = currentPlayer->getPosition();
     bool isActive = gameSpaceList.at(pos)->getIsActive();
     return isActive;
+}
+
+//Gets number of properties in a color set a player owns
+int Game::countColors(PlayerType *player, string color){
+    /*
+     * returns number of same color for a given color.
+     * 3 : monopoly.
+     * also used for railroads.
+     */
+    int len = player->getProperty().length();
+    int count = 0;
+    for (int i = 0 ; i < len; i ++){
+        if (player->getProperty()[i]->getColor() == color){
+            count ++;
+        }
+    }
+    // these colors only have two spaces, easier to modify here than in application.
+    if ((color == "Brown" || color == "Blue") && count == 2){
+        return 3;
+    }
+    return count;
 }
 
 //********************
@@ -262,7 +273,7 @@ void Game::addBoardSpaces(){
     gameSpaceList.push_back(p11);
 
     //Electric Company
-    Property *p12 = new Property("Electric Company", "Utilities", 0, 150, 0, 0, 0, 0, 0, 75, 83);
+    Property *p12 = new Property("Electric Company", "Utilities", 150, 0, 0, 0, 0, 0, 0, 75, 83);
     gameSpaceList.push_back(p12);
 
     //States Avenue
@@ -326,7 +337,7 @@ void Game::addBoardSpaces(){
     gameSpaceList.push_back(p27);
 
     //Water Works
-    Property *p28 = new Property("Water Works", "Utilities", 0, 150, 0, 0, 0, 0, 0, 75, 83);
+    Property *p28 = new Property("Water Works", "Utilities", 150, 0, 0, 0, 0, 0, 0, 75, 83);
     gameSpaceList.push_back(p28);
 
     //Marvin Gardens
@@ -532,6 +543,7 @@ void Game::payPlayer(PlayerType *p1, PlayerType *p2, int value){ //p1 = who is p
     }
 }
 
+//Pay tax to free parking
 void Game::transferMoney(PlayerType *p1, int amount, bool ifTax){
     if (ifTax == true){
         // if paying a tax, take money from player and tranfer to free parking pile.
@@ -540,8 +552,11 @@ void Game::transferMoney(PlayerType *p1, int amount, bool ifTax){
     }
 }
 
+//Get the money from free parking
 int Game::getFreeParking(){
-    return this->freeParkingMoney;
+    int money = freeParkingMoney;
+    freeParkingMoney = 0;
+    return money;
 }
 
 //Start Trade
@@ -560,16 +575,6 @@ void Game::jailPlayer(){
 //Move Player
 void Game::movePlayer(int die1, int die2){
     currentPlayer->setPosition(die1, die2);
-}
-
-//Add House
-void Game::addHouse(){
-
-}
-
-//Add Hotel
-void Game::addHotel(){
-
 }
 
 //Handles Special Cards -- !!!UNTESTED!!!
@@ -618,22 +623,4 @@ void Game::handleSpecialCard(SpecialCard *special){
     }
 }
 
-int Game::countColors(PlayerType *player, string color){
-    /*
-     * returns number of same color for a given color.
-     * 3 : monopoly.
-     * also used for railroads.
-     */
-    int len = player->getProperty().length();
-    int count = 0;
-    for (int i = 0 ; i < len; i ++){
-        if (player->getProperty()[i]->getColor() == color){
-            count ++;
-        }
-    }
-    // these colors only have two spaces, easier to modify here than in application.
-    if ((color == "Brown" || color == "Blue") && count == 2){
-        return 3;
-    }
-    return count;
-}
+
