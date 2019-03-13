@@ -242,10 +242,18 @@ void MainWindow::displayOptions(){
                     QString message = "You are unable unable to pay rent! \n"
                                       "Either mortage propperty, or declare bankruptcy";
                     QAbstractButton* declare = warning.addButton(("I...DECLARE...BANKRUPTCY"),QMessageBox::YesRole);
+                    QAbstractButton* mortage = warning.addButton(("Mortage Property"),QMessageBox::NoRole);
                     warning.exec();
 
                     if (warning.clickedButton()==declare){
                         this->endGame();
+                    }
+
+                    // this wont deduct rent on exit.
+                    if (warning.clickedButton()==mortage){
+                        PropertyDisplay *p = new PropertyDisplay(this, currentPlayer);
+                        p->setModal(true);
+                        p->exec();
                     }
                 }
             }
