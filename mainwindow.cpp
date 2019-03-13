@@ -41,7 +41,6 @@ MainWindow::MainWindow(QWidget *parent) :
     //                                     QDir::home().dirName(), &p1);
 
     QString p1Name = login.getPlayerOne();
-
     if (p1 && !p1Name.isEmpty()){
 
         QString p1NameStr = p1Name;
