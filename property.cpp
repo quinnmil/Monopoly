@@ -3,6 +3,12 @@
 #include <cmath>
 #include "property.hpp"
 
+//********************
+//
+//Constructors/Deconstructor
+//
+//********************
+
 //Constructor
 Property::Property(){
     ownedBy = "";
@@ -151,7 +157,7 @@ int Property::getHotelCount(){
     return hotelCount;
 }
 
-//
+//Gets if this is a buyable property (not chance or community chest)
 bool Property::canBuy(){
     if (cost == 0){
         return false;
@@ -161,6 +167,7 @@ bool Property::canBuy(){
     }
 }
 
+//Gets if the property is mortgaged, true = unmortgaged
 bool Property::getIsActive(){
     return isActive;
 }
@@ -186,10 +193,12 @@ void Property::setHotelCount(int hotelCount){
     this->hotelCount = hotelCount;
 }
 
+//Sets if property is mortgaged
 void Property::setActive(bool active){
     isActive = active;
 }
 
+//Sets the rent of the property (used for houses etc)
 void Property::setRent(int rent){
     this->rent = rent;
 }
@@ -229,34 +238,42 @@ SpecialCard::~SpecialCard(){
 
 }
 
+//Get message of card
 string SpecialCard::getMessage(){
     return message;
 }
 
+//Get where to move to
 int SpecialCard::getMoveTo(){
     return move_to;
 }
 
+//Get money value of card
 int SpecialCard::getMoneyValue(){
     return moneyValue;
 }
 
+//Get if you are the one being paid
 bool SpecialCard::getGetPaid(){
     return getPaid;
 }
 
+//Get if you are the one paying
 bool SpecialCard::getYouPay(){
     return youPay;
 }
 
+//Get if you must move to GO
 bool SpecialCard::getToGo(){
     return toGo;
 }
 
+//Get if this is a get out of jail free card
 bool SpecialCard::getSprung(){
     return getOutOfJail;
 }
 
+//Get if this is a GO TO JAIL card
 bool SpecialCard::getToJail(){
     return toJail;
 }

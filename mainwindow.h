@@ -9,7 +9,6 @@
 #include <QTCore>
 #include <QGraphicsRectItem>
 #include "property.hpp"
-#include "propertytype.hpp"
 #include "game.hpp"
 
 namespace Ui {
@@ -26,7 +25,7 @@ public:
     void updateDisplay();
 
     void setSpaceList();
-    QList <QLabel *>getSpaceList() { return this->SpaceList; }
+    QList<QLabel*>getSpaceList() { return this->SpaceList; }
 
     void setGameSpaceList();
     QList<Property*> getGameSpaceList() { return this->GameSpaceList; }

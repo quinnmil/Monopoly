@@ -6,9 +6,20 @@ using namespace std;
 
 class Property{
 public:
-	Property();
+    //********************
+    //
+    //Constructors/Deconstructors
+    //
+    //********************
+    Property();
     Property(string name, string color, int cost, int rent, int colorSetRent, int perHouseRent, int hotelRent, int houseCost, int hotelCost, int mortgage, int unmortgage);
 	~Property();
+
+    //********************
+    //
+    //Getters
+    //
+    //********************
     string getOwnedBy();
     string getName();
 	string getColor();
@@ -27,6 +38,12 @@ public:
 	int getHotelCost();
 	int getHouseCount();
     int getHotelCount();
+
+    //********************
+    //
+    //Getters
+    //
+    //********************
     void setOwnedBy(string name);
 	void setHouseCount(int houseCount);
 	void setHotelCount(int hotelCount);
@@ -60,9 +77,20 @@ private:
 
 class SpecialCard{
 public:
+    //********************
+    //
+    //Constructors/Deconstructors
+    //
+    //********************
     SpecialCard();
     SpecialCard(string message, int move_to, int moneyValue, bool getPaid, bool youPay, bool toGo, bool getOutOfJail, bool toJail);
     ~SpecialCard();
+
+    //********************
+    //
+    //Getters
+    //
+    //********************
     string getMessage();
     int getMoveTo();
     int getMoneyValue();
@@ -71,6 +99,7 @@ public:
     bool getToGo();
     bool getSprung(); //get out of jail
     bool getToJail(); //go to jail
+
 private:
     string message;
     int move_to; //+ or - position

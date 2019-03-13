@@ -23,9 +23,6 @@ MainWindow::MainWindow(QWidget *parent) :
     login.setModal(true);
     login.exec();
 
-    // hide features before newgame is created.
-    // ui->Board->setHidden(true);
-    // ui->Dice->setHidden(true);
     this->setWindowTitle("Monopoly");
     ui->endTurn_button->setText("Roll dice first!");
     ui->endTurn_button->setEnabled(false);
@@ -33,7 +30,8 @@ MainWindow::MainWindow(QWidget *parent) :
     QString p1Name = login.getPlayerOne();
     QString p2Name = login.getPlayerTwo();
 
-    QFont f("Sans Serif", 14, QFont::Bold);
+    QFont f("Sans Serif", 14, QFont::Bold); //Creates bold font to use
+    //Beautify player's money label
     ui->p1Money->setAlignment(Qt::AlignCenter);
     ui->p2Money->setAlignment(Qt::AlignCenter);
     ui->p1Money->setFont(f);

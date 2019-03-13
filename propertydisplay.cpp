@@ -13,20 +13,24 @@ PropertyDisplay::PropertyDisplay(QWidget *parent, PlayerType* player) :
     ui(new Ui::PropertyDisplay)
 {
     ui->setupUi(this);
-    this->setWindowTitle("Properties");
+    this->setWindowTitle("Properties"); //Set window title
 
     // get game from parent
     // get propertyList from player
+    // get playerList from player
     Game *g = ((MainWindow*)parentWidget())->getGame();
     PropertyList = player->getProperty();
     PlayerList = g->getPlayerList();
 
+    //Add properties to the list
     for (int i = 0; i < PropertyList.length(); i++){
         QString name = QString::fromStdString(PropertyList[i]->getName());
         ui->PropertyList->addItem(name);
     }
 
     ui->hotelButton->setEnabled(false); //Always grey until 4 houses
+
+    //If the player clicking the property owns/does not own
     if(player->getName().compare(g->getCurrentPlayerName()) != 0){
         ui->houseButton->setEnabled(false);
         ui->mortgageButton->setEnabled(false);
@@ -149,6 +153,7 @@ void PropertyDisplay::on_houseButton_clicked()
         Property *p = PropertyList.at(i);
         if(p->getName().compare(currPropName.toStdString()) == 0){
             int houses = p->getHouseCount();
+            //Sets rent depending on amount of houses currently on the property, adds a house, removes the house cost from player's money
             switch(houses){
             case 0:
                 p->setRent(p->getOneHouseRent());
@@ -188,10 +193,12 @@ void PropertyDisplay::on_hotelButton_clicked()
         Property *p = PropertyList.at(i);
         if(p->getName().compare(currPropName.toStdString()) == 0){
             int hotel = p->getHotelCount();
+            //Makes sure there are no hotels
             if(hotel == 0){
-                p->setRent(p->getHotelRent());
-                p->setHotelCount(1);
-                cp->setMoney(cp->getMoney() - p->getHotelCost());
+                p->setRent(p->getHotelRent()); //Sets rent to hotelRent
+                p->setHotelCount(1); //Adds hotel
+                p->setHouseCount(0); //Removes houses
+                cp->setMoney(cp->getMoney() - p->getHotelCost()); //Pays for hotel
             }
         }
     }
