@@ -202,6 +202,17 @@ void MainWindow::displayOptions(){
                     rentCost = 25 * game->countColors(owner, currentProperty->getColor());
                 }
 
+                if (currentProperty->getColor() == "Utilities"){
+                    int roll = game->getDieOne() + game->getDieTwo();
+                    if (game->countColors(owner, currentProperty->getColor())==2){
+                    rentCost = (roll * 10);
+                    }
+                    else {
+                        rentCost = (roll * 4);
+                    }
+                }
+
+
                 else if (currentProperty->getHotelCount() != 0){
                     rentCost = currentProperty->getHotelRent();
                 }
@@ -400,7 +411,7 @@ void MainWindow::drawCard(){
     // not using specialCard class right not to save time.
     // Could get around to implement later.
     int i = rand()%1;
-    QList<int> values = {200, -50, 100, 200, 300};
+    QList<int> values = {200, 200, -50};
     QList<QString> messages = {"You receive first place at the Eugene Luks Programming Contest!\n"
                               "Receive $200 in prize money.", "Celebrate passing 330 at Taylor's, lose $50"};
 
@@ -468,7 +479,7 @@ void MainWindow::on_endTurn_button_clicked()
 
     game->endturn();
     updateDisplay();
-
+    ui->endTurn_button->setDisabled(true);
     ui->pushButton->setEnabled(true);
 }
 

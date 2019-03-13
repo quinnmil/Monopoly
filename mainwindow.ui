@@ -45,13 +45,11 @@
       <font>
        <pointsize>10</pointsize>
        <stylestrategy>NoAntialias</stylestrategy>
+       <kerning>true</kerning>
       </font>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="lineWidth">
-      <number>6</number>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
@@ -79,13 +77,11 @@
       <font>
        <pointsize>10</pointsize>
        <stylestrategy>NoAntialias</stylestrategy>
+       <kerning>true</kerning>
       </font>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="lineWidth">
-      <number>6</number>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
@@ -113,13 +109,11 @@
       <font>
        <pointsize>10</pointsize>
        <stylestrategy>NoAntialias</stylestrategy>
+       <kerning>true</kerning>
       </font>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="lineWidth">
-      <number>6</number>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
@@ -147,13 +141,11 @@
       <font>
        <pointsize>10</pointsize>
        <stylestrategy>NoAntialias</stylestrategy>
+       <kerning>true</kerning>
       </font>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="lineWidth">
-      <number>6</number>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
@@ -181,13 +173,11 @@
       <font>
        <pointsize>10</pointsize>
        <stylestrategy>NoAntialias</stylestrategy>
+       <kerning>true</kerning>
       </font>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="lineWidth">
-      <number>6</number>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
@@ -215,13 +205,11 @@
       <font>
        <pointsize>10</pointsize>
        <stylestrategy>NoAntialias</stylestrategy>
+       <kerning>true</kerning>
       </font>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="lineWidth">
-      <number>6</number>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
@@ -249,13 +237,11 @@
       <font>
        <pointsize>10</pointsize>
        <stylestrategy>NoAntialias</stylestrategy>
+       <kerning>true</kerning>
       </font>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="lineWidth">
-      <number>6</number>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
@@ -283,13 +269,11 @@
       <font>
        <pointsize>10</pointsize>
        <stylestrategy>NoAntialias</stylestrategy>
+       <kerning>true</kerning>
       </font>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="lineWidth">
-      <number>6</number>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
@@ -317,13 +301,11 @@
       <font>
        <pointsize>10</pointsize>
        <stylestrategy>NoAntialias</stylestrategy>
+       <kerning>true</kerning>
       </font>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="lineWidth">
-      <number>6</number>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
@@ -351,13 +333,11 @@
       <font>
        <pointsize>10</pointsize>
        <stylestrategy>NoAntialias</stylestrategy>
+       <kerning>true</kerning>
       </font>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="lineWidth">
-      <number>6</number>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
@@ -385,13 +365,11 @@
       <font>
        <pointsize>10</pointsize>
        <stylestrategy>NoAntialias</stylestrategy>
+       <kerning>true</kerning>
       </font>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="lineWidth">
-      <number>6</number>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
@@ -419,13 +397,11 @@
       <font>
        <pointsize>10</pointsize>
        <stylestrategy>NoAntialias</stylestrategy>
+       <kerning>true</kerning>
       </font>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="lineWidth">
-      <number>6</number>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
@@ -453,13 +429,11 @@
       <font>
        <pointsize>10</pointsize>
        <stylestrategy>NoAntialias</stylestrategy>
+       <kerning>true</kerning>
       </font>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="lineWidth">
-      <number>6</number>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
@@ -487,13 +461,11 @@
       <font>
        <pointsize>10</pointsize>
        <stylestrategy>NoAntialias</stylestrategy>
+       <kerning>true</kerning>
       </font>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="lineWidth">
-      <number>6</number>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
@@ -521,13 +493,11 @@
       <font>
        <pointsize>10</pointsize>
        <stylestrategy>NoAntialias</stylestrategy>
+       <kerning>true</kerning>
       </font>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="lineWidth">
-      <number>6</number>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
@@ -555,13 +525,11 @@
       <font>
        <pointsize>10</pointsize>
        <stylestrategy>NoAntialias</stylestrategy>
+       <kerning>true</kerning>
       </font>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="lineWidth">
-      <number>6</number>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
@@ -589,16 +557,14 @@
       <font>
        <pointsize>10</pointsize>
        <stylestrategy>NoAntialias</stylestrategy>
+       <kerning>true</kerning>
       </font>
      </property>
      <property name="styleSheet">
       <string notr="true"/>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="lineWidth">
-      <number>6</number>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
@@ -626,13 +592,11 @@
       <font>
        <pointsize>10</pointsize>
        <stylestrategy>NoAntialias</stylestrategy>
+       <kerning>true</kerning>
       </font>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="lineWidth">
-      <number>6</number>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
@@ -660,13 +624,11 @@
       <font>
        <pointsize>10</pointsize>
        <stylestrategy>NoAntialias</stylestrategy>
+       <kerning>true</kerning>
       </font>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="lineWidth">
-      <number>6</number>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
@@ -694,13 +656,11 @@
       <font>
        <pointsize>10</pointsize>
        <stylestrategy>NoAntialias</stylestrategy>
+       <kerning>true</kerning>
       </font>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="lineWidth">
-      <number>6</number>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
@@ -728,13 +688,11 @@
       <font>
        <pointsize>10</pointsize>
        <stylestrategy>NoAntialias</stylestrategy>
+       <kerning>true</kerning>
       </font>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="lineWidth">
-      <number>6</number>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
@@ -769,10 +727,7 @@
       </font>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="lineWidth">
-      <number>6</number>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
@@ -800,13 +755,11 @@
       <font>
        <pointsize>10</pointsize>
        <stylestrategy>NoAntialias</stylestrategy>
+       <kerning>true</kerning>
       </font>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="lineWidth">
-      <number>6</number>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
@@ -834,13 +787,11 @@
       <font>
        <pointsize>10</pointsize>
        <stylestrategy>NoAntialias</stylestrategy>
+       <kerning>true</kerning>
       </font>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="lineWidth">
-      <number>6</number>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
@@ -868,13 +819,11 @@
       <font>
        <pointsize>10</pointsize>
        <stylestrategy>NoAntialias</stylestrategy>
+       <kerning>true</kerning>
       </font>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="lineWidth">
-      <number>6</number>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
@@ -911,13 +860,10 @@
       <string notr="true"/>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="frameShadow">
       <enum>QFrame::Plain</enum>
-     </property>
-     <property name="lineWidth">
-      <number>6</number>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
@@ -948,13 +894,11 @@
       <font>
        <pointsize>10</pointsize>
        <stylestrategy>NoAntialias</stylestrategy>
+       <kerning>true</kerning>
       </font>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="lineWidth">
-      <number>6</number>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
@@ -982,13 +926,11 @@
       <font>
        <pointsize>10</pointsize>
        <stylestrategy>NoAntialias</stylestrategy>
+       <kerning>true</kerning>
       </font>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="lineWidth">
-      <number>6</number>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
@@ -1016,13 +958,11 @@
       <font>
        <pointsize>10</pointsize>
        <stylestrategy>NoAntialias</stylestrategy>
+       <kerning>true</kerning>
       </font>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="lineWidth">
-      <number>6</number>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
@@ -1050,13 +990,11 @@
       <font>
        <pointsize>10</pointsize>
        <stylestrategy>NoAntialias</stylestrategy>
+       <kerning>true</kerning>
       </font>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="lineWidth">
-      <number>6</number>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
@@ -1084,13 +1022,11 @@
       <font>
        <pointsize>10</pointsize>
        <stylestrategy>NoAntialias</stylestrategy>
+       <kerning>true</kerning>
       </font>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="lineWidth">
-      <number>6</number>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
@@ -1118,13 +1054,11 @@
       <font>
        <pointsize>10</pointsize>
        <stylestrategy>NoAntialias</stylestrategy>
+       <kerning>true</kerning>
       </font>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="lineWidth">
-      <number>6</number>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
@@ -1152,13 +1086,11 @@
       <font>
        <pointsize>10</pointsize>
        <stylestrategy>NoAntialias</stylestrategy>
+       <kerning>true</kerning>
       </font>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="lineWidth">
-      <number>6</number>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
@@ -1186,13 +1118,11 @@
       <font>
        <pointsize>10</pointsize>
        <stylestrategy>NoAntialias</stylestrategy>
+       <kerning>true</kerning>
       </font>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="lineWidth">
-      <number>6</number>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
@@ -1220,13 +1150,11 @@
       <font>
        <pointsize>10</pointsize>
        <stylestrategy>NoAntialias</stylestrategy>
+       <kerning>true</kerning>
       </font>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="lineWidth">
-      <number>6</number>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
@@ -1254,13 +1182,11 @@
       <font>
        <pointsize>10</pointsize>
        <stylestrategy>NoAntialias</stylestrategy>
+       <kerning>true</kerning>
       </font>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="lineWidth">
-      <number>6</number>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
@@ -1288,13 +1214,11 @@
       <font>
        <pointsize>10</pointsize>
        <stylestrategy>NoAntialias</stylestrategy>
+       <kerning>true</kerning>
       </font>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="lineWidth">
-      <number>6</number>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
@@ -1322,13 +1246,11 @@
       <font>
        <pointsize>10</pointsize>
        <stylestrategy>NoAntialias</stylestrategy>
+       <kerning>true</kerning>
       </font>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="lineWidth">
-      <number>6</number>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
@@ -1356,13 +1278,11 @@
       <font>
        <pointsize>10</pointsize>
        <stylestrategy>NoAntialias</stylestrategy>
+       <kerning>true</kerning>
       </font>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="lineWidth">
-      <number>6</number>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
@@ -1420,13 +1340,11 @@
       <font>
        <pointsize>10</pointsize>
        <stylestrategy>NoAntialias</stylestrategy>
+       <kerning>true</kerning>
       </font>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="lineWidth">
-      <number>6</number>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
@@ -1807,7 +1725,7 @@
      <x>0</x>
      <y>0</y>
      <width>1347</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
