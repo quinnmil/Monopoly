@@ -7,6 +7,8 @@
 #include "game.hpp"
 #include "mainwindow.h"
 #include <QApplication>
+#include "login.h"
+
 
 //GAME FUNCTION
 /*
