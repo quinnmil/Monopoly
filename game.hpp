@@ -44,6 +44,11 @@ public:
     int getPropertyHouses(); //DONE
     int getPropertyHotels(); //DONE
     bool getIsPropertyActive(); //DONE
+    int getPropertyOneHouse();
+    int getPropertyTwoHouse();
+    int getPropertyThreeHouse();
+    int getPropertyFourHouse();
+    int getPropertyHotelRent();
     string getPropertyInfo(); // property description if special property, otherwise empty string is fine.
 
     //********************

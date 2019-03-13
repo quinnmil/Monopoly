@@ -150,16 +150,53 @@ int Game::getPropertyRent(){
     return rent;
 }
 
+//Gets house count
 int Game::getPropertyHouses(){
     int pos = currentPlayer->getPosition();
     int houses = gameSpaceList.at(pos)->getHouseCount();
     return houses;
 }
 
+//Gets hotel count
 int Game::getPropertyHotels(){
     int pos = currentPlayer->getPosition();
     int hotels = gameSpaceList.at(pos)->getHotelCount();
     return hotels;
+}
+
+//Gets 1 house rent
+int Game::getPropertyOneHouse(){
+    int pos = currentPlayer->getPosition();
+    int onerent = gameSpaceList.at(pos)->getOneHouseRent();
+    return onerent;
+}
+
+//Gets 2 house rent
+int Game::getPropertyTwoHouse(){
+    int pos = currentPlayer->getPosition();
+    int tworent = gameSpaceList.at(pos)->getTwoHouseRent();
+    return tworent;
+}
+
+//Gets 3 house rent
+int Game::getPropertyThreeHouse(){
+    int pos = currentPlayer->getPosition();
+    int threerent = gameSpaceList.at(pos)->getThreeHouseRent();
+    return threerent;
+}
+
+//Gets 4 house rent
+int Game::getPropertyFourHouse(){
+    int pos = currentPlayer->getPosition();
+    int fourrent = gameSpaceList.at(pos)->getFourHouseRent();
+    return fourrent;
+}
+
+//Gets hotel rent
+int Game::getPropertyHotelRent(){
+    int pos = currentPlayer->getPosition();
+    int hotel = gameSpaceList.at(pos)->getHotelRent();
+    return hotel;
 }
 
 bool Game::getIsPropertyActive(){
