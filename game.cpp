@@ -496,10 +496,10 @@ void Game::buyProperty(){
 }
 
 //Pay Rent
-void Game::payRent(){
+void Game::payRent(int rent){
     int pos = currentPlayer->getPosition(); //Gets position of current player
     Property *currProp = gameSpaceList.at(pos); //Gets current property
-    int rent = currProp->getRent(); //Gets rent
+//    int rent = currProp->getRent(); //Gets rent
     if(currProp->getOwnedBy().compare("") > 0){ //If there is an owner of said property
         PlayerType *owner;
         for(int i = 0; i < playerList.length(); i++){
@@ -616,4 +616,24 @@ void Game::handleSpecialCard(SpecialCard *special){
     else{
         //Shouldnt happen
     }
+}
+
+int Game::countColors(PlayerType *player, string color){
+    /*
+     * returns number of same color for a given color.
+     * 3 : monopoly.
+     * also used for railroads.
+     */
+    int len = player->getProperty().length();
+    int count = 0;
+    for (int i = 0 ; i < len; i ++){
+        if (player->getProperty()[i]->getColor() == color){
+            count ++;
+        }
+    }
+    // these colors only have two spaces, easier to modify here than in application.
+    if ((color == "Brown" || color == "Blue") && count == 2){
+        return 3;
+    }
+    return count;
 }

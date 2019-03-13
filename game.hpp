@@ -51,6 +51,8 @@ public:
     int getPropertyHotelRent();
     string getPropertyInfo(); // property description if special property, otherwise empty string is fine.
 
+    int countColors(PlayerType *player, string color);
+
     //********************
     //
     //Game Functions
@@ -75,7 +77,7 @@ public:
     //********************
 
     void buyProperty(); //DONE and WORKING
-    void payRent(); //DONE and WORKING
+    void payRent(int rent); //DONE and WORKING
     void payPlayer(PlayerType *p1, PlayerType *p2, int value); //NEEDS WORK, NEEDS TO WORK WITH INTERFACE?
 
     void payTax(); //adds to free parking money
