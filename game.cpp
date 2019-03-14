@@ -554,9 +554,10 @@ void Game::payPlayer(PlayerType *p1, PlayerType *p2, int value){ //p1 = who is p
 void Game::transferMoney(PlayerType *p1, int amount, bool ifTax){
     if (ifTax == true){
         // if paying a tax, take money from player and tranfer to free parking pile.
-        p1->setMoney(p1->getMoney() - amount);
         this->freeParkingMoney += amount;
     }
+    p1->setMoney(p1->getMoney() - amount);
+
 }
 
 //Get the money from free parking
