@@ -356,6 +356,13 @@ void MainWindow::displayOptions(){
         // if income tax
         if (currentProperty->getName() == "Income Tax"){
             game->transferMoney(game->getCurrentPlayer(), 200, true);
+            QString title = "Income Tax";
+            QString message = "You pay $200 for income tax.";
+            QMessageBox info;
+            info.setWindowTitle(title);
+            info.setText(message);
+            info.setStandardButtons(QMessageBox::Ok);
+            info.exec();
             updateDisplay();
         }
 
@@ -372,7 +379,7 @@ void MainWindow::displayOptions(){
         }
 
         // if free parking - collect money paid in tax so far.
-        if (currentProperty->getName() == "FreeParking"){
+        if (currentProperty->getName() == "Free Parking"){
             // display message announcing the payment and amount.
             QString title = "Free Parking!";
             QString message = QString("Congratulations, you land on free parking and collect %1").arg(QString::number(game->getFreeParking()));
@@ -401,7 +408,14 @@ void MainWindow::displayOptions(){
 
         // if luxury tax
         if (currentProperty->getName() == "Luxury Tax"){
-            game->transferMoney(game->getCurrentPlayer(), 100, true);
+            game->transferMoney(game->getCurrentPlayer(), 75, true);
+            QString title = "Luxury Tax";
+            QString message = "You pay $75 for luxury tax.";
+            QMessageBox info;
+            info.setWindowTitle(title);
+            info.setText(message);
+            info.setStandardButtons(QMessageBox::Ok);
+            info.exec();
             updateDisplay();
         }
     }

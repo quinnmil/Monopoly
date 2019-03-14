@@ -364,7 +364,7 @@ void Game::addBoardSpaces(){
     gameSpaceList.push_back(p32);
 
     //Community Chest
-    Property *p33 = new Property("Community Chest 3", "SpecialCard", 0, 0, 0, 0, 0, 0, 0, 0, 0);
+    Property *p33 = new Property("Community Chest", "SpecialCard", 0, 0, 0, 0, 0, 0, 0, 0, 0);
     gameSpaceList.push_back(p33);
 
     //Pennsylvania Avenue
