@@ -11,7 +11,6 @@
 
 //MAIN
 int main(int argc, char *argv[]){
-//    runGame();
     QApplication a(argc, argv);
     MainWindow w;
     w.show();

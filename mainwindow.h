@@ -22,9 +22,9 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    void updateDisplay();
+    void updateDisplay(); // updates graphics on board display
 
-    void setSpaceList();
+    void setSpaceList(); // generates spacelist from elements in the MainWindow.ui
     QList<QLabel*>getSpaceList() { return this->SpaceList; }
 
     void setGameSpaceList();
@@ -33,30 +33,30 @@ public:
     void setPlayerList();
     QList<PlayerType*> getPlayerList() { return this->PlayerList; }
 
-    void drawCard();
+    void drawCard(); // draws card for community chest / chance
     void displayOptions();
     void setGame(Game * game) { this->game = game; }
     Game* getGame(){ return this->game; }
 
-    void startGame(QString p1, QString p2);
+    void startGame(QString p1, QString p2); // starts game with player name arguments.
     void endGame();
 
 private slots:
-    void on_pushButton_clicked();
+    void on_pushButton_clicked(); // roll dice button
 
-    void on_endTurn_button_clicked();
+    void on_endTurn_button_clicked(); // end turn button
 
-    void on_p1Property_clicked();
+    void on_p1Property_clicked(); // "player 1" property button
 
-    void on_p2Property_clicked();
+    void on_p2Property_clicked(); //  "player 2" property button
 
 private:
     Ui::MainWindow *ui;
     Game* game;
 
-    QList <QLabel *> SpaceList;
-    QList<Property*> GameSpaceList;
-    QList<PlayerType*> PlayerList;
+    QList <QLabel *> SpaceList; // list of label elements in the ui
+    QList<Property*> GameSpaceList; // list of pointers to Properties
+    QList<PlayerType*> PlayerList; // list of pointers to PlayerType
 };
 
 #endif // MAINWINDOW_H
