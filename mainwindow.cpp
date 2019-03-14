@@ -301,7 +301,7 @@ void MainWindow::displayOptions(){
                 if (currentPlayer->getMoney() > currentProperty->getRent()) { // if user has enough money to pay rent
                     // display window notifying of rent payment.
                     QString title = name;
-                    QString message = QString("You landed on %1, and pay $%2 to %3").arg(name).arg(rentCost).arg(QString::fromStdString(currentProperty->getOwnedBy()));
+                    QString message = QString("You landed on %1, and pay $%2 to %3.").arg(name).arg(rentCost).arg(QString::fromStdString(currentProperty->getOwnedBy()));
                     game->transferMoney(game->getCurrentPlayer(),game->getFreeParking(),false);
                     QMessageBox info;
                     info.setWindowTitle(title);
@@ -315,7 +315,7 @@ void MainWindow::displayOptions(){
                     QMessageBox warning;
                     QString title = "Insufficient funds!";
                     QString message = "You are unable unable to pay rent! \n"
-                                      "Either mortgage property, or declare bankruptcy";
+                                      "Either mortgage property, or declare bankruptcy.";
                     QAbstractButton* declare = warning.addButton(("I...DECLARE...BANKRUPTCY"),QMessageBox::YesRole);
                     QAbstractButton* mortage = warning.addButton(("Mortgage Property"),QMessageBox::NoRole);
                     warning.exec();
@@ -382,7 +382,7 @@ void MainWindow::displayOptions(){
         if (currentProperty->getName() == "Free Parking"){
             // display message announcing the payment and amount.
             QString title = "Free Parking!";
-            QString message = QString("Congratulations, you land on free parking and collect %1").arg(QString::number(game->getFreeParking()));
+            QString message = QString("Congratulations, you land on free parking and collect $%1!").arg(QString::number(game->getFreeParking()));
             game->transferMoney(game->getCurrentPlayer(),game->getFreeParking(),false);
             QMessageBox info;
             info.setWindowTitle(title);
@@ -397,7 +397,7 @@ void MainWindow::displayOptions(){
         if (currentProperty->getName() == "Go to Jail"){
             game->jailPlayer();
             QString title = "Go to Jail";
-            QString message = "Go directly to jail. Do not pass Go. Do not collect $200";
+            QString message = "Go directly to jail. Do not pass GO. Do not collect $200.";
             QMessageBox info;
             info.setWindowTitle(title);
             info.setText(message);
