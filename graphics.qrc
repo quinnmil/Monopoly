@@ -9,5 +9,6 @@
         <file>Graphics/die4.png</file>
         <file>Graphics/die5.png</file>
         <file>Graphics/die6.png</file>
+        <file>Graphics/hat.png</file>
     </qresource>
 </RCC>
