@@ -302,7 +302,7 @@ void MainWindow::displayOptions(){
                     // display window notifying of rent payment.
                     QString title = name;
                     QString message = QString("You landed on %1, and pay $%2 to %3.").arg(name).arg(rentCost).arg(QString::fromStdString(currentProperty->getOwnedBy()));
-                    game->transferMoney(game->getCurrentPlayer(),game->getFreeParking(),false);
+                    //game->transferMoney(game->getCurrentPlayer(), owner, false);
                     QMessageBox info;
                     info.setWindowTitle(title);
                     info.setText(message);
@@ -383,7 +383,7 @@ void MainWindow::displayOptions(){
             // display message announcing the payment and amount.
             QString title = "Free Parking!";
             QString message = QString("Congratulations, you land on free parking and collect $%1!").arg(QString::number(game->getFreeParking()));
-            game->transferMoney(game->getCurrentPlayer(),-game->getFreeParking(),false);
+            game->transferMoney(game->getCurrentPlayer(),-(game->getFreeParking()),false);
             QMessageBox info;
             info.setWindowTitle(title);
             info.setText(message);
