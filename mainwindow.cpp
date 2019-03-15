@@ -529,7 +529,7 @@ void MainWindow::drawCard(){
      * Could get around to implement later.
     */
     int i = rand()%6;
-    QList<int> values = {-50, 50, 15, -10, 100, -20}; // game->transferMoney subtracts value (usually used for tax)
+    QList<int> values = {-50, 30, 15, -10, 100, -20}; // game->transferMoney subtracts value (usually used for tax)
     QList<QString> messages = {"You receive first place at the Eugene Luks Programming Contest!\n"
                               "Receive $50 in prize money.", "Celebrate passing 330 at Taylor's, lose $30",
                               "Speeding Fine, pay $15", "You have won second prize in a beauty contest. Collect $10",
