@@ -6,7 +6,7 @@
 #include <ctime>
 #include <QGraphicsScene>
 #include <QtGui>
-#include <QTCore>
+#include <QtCore>
 #include <QDebug>
 #include <QMessageBox>
 #include <QInputDialog>
