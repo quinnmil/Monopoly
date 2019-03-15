@@ -6,7 +6,7 @@
 #include <QGraphicsView>
 #include <QGraphicsScene>
 #include <QtGui>
-#include <QTCore>
+#include <QtCore>
 #include <QGraphicsRectItem>
 #include "property.hpp"
 #include "game.hpp"
