@@ -10,6 +10,10 @@ TEMPLATE = app
 TARGET = Monopoly
 INCLUDEPATH += .
 
+CONFIG += staticlib c++11
+
+
+
 # The following define makes your compiler warn you if you use any
 # feature of Qt which has been marked as deprecated (the exact warnings
 # depend on your compiler). Please consult the documentation of the
