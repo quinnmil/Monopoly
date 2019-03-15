@@ -264,7 +264,7 @@ void MainWindow::displayOptions(){
                 }
 
                 if (currentProperty->getColor() == "Utilities"){
-                    int roll = game->getDieOne() + game->getDieTwo();
+                    int roll = getdie1() + getdie2();
                     if (game->countColors(owner, currentProperty->getColor())==2){
                     rentCost = (roll * 10);
                     }
@@ -429,8 +429,11 @@ void MainWindow::displayOptions(){
 //********************
 void MainWindow::on_pushButton_clicked(){
 
-    int die1 = game->getDieOne();
-    int die2 = game->getDieTwo();
+    setDie1(game->getDieOne());
+    setDie2(game->getDieTwo());
+
+    int die1 = getdie1();
+    int die2 = getdie2();
 
     // update dice display
     switch(die1){
@@ -466,7 +469,6 @@ void MainWindow::on_pushButton_clicked(){
 
         }
         else {game->getCurrentPlayer()->setJailTime(game->getCurrentPlayer()->getJailTime()-1);
-            this->game->movePlayer(die1, die2);
             int ret = QMessageBox::information(this, tr("In Jail"),
                                            tr("You're still in jail, roll doubles or wait %1 more turns!").arg(QString::number(game->getCurrentPlayer()->getJailTime())),
                                            QMessageBox::Ok);

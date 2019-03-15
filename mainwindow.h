@@ -41,6 +41,12 @@ public:
     void startGame(QString p1, QString p2); // starts game with player name arguments.
     void endGame();
 
+    // fix for utilities
+    void setDie1(int die) {die1 = die; }
+    void setDie2(int die) {die2 = die; }
+    int getdie1() { return die1; }
+    int getdie2() { return die2; }
+
 private slots:
     void on_pushButton_clicked(); // roll dice button
 
@@ -51,6 +57,9 @@ private slots:
     void on_p2Property_clicked(); //  "player 2" property button
 
 private:
+    int die1;
+    int die2;
+
     Ui::MainWindow *ui;
     Game* game;
 
