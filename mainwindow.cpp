@@ -131,7 +131,6 @@ void MainWindow::updateDisplay(){
 
 
       // implemented for two players. can add more pieces later.
-      qDebug() << "update location for player : " << QString::fromStdString(PlayerList[j]->getName());
       switch (PlayerList[j]->getPiece()){
       case 1:
           SpaceList[index]->setPixmap(QPixmap(":/graphics/Graphics/hat.png"));
@@ -333,7 +332,9 @@ void MainWindow::displayOptions(){
                 }
             }
         }
-
+        if (currentPlayer->getMoney() <= 0){
+            endGame();
+        }
     }
     //********************
     // SPECIAL SPACES
@@ -527,7 +528,7 @@ void MainWindow::drawCard(){
      * not using specialCard class right not to save time.
      * Could get around to implement later.
     */
-    int i = rand()%1;
+    int i = rand()%6;
     QList<int> values = {-50, 50, 15, -10, 100, -20}; // game->transferMoney subtracts value (usually used for tax)
     QList<QString> messages = {"You receive first place at the Eugene Luks Programming Contest!\n"
                               "Receive $50 in prize money.", "Celebrate passing 330 at Taylor's, lose $30",
