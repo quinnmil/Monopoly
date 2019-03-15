@@ -292,7 +292,7 @@ void Game::addBoardSpaces(){
     gameSpaceList.push_back(p14);
 
     //Pennsylvania Railroad
-    Property *p15 = new Property("Pennsylvania Avenue", "Railroad", 200, 25, 200, 0, 0, 0, 0, 100, 110);
+    Property *p15 = new Property("Pennsylvania Railroad", "Railroad", 200, 25, 200, 0, 0, 0, 0, 100, 110);
     gameSpaceList.push_back(p15);
 
     //St. James Place
@@ -562,9 +562,7 @@ void Game::transferMoney(PlayerType *p1, int amount, bool ifTax){
 
 //Get the money from free parking
 int Game::getFreeParking(){
-    int money = freeParkingMoney;
-    freeParkingMoney = 0;
-    return money;
+    return freeParkingMoney;
 }
 
 //Start Trade
