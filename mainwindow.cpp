@@ -383,7 +383,7 @@ void MainWindow::displayOptions(){
             // display message announcing the payment and amount.
             QString title = "Free Parking!";
             QString message = QString("Congratulations, you land on free parking and collect $%1!").arg(QString::number(game->getFreeParking()));
-            game->transferMoney(game->getCurrentPlayer(),game->getFreeParking(),false);
+            game->transferMoney(game->getCurrentPlayer(),-game->getFreeParking(),false);
             QMessageBox info;
             info.setWindowTitle(title);
             info.setText(message);
